@@ -64,7 +64,7 @@ Your margin on a capability you don't have to build or maintain.
 
 </div>
 
-<div class="partner-cta">
+<div class="partner-cta glass-hack">
 
 ## Let's Talk
 
