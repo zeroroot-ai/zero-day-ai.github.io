@@ -1,0 +1,42 @@
+<canvas id="zda-rain" style="position:fixed;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:1;opacity:0.035;" aria-hidden="true"></canvas>
+<script>
+(function(){
+  var c = document.getElementById('zda-rain');
+  var ctx = c.getContext('2d');
+  var cols, drops;
+  var fs = 13;
+  var chars = '01アイウエオカキクケコサシスセソタチツテトナニヌネノハヒフヘホマミムメモ';
+
+  function resize() {
+    c.width  = window.innerWidth;
+    c.height = window.innerHeight;
+    cols  = Math.floor(c.width / fs);
+    drops = Array.from({length: cols}, function() { return Math.random() * -50 | 0; });
+  }
+
+  function draw() {
+    ctx.fillStyle = 'rgba(10,18,12,0.05)';
+    ctx.fillRect(0, 0, c.width, c.height);
+    ctx.fillStyle = '#39ff84';
+    ctx.font = fs + 'px JetBrains Mono, monospace';
+    for (var i = 0; i < cols; i++) {
+      var ch = chars[Math.random() * chars.length | 0];
+      var x  = i * fs;
+      var y  = drops[i] * fs;
+      ctx.globalAlpha = Math.random() * 0.5 + 0.3;
+      ctx.fillText(ch, x, y);
+      ctx.globalAlpha = 1;
+      if (y > c.height && Math.random() > 0.975) drops[i] = 0;
+      else drops[i]++;
+    }
+  }
+
+  resize();
+  window.addEventListener('resize', resize);
+
+  /* respect prefers-reduced-motion */
+  if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    setInterval(draw, 55);
+  }
+})();
+</script>
