@@ -200,8 +200,8 @@ a:hover {
 }
 
 .button-primary:hover {
-    background-color: var(--secondary);
-    border-color: var(--secondary);
+    background-color: var(--link-color);
+    border-color: var(--link-color);
     color: var(--main-bg-color);
     text-shadow: none;
 }
@@ -540,7 +540,7 @@ tbody tr:nth-child(even) { background: var(--code-bg); }
     width: 40px;
     height: 40px;
     min-width: 40px;
-    background: var(--secondary);
+    background: var(--link-color);
     color: var(--main-bg-color);
     font-weight: bold;
     font-size: 1.2em;
@@ -657,7 +657,7 @@ tbody tr:nth-child(even) { background: var(--code-bg); }
 }
 
 .video-coming-soon p {
-    color: var(--secondary);
+    color: var(--link-color);
     font-size: 1.1em;
     margin: 0;
 }
@@ -719,7 +719,7 @@ tbody tr:nth-child(even) { background: var(--code-bg); }
 .final-cta p {
     font-size: 1.2em;
     margin-bottom: 20px;
-    color: var(--secondary);
+    color: var(--link-color);
 }
 
 /* =============================================
