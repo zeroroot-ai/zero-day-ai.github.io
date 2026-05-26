@@ -1,17 +1,6 @@
-<span class="logo glow" title="{{ $.Site.Params.Logo.logoHost }}">
+<span class="logo glow">
     <a href="/" class="logo" style="text-decoration: none">
-    <img src="/mark-dark-512.png" alt="zero-day.ai" class="gibson-logo" width="36" height="36" />
-    <span class="color-highlight">[</span>
-    <span class="color-alt">{{ $.Site.Params.Logo.logoUser }}</span>
-    <span class="color-highlight">@</span>
-    <span class="color-highlight">{{ $.Site.Params.Logo.logoHost }}</span>
-    <span class="color-alt">]: </span>
+        <span class="color-highlight">zero-day.ai</span>
     </a>
-    {{ if and .File .File.BaseFileName }}
-    <span class="color-highlight">  ~/{{ .File.BaseFileName }}</span>
-    {{ else }}
-    <span class="color-highlight">  ~</span>
-    {{ end }}
-    <span class="color-alt">$</span>
-  <span class="logo-cursor"></span>
+    <span class="logo-cursor"></span>
 </span>
