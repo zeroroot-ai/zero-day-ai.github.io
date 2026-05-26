@@ -1,18 +1,11 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>zero-day.ai</title>
-    <link>https://www.zero-day.ai/</link>
-    <description>Recent content on zero-day.ai</description>
-    <generator>Hugo</generator>
-    <language>en-us</language>
-    <atom:link href="https://www.zero-day.ai/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Partner With Us</title>
-      <link>https://www.zero-day.ai/partner/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://www.zero-day.ai/partner/</guid>
-      <description>&lt;div class=&#34;partner-page&#34;&gt;&#xA;&lt;h1 id=&#34;partner-with-us&#34;&gt;Partner With Us&lt;/h1&gt;&#xA;&lt;p class=&#34;partner-intro&#34;&gt;&#xA;Consulting firms and MSSPs: Add a differentiated capability your competitors don&#39;t have. Gibson deploys &lt;strong&gt;inside&lt;/strong&gt; client infrastructure, enabling services that cloud-hosted tools simply cannot deliver.&#xA;&lt;/p&gt;&#xA;&lt;div class=&#34;partner-section&#34;&gt;&#xA;&lt;h2 id=&#34;the-problem-you-solve&#34;&gt;The Problem You Solve&lt;/h2&gt;&#xA;&lt;p&gt;Every DevSecOps firm sells the same services with the same tools. Your clients need continuous security testing, but your competitors offer the exact same capabilities. Gibson changes that equation.&lt;/p&gt;&#xA;&lt;p&gt;With Gibson, you can offer autonomous agent capabilities that run on your client&amp;rsquo;s cluster, behind their firewall, in air-gapped and classified environments. No other tool on the market does this.&lt;/p&gt;</description>
-    </item>
-  </channel>
-</rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>zero-day.ai</title><link>https://www.zero-day.ai/</link><description>Recent content on zero-day.ai</description><generator>Hugo</generator><language>en-us</language><lastBuildDate>Mon, 15 Jan 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://www.zero-day.ai/index.xml" rel="self" type="application/rss+xml"/><item><title>Introducing Gibson: Autonomous Agent Orchestration for Security</title><link>https://www.zero-day.ai/blog/introducing-gibson/</link><pubDate>Mon, 15 Jan 2024 00:00:00 +0000</pubDate><guid>https://www.zero-day.ai/blog/introducing-gibson/</guid><description>&lt;p&gt;Gibson is an autonomous agent orchestration platform. Think Kubernetes, but for AI agents instead of containers.&lt;/p&gt;
+&lt;h2 id="what-gibson-actually-is"&gt;What Gibson Actually Is&lt;/h2&gt;
+&lt;p&gt;Gibson is an autonomous agent orchestration platform. Think Kubernetes, but for security testing agents instead of containers.&lt;/p&gt;
+&lt;p&gt;You write agents in Go using the SDK. They run on your cluster. They reason with LLMs (Claude, GPT, Gemini, or local models via Ollama). They execute tools via distributed Redis queues. They accumulate knowledge in a Neo4j graph database. And they do it all inside your infrastructure, not ours.&lt;/p&gt;</description></item><item><title>Partner With Us</title><link>https://www.zero-day.ai/partner/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://www.zero-day.ai/partner/</guid><description>&lt;div class="partner-page"&gt;
+&lt;h1 id="partner-with-us"&gt;Partner With Us&lt;/h1&gt;
+&lt;p class="partner-intro"&gt;
+Consultancies and system integrators: your clients are being told to ship AI agents. They don't know how to do it in a way that works in production. Gibson gives you the infrastructure to deliver that — deployed &lt;strong&gt;inside&lt;/strong&gt; their cluster, behind their firewall.
+&lt;/p&gt;
+&lt;div class="partner-section"&gt;
+&lt;h2 id="the-problem-your-clients-have"&gt;The Problem Your Clients Have&lt;/h2&gt;
+&lt;p&gt;Every engineering org is being told to &amp;ldquo;ship agents.&amp;rdquo; Most will spend 6-12 months building infrastructure that falls apart at scale — stitching together vector databases, prompt chains, and custom orchestration that nobody can maintain.&lt;/p&gt;</description></item></channel></rss>
