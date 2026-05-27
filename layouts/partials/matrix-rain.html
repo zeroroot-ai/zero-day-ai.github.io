@@ -1,42 +1,60 @@
-<canvas id="zda-rain" style="position:fixed;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:1;opacity:0.035;" aria-hidden="true"></canvas>
+<canvas id="zda-rain" style="position:fixed;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:1;opacity:0.08;" aria-hidden="true"></canvas>
 <script>
 (function(){
   var c = document.getElementById('zda-rain');
   var ctx = c.getContext('2d');
-  var cols, drops;
-  var fs = 13;
-  var chars = '01アイウエオカキクケコサシスセソタチツテトナニヌネノハヒフヘホマミムメモ';
+  var cols, drops, bright;
+  var fs = 14;
+  /* katakana + binary — classic Hackers/Matrix mix */
+  var chars = '01アイウエオカキクケコサシスセソタチツテトハヒフヘホ<>{}[]|\\/-_=+';
 
   function resize() {
     c.width  = window.innerWidth;
     c.height = window.innerHeight;
-    cols  = Math.floor(c.width / fs);
-    drops = Array.from({length: cols}, function() { return Math.random() * -50 | 0; });
+    cols   = Math.floor(c.width / fs);
+    drops  = Array.from({length: cols}, function() { return (Math.random() * c.height / fs - 40) | 0; });
+    bright = Array.from({length: cols}, function() { return Math.random() > 0.85; });
   }
 
   function draw() {
-    ctx.fillStyle = 'rgba(10,18,12,0.05)';
+    /* fade trail */
+    ctx.fillStyle = 'rgba(5,10,5,0.06)';
     ctx.fillRect(0, 0, c.width, c.height);
-    ctx.fillStyle = '#39ff84';
-    ctx.font = fs + 'px JetBrains Mono, monospace';
+
     for (var i = 0; i < cols; i++) {
       var ch = chars[Math.random() * chars.length | 0];
       var x  = i * fs;
       var y  = drops[i] * fs;
-      ctx.globalAlpha = Math.random() * 0.5 + 0.3;
+
+      /* head of stream = bright white-green, trail = dim green */
+      if (bright[i]) {
+        ctx.fillStyle = '#afffb8';
+        ctx.font = 'bold ' + fs + 'px "JetBrains Mono", monospace';
+      } else {
+        var alpha = Math.random() * 0.6 + 0.2;
+        ctx.fillStyle = 'rgba(57,255,90,' + alpha + ')';
+        ctx.font = fs + 'px "JetBrains Mono", monospace';
+      }
+
+      /* occasional pink character — hot pink glitch */
+      if (Math.random() > 0.97) ctx.fillStyle = '#ff2d78';
+
       ctx.fillText(ch, x, y);
-      ctx.globalAlpha = 1;
-      if (y > c.height && Math.random() > 0.975) drops[i] = 0;
-      else drops[i]++;
+
+      if (y > c.height && Math.random() > 0.97) {
+        drops[i] = -20;
+        bright[i] = Math.random() > 0.8;
+      } else {
+        drops[i]++;
+      }
     }
   }
 
   resize();
   window.addEventListener('resize', resize);
 
-  /* respect prefers-reduced-motion */
   if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-    setInterval(draw, 55);
+    setInterval(draw, 48);
   }
 })();
 </script>
