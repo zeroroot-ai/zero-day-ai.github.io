@@ -1,70 +1,48 @@
-/* zero-day.ai — gibson dark design system */
+/* zero-day.ai — 90s hacker aesthetic */
+/* inspired by: Hackers (1995), WarGames, 2600, Max Headroom */
 
 :root {
-    --main-bg-color:   oklch(0.10 0.008 145);
-    --main-text-color: oklch(0.93 0.01 145);
-    --highlight-color: oklch(0.86 0.28 145);   /* phosphor green */
-    --secondary:       oklch(0.82 0.18 80);    /* amber — keep token, remove from UI */
-    --link-color:      oklch(0.78 0.16 220);   /* ice-cyan */
-    --border-color:    oklch(0.30 0.06 145);
-    --code-bg:         oklch(0.08 0.006 145);
-    --card-bg:         oklch(0.13 0.010 145);
-    --accent-purple:   oklch(0.71 0.16 295);
-    --accent-orange:   oklch(0.80 0.13 65);
-    --dim-text:        oklch(0.60 0.04 175);   /* metadata / secondary text */
+    --bg:          #050a05;           /* near-black phosphor */
+    --bg-mid:      #080f08;
+    --bg-card:     #0b120b;
+    --green:       #39ff5a;           /* vivid phosphor green */
+    --green-dim:   #1a7a2a;
+    --green-glow:  rgba(57,255,90,0.18);
+    --pink:        #ff2d78;           /* hot magenta — Hackers palette */
+    --pink-glow:   rgba(255,45,120,0.18);
+    --cyan:        #00e5ff;           /* electric cyan */
+    --cyan-dim:    #005f6b;
+    --cyan-glow:   rgba(0,229,255,0.15);
+    --purple:      #bf5fff;           /* electric purple */
+    --text:        #b8f0be;           /* phosphor text */
+    --text-dim:    #4a6e4e;           /* dim terminal text */
+    --border:      #1a3a1e;
+    --border-bright: #2a6a30;
 
     --glow-strength: 1;
 }
 
-/* =============================================
-   Base
-   ============================================= */
-
 *, *::before, *::after { box-sizing: border-box; }
 
+/* =============================================
+   Base — CRT monitor feel
+   ============================================= */
+
 body {
-    background-color: var(--main-bg-color);
-    background-image:
-        /* circuit grid */
-        linear-gradient(
-            color-mix(in oklch, var(--highlight-color) 3%, transparent) 1px,
-            transparent 1px
-        ),
-        linear-gradient(
-            90deg,
-            color-mix(in oklch, var(--highlight-color) 3%, transparent) 1px,
-            transparent 1px
-        );
-    background-size: 40px 40px;
-    color: var(--main-text-color);
+    background-color: var(--bg);
+    color: var(--text);
     font-family: 'JetBrains Mono', 'TerminusModern', 'Courier New', monospace;
-    font-size: 16px;
-    font-weight: 500;
-    line-height: 1.8;
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 1.75;
     margin: 0;
     padding: 0;
     min-height: 100vh;
+    /* Subtle phosphor bleed on text */
+    text-shadow: 0 0 2px rgba(57,255,90,0.12);
 }
 
-.container {
-    max-width: 820px;
-    margin: 0 auto;
-    padding: 40px 20px;
-}
-
-/* =============================================
-   Color utility classes
-   ============================================= */
-
-.color-highlight { color: var(--highlight-color); }
-.color-alt       { color: var(--link-color); }
-.color-base      { color: var(--main-text-color); }
-
-/* =============================================
-   CRT visual effects
-   ============================================= */
-
-/* Scanline overlay */
+/* Scanlines — more visible than before */
 body::before {
     content: '';
     position: fixed;
@@ -74,14 +52,14 @@ body::before {
     background: repeating-linear-gradient(
         0deg,
         transparent,
-        transparent 2px,
-        oklch(0 0 0 / 0.06) 2px,
-        oklch(0 0 0 / 0.06) 4px
+        transparent 3px,
+        rgba(0,0,0,0.18) 3px,
+        rgba(0,0,0,0.18) 4px
     );
     opacity: var(--glow-strength);
 }
 
-/* Vignette */
+/* Vignette — strong CRT curvature effect */
 body::after {
     content: '';
     position: fixed;
@@ -89,82 +67,112 @@ body::after {
     pointer-events: none;
     z-index: 9998;
     background: radial-gradient(
-        ellipse at center,
-        transparent 60%,
-        oklch(0 0 0 / 0.4) 100%
+        ellipse at 50% 50%,
+        transparent 55%,
+        rgba(0,0,0,0.55) 85%,
+        rgba(0,0,0,0.85) 100%
     );
 }
+
+.container {
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+
+/* =============================================
+   Color utilities
+   ============================================= */
+
+.color-highlight { color: var(--green); }
+.color-alt       { color: var(--cyan); }
+.color-base      { color: var(--text); }
 
 /* =============================================
    Animations
    ============================================= */
-
-@keyframes zda-flicker {
-    0%, 89%, 100% { opacity: 1; }
-    90%  { opacity: 0.55; filter: blur(0.5px); }
-    91%  { opacity: 1; }
-    93%  { opacity: 0.78; }
-    94%  { opacity: 1; }
-}
 
 @keyframes blink {
     0%, 49%  { opacity: 1; }
     50%, 100% { opacity: 0; }
 }
 
-@keyframes glitch {
-    0%, 88%, 100% {
+/* VHS-style glitch with color channel separation */
+@keyframes vhs-glitch {
+    0%, 85%, 100% {
         transform: none;
-        text-shadow: 0 0 calc(12px * var(--glow-strength)) color-mix(in oklch, var(--highlight-color) 50%, transparent);
-    }
-    89% {
-        transform: translateX(-3px) skew(-1deg);
+        filter: none;
         text-shadow:
-            3px 0 var(--link-color),
-            -3px 0 color-mix(in oklch, var(--accent-purple) 80%, transparent);
-        clip-path: inset(15% 0 70% 0);
+            0 0 10px rgba(57,255,90,0.6),
+            0 0 20px rgba(57,255,90,0.25);
     }
-    90% {
-        transform: translateX(3px);
-        clip-path: inset(55% 0 20% 0);
+    86% {
+        transform: translateX(-4px);
+        filter: none;
+        text-shadow:
+            4px 0  var(--pink),
+            -4px 0 var(--cyan),
+            0 0 8px var(--green);
+        clip-path: inset(20% 0 72% 0);
     }
-    91% {
+    87% {
+        transform: translateX(4px);
+        clip-path: inset(62% 0 18% 0);
+        text-shadow:
+            -3px 0 var(--pink),
+            3px 0  var(--cyan);
+    }
+    88% {
+        transform: none;
+        filter: none;
+        clip-path: none;
+        text-shadow: 0 0 10px rgba(57,255,90,0.6);
+    }
+    93% {
+        transform: skew(-0.4deg);
+        text-shadow:
+            2px 0 var(--cyan),
+            -2px 0 var(--pink);
+        clip-path: inset(45% 0 42% 0);
+        opacity: 0.85;
+    }
+    94% {
         transform: none;
         clip-path: none;
-        text-shadow: 0 0 calc(12px * var(--glow-strength)) color-mix(in oklch, var(--highlight-color) 50%, transparent);
-    }
-    95% {
-        transform: translateX(2px) skew(0.5deg);
-        text-shadow:
-            -2px 0 var(--link-color),
-            2px 0 color-mix(in oklch, var(--accent-purple) 80%, transparent);
-        clip-path: inset(40% 0 45% 0);
-    }
-    96% { transform: none; clip-path: none; }
-}
-
-@keyframes neon-pulse {
-    0%, 100% {
-        box-shadow:
-            0 0 calc(4px  * var(--glow-strength)) color-mix(in oklch, var(--highlight-color) 30%, transparent),
-            inset 0 0 calc(2px * var(--glow-strength)) color-mix(in oklch, var(--highlight-color) 8%, transparent);
-    }
-    50% {
-        box-shadow:
-            0 0 calc(14px * var(--glow-strength)) color-mix(in oklch, var(--highlight-color) 50%, transparent),
-            0 0 calc(30px * var(--glow-strength)) color-mix(in oklch, var(--highlight-color) 20%, transparent),
-            inset 0 0 calc(6px * var(--glow-strength)) color-mix(in oklch, var(--highlight-color) 12%, transparent);
+        opacity: 1;
     }
 }
 
-@keyframes scan-sweep {
-    0%   { top: -5%; opacity: 0; }
-    5%   { opacity: calc(0.04 * var(--glow-strength)); }
-    95%  { opacity: calc(0.04 * var(--glow-strength)); }
-    100% { top: 105%; opacity: 0; }
+/* Screen flicker */
+@keyframes screen-flicker {
+    0%, 91%, 100% { opacity: 1; }
+    92% { opacity: 0.7; }
+    93% { opacity: 1; }
+    96% { opacity: 0.85; }
+    97% { opacity: 1; }
 }
 
-.zda-flicker { animation: glitch 9s infinite; }
+/* Boot line fade-in */
+@keyframes boot-in {
+    from { opacity: 0; transform: translateX(-8px); }
+    to   { opacity: 1; transform: none; }
+}
+
+/* Status blink */
+@keyframes status-blink {
+    0%, 60%, 100% { opacity: 1; }
+    70%, 90% { opacity: 0; }
+}
+
+/* Horizontal scan sweep */
+@keyframes h-sweep {
+    0%   { top: -2%; opacity: 0; }
+    3%   { opacity: calc(0.08 * var(--glow-strength)); }
+    97%  { opacity: calc(0.08 * var(--glow-strength)); }
+    100% { top: 102%; opacity: 0; }
+}
+
+.zda-flicker { animation: vhs-glitch 10s infinite; }
 
 /* =============================================
    Glow utilities
@@ -172,59 +180,93 @@ body::after {
 
 .glow {
     text-shadow:
-        0 0 calc(10px * var(--glow-strength)) var(--highlight-color),
-        0 0 calc(22px * var(--glow-strength)) color-mix(in oklch, var(--highlight-color) 28%, transparent),
-        0 0 calc(40px * var(--glow-strength)) color-mix(in oklch, var(--highlight-color) 12%, transparent);
+        0 0 8px  var(--green),
+        0 0 20px rgba(57,255,90,0.35),
+        0 0 40px rgba(57,255,90,0.12);
 }
 
 .text-zd-glow {
-    text-shadow:
-        0 0 calc(8px * var(--glow-strength)) color-mix(in oklch, var(--highlight-color) 60%, transparent);
+    text-shadow: 0 0 8px rgba(57,255,90,0.7);
 }
 
-.glow-green {
-    box-shadow: 0 0 calc(15px * var(--glow-strength)) color-mix(in oklch, var(--highlight-color) 40%, transparent);
-}
+/* =============================================
+   Terminal window boxes  (term-box)
+   labeled border: [+]─[ LABEL ]────────────[+]
+   ============================================= */
 
-.border-glow-green {
-    animation: neon-pulse 4s ease-in-out infinite;
-}
-
-.glass-hack {
-    background: color-mix(in oklch, var(--highlight-color) 2%, var(--card-bg));
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    border: 1px solid color-mix(in oklch, var(--highlight-color) 18%, transparent);
+.term-box {
     position: relative;
+    border: 1px solid var(--border-bright);
+    padding: 30px 28px 24px;
+    background: var(--bg-card);
+    margin: 48px 0;
+    box-shadow:
+        0 0 calc(18px * var(--glow-strength)) var(--green-glow),
+        inset 0 0 30px rgba(57,255,90,0.02);
 }
 
-/* ASCII corner brackets on cards */
-.glass-hack::before,
-.glass-hack::after {
-    content: '';
+/* Top rule with label */
+.term-box::before {
+    content: '[+]─[ ' attr(data-label) ' ]';
     position: absolute;
-    width: 12px;
-    height: 12px;
-    pointer-events: none;
-    opacity: calc(0.6 * var(--glow-strength));
+    top: -0.65em;
+    left: 14px;
+    background: var(--bg-card);
+    color: var(--green);
+    font-size: 0.78em;
+    letter-spacing: 2px;
+    padding: 0 6px;
+    text-shadow: 0 0 8px var(--green);
+    white-space: nowrap;
 }
 
-.glass-hack::before {
-    top: 6px;
-    left: 6px;
-    border-top: 2px solid var(--highlight-color);
-    border-left: 2px solid var(--highlight-color);
-    box-shadow:
-        0 0 calc(4px * var(--glow-strength)) var(--highlight-color);
+/* Bottom-right corner label */
+.term-box::after {
+    content: '[EOF]';
+    position: absolute;
+    bottom: -0.65em;
+    right: 14px;
+    background: var(--bg-card);
+    color: var(--text-dim);
+    font-size: 0.68em;
+    letter-spacing: 1px;
+    padding: 0 4px;
 }
 
-.glass-hack::after {
-    bottom: 6px;
-    right: 6px;
-    border-bottom: 2px solid var(--link-color);
-    border-right: 2px solid var(--link-color);
-    box-shadow:
-        0 0 calc(4px * var(--glow-strength)) var(--link-color);
+/* =============================================
+   Boot sequence
+   ============================================= */
+
+.boot-seq {
+    text-align: left;
+    margin-bottom: 32px;
+    font-size: 0.82em;
+    color: var(--text-dim);
+    border-left: 2px solid var(--border-bright);
+    padding-left: 16px;
+}
+
+.boot-line {
+    display: block;
+    animation: boot-in 0.3s ease both;
+}
+
+.boot-line:nth-child(1) { animation-delay: 0.1s; }
+.boot-line:nth-child(2) { animation-delay: 0.3s; }
+.boot-line:nth-child(3) { animation-delay: 0.5s; }
+.boot-line:nth-child(4) { animation-delay: 0.7s; }
+.boot-line:nth-child(5) { animation-delay: 0.9s; }
+
+.blink-txt {
+    color: var(--cyan);
+    animation: status-blink 2s infinite;
+}
+
+.status-ok {
+    color: var(--green);
+    text-shadow: 0 0 8px var(--green);
+    font-weight: bold;
+    animation: none;
 }
 
 /* =============================================
@@ -232,35 +274,23 @@ body::after {
    ============================================= */
 
 .logo {
-    font-size: 1.2em;
+    font-size: 1.25em;
     font-weight: bold;
     text-decoration: none;
     display: flex;
     align-items: center;
     gap: 10px;
+    letter-spacing: 1px;
 }
 
 .logo-cursor {
     display: inline-block;
     width: 10px;
-    height: 20px;
-    background-color: var(--highlight-color);
-    box-shadow:
-        0 0 calc(6px * var(--glow-strength)) var(--highlight-color),
-        0 0 calc(14px * var(--glow-strength)) color-mix(in oklch, var(--highlight-color) 40%, transparent);
+    height: 18px;
+    background-color: var(--green);
+    box-shadow: 0 0 8px var(--green), 0 0 16px rgba(57,255,90,0.4);
     animation: blink 1s infinite;
     vertical-align: text-bottom;
-}
-
-.gibson-logo {
-    filter: drop-shadow(0 0 calc(5px * var(--glow-strength)) var(--highlight-color));
-    transition: filter 0.3s ease;
-    display: block;
-    flex-shrink: 0;
-}
-
-.gibson-logo:hover {
-    filter: drop-shadow(0 0 calc(15px * var(--glow-strength)) var(--highlight-color));
 }
 
 /* =============================================
@@ -268,80 +298,60 @@ body::after {
    ============================================= */
 
 a {
-    color: var(--link-color);
+    color: var(--cyan);
     text-decoration: none;
-    transition: all 0.2s ease;
+    transition: color 0.15s ease, text-shadow 0.15s ease;
 }
 
 a:hover {
-    color: var(--highlight-color);
-    text-shadow: 0 0 calc(8px * var(--glow-strength)) color-mix(in oklch, var(--highlight-color) 60%, transparent);
+    color: var(--green);
+    text-shadow: 0 0 8px var(--green);
 }
 
 /* =============================================
-   Buttons
+   Buttons — retro terminal style
    ============================================= */
 
 .button {
     display: inline-block;
-    padding: 10px 20px;
-    border: 1px solid var(--link-color);
-    background-color: transparent;
-    color: var(--link-color);
-    text-transform: uppercase;
+    padding: 10px 18px;
+    border: 1px solid var(--cyan);
+    background: transparent;
+    color: var(--cyan);
+    font-family: inherit;
+    font-size: 0.85em;
     letter-spacing: 2px;
-    font-size: 0.9em;
-    transition: all 0.2s ease;
+    text-transform: uppercase;
     cursor: pointer;
     text-decoration: none;
+    transition: all 0.12s ease;
     position: relative;
-    clip-path: polygon(0 0, calc(100% - 8px) 0, 100% 8px, 100% 100%, 8px 100%, 0 calc(100% - 8px));
-}
-
-.button::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background: var(--link-color);
-    opacity: 0;
-    transition: opacity 0.2s ease;
-    clip-path: polygon(0 0, calc(100% - 8px) 0, 100% 8px, 100% 100%, 8px 100%, 0 calc(100% - 8px));
 }
 
 .button:hover {
-    color: var(--main-bg-color);
-    box-shadow:
-        0 0 calc(20px * var(--glow-strength)) color-mix(in oklch, var(--link-color) 40%, transparent);
+    background: var(--cyan);
+    color: var(--bg);
     text-shadow: none;
-    border-color: var(--link-color);
+    box-shadow: 0 0 16px var(--cyan-glow), 0 0 32px var(--cyan-glow);
 }
-
-.button:hover::before { opacity: 1; }
-
-.button:hover span,
-.button:hover { position: relative; z-index: 1; }
 
 .button-primary {
-    background-color: var(--highlight-color);
-    color: var(--main-bg-color);
-    border-color: var(--highlight-color);
-    font-weight: bold;
-    clip-path: polygon(0 0, calc(100% - 8px) 0, 100% 8px, 100% 100%, 8px 100%, 0 calc(100% - 8px));
+    border-color: var(--pink);
+    color: var(--pink);
+    text-shadow: 0 0 6px rgba(255,45,120,0.4);
+    box-shadow: 0 0 10px var(--pink-glow);
 }
 
-.button-primary::before { background: var(--link-color); }
-
 .button-primary:hover {
-    color: var(--main-bg-color);
-    border-color: var(--link-color);
-    box-shadow:
-        0 0 calc(24px * var(--glow-strength)) color-mix(in oklch, var(--link-color) 50%, transparent);
+    background: var(--pink);
+    color: var(--bg);
     text-shadow: none;
+    box-shadow: 0 0 20px var(--pink-glow), 0 0 40px var(--pink-glow);
 }
 
 .button-large {
-    padding: 15px 32px;
-    font-size: 1.05em;
+    padding: 14px 28px;
+    font-size: 0.95em;
 }
 
 /* =============================================
@@ -349,23 +359,41 @@ a:hover {
    ============================================= */
 
 h1, h2, h3, h4, h5, h6 {
-    color: var(--highlight-color);
+    color: var(--green);
+    font-weight: 400;
+    letter-spacing: 1px;
     margin-top: 1.5em;
     margin-bottom: 0.8em;
-    font-weight: normal;
 }
 
-h1 { font-size: 2.2em; line-height: 1.3; }
-h2 { font-size: 1.8em; line-height: 1.4; }
-h3 { font-size: 1.4em; line-height: 1.5; }
+h1 {
+    font-size: 2.4em;
+    line-height: 1.2;
+    text-shadow:
+        0 0 12px var(--green),
+        0 0 24px rgba(57,255,90,0.35);
+}
 
-/* Section heading decorators in content */
-.post-content h2::before,
-.differentiator h2::before {
-    content: '// ';
-    color: var(--link-color);
-    opacity: 0.7;
-    font-size: 0.8em;
+h2 {
+    font-size: 1.5em;
+    line-height: 1.4;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+h3 {
+    font-size: 1.15em;
+    line-height: 1.5;
+}
+
+/* Section marker styling */
+.use-cases h2,
+.services-section h2 {
+    color: var(--pink);
+    text-shadow: 0 0 10px rgba(255,45,120,0.4);
+    border-bottom: 1px solid var(--pink);
+    padding-bottom: 8px;
+    letter-spacing: 3px;
 }
 
 /* =============================================
@@ -377,69 +405,71 @@ pre, code {
 }
 
 code {
-    background-color: var(--code-bg);
-    color: color-mix(in oklch, var(--highlight-color) 80%, var(--main-text-color));
-    padding: 2px 6px;
-    border-radius: 0;
-    border: 1px solid color-mix(in oklch, var(--highlight-color) 12%, transparent);
+    background: #040904;
+    color: var(--green);
+    padding: 1px 5px;
+    border: 1px solid var(--border);
+    font-size: 0.92em;
 }
 
 pre {
-    background-color: var(--code-bg);
-    color: var(--main-text-color);
+    background: #020602;
+    color: var(--green);
     padding: 0;
     overflow-x: auto;
-    border: 1px solid color-mix(in oklch, var(--highlight-color) 20%, transparent);
+    border: 1px solid var(--border-bright);
     border-top: none;
-    border-radius: 0;
-    box-shadow:
-        0 0 calc(12px * var(--glow-strength)) color-mix(in oklch, var(--highlight-color) 15%, transparent),
-        inset 0 0 40px color-mix(in oklch, var(--highlight-color) 2%, transparent);
     position: relative;
+    box-shadow: 0 0 16px var(--green-glow);
 }
 
-/* Terminal titlebar */
+/* Terminal window titlebar */
 pre::before {
-    content: '● ● ●';
+    content: '  ■  zero-day.ai  >_';
     display: block;
-    background: color-mix(in oklch, var(--highlight-color) 8%, var(--code-bg));
-    color: var(--dim-text);
-    padding: 6px 14px;
-    font-size: 0.7em;
-    letter-spacing: 4px;
-    border-bottom: 1px solid color-mix(in oklch, var(--highlight-color) 15%, transparent);
-    border-left: 3px solid var(--highlight-color);
+    background: var(--green-dim);
+    color: var(--bg);
+    padding: 5px 12px;
+    font-size: 0.72em;
+    letter-spacing: 1px;
+    font-weight: bold;
+    border-bottom: 1px solid var(--border-bright);
 }
 
 pre > code {
     display: block;
-    padding: 16px;
+    padding: 14px 16px;
     background: none;
     border: none;
-    color: inherit;
+    color: var(--green);
 }
 
 pre code {
     background: none;
-    color: inherit;
+    color: var(--green);
     padding: 0;
     border: none;
+    font-size: 1em;
 }
 
-/* Syntax-highlighted blocks (Hugo's .highlight wrapper) */
-.highlight pre {
-    margin: 0;
-}
+.highlight pre { margin: 0; }
 
 /* =============================================
-   Navigation
+   Navigation / Header / Footer
    ============================================= */
 
+header {
+    padding: 16px 0;
+    border-bottom: 1px solid var(--border-bright);
+    background: var(--bg);
+    box-shadow: 0 3px 20px var(--green-glow);
+    animation: screen-flicker 12s infinite;
+}
+
 nav {
-    border-bottom: 1px solid var(--border-color);
-    padding: 20px 0;
-    margin-bottom: 40px;
-    box-shadow: 0 2px calc(12px * var(--glow-strength)) color-mix(in oklch, var(--highlight-color) 8%, transparent);
+    border-bottom: 1px solid var(--border);
+    padding: 18px 0;
+    margin-bottom: 36px;
 }
 
 nav ul {
@@ -447,52 +477,68 @@ nav ul {
     padding: 0;
     margin: 0;
     display: flex;
-    gap: 30px;
+    gap: 28px;
     flex-wrap: wrap;
 }
 
 nav li {
     display: inline;
-    font-size: 16px;
-    padding: 12px 0;
+    font-size: 0.9em;
+    padding: 10px 0;
+    letter-spacing: 1px;
 }
 
-/* =============================================
-   Header / Footer
-   ============================================= */
+nav a {
+    color: var(--text-dim);
+    text-transform: uppercase;
+    font-size: 0.88em;
+    letter-spacing: 2px;
+    transition: color 0.15s, text-shadow 0.15s;
+}
 
-header {
-    padding: 20px 0;
-    border-bottom: 1px solid var(--border-color);
-    margin-bottom: 40px;
-    box-shadow: 0 4px calc(20px * var(--glow-strength)) color-mix(in oklch, var(--highlight-color) 10%, transparent);
+nav a:hover {
+    color: var(--green);
+    text-shadow: 0 0 8px var(--green);
 }
 
 footer {
-    border-top: 1px solid var(--border-color);
-    margin-top: 50px;
-    padding-top: 20px;
+    border-top: 1px solid var(--border-bright);
+    margin-top: 60px;
+    padding: 20px;
     text-align: center;
-    color: var(--dim-text);
-    box-shadow: 0 -4px calc(20px * var(--glow-strength)) color-mix(in oklch, var(--highlight-color) 8%, transparent);
+    color: var(--text-dim);
+    font-size: 0.85em;
+    letter-spacing: 1px;
+    box-shadow: 0 -3px 20px var(--green-glow);
 }
 
-footer a {
-    color: var(--link-color);
-}
+footer a { color: var(--cyan); }
 
 /* =============================================
    Content layout
    ============================================= */
 
 main, .content, article, .content-p {
-    max-width: 820px;
+    max-width: 860px;
     margin: 0 auto;
     padding: 20px;
 }
 
 main p, article p, .content p {
-    margin-bottom: 1.5em;
+    margin-bottom: 1.4em;
+}
+
+/* =============================================
+   BBS divider
+   ============================================= */
+
+.bbs-divider {
+    text-align: center;
+    color: var(--text-dim);
+    font-size: 0.78em;
+    letter-spacing: 1px;
+    margin: 8px 0;
+    overflow: hidden;
 }
 
 /* =============================================
@@ -500,85 +546,100 @@ main p, article p, .content p {
    ============================================= */
 
 .post-content {
-    font-size: 1.05rem;
+    font-size: 1rem;
     line-height: 1.9;
-    color: var(--main-text-color);
+    color: var(--text);
     max-width: 68ch;
     margin: 0 auto;
 }
 
-.post-content p { margin-bottom: 20px; }
+.post-content p { margin-bottom: 18px; }
 
 .content-h1 {
-    animation: glitch 9s infinite;
+    animation: vhs-glitch 10s infinite;
+    letter-spacing: 1px;
 }
 
 .content-meta,
 .post-meta {
-    color: var(--dim-text);
-    font-size: 0.9em;
-    margin-bottom: 30px;
+    color: var(--text-dim);
+    font-size: 0.85em;
+    margin-bottom: 28px;
+    letter-spacing: 1px;
 }
 
 .content-meta a,
-.post-meta a {
-    color: var(--link-color);
+.post-meta a { color: var(--cyan); }
+
+/* Section headings in posts */
+.post-content h2 {
+    color: var(--green);
+    border-bottom: 1px solid var(--border-bright);
+    padding-bottom: 4px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 1.2em;
 }
 
-.post-tags { margin-top: 30px; }
+.post-content h2::before {
+    content: '>> ';
+    color: var(--pink);
+    font-size: 0.9em;
+}
 
+/* Tags */
 .tag {
     display: inline-block;
-    padding: 3px 10px;
-    margin-right: 10px;
-    background-color: var(--code-bg);
-    border: 1px solid color-mix(in oklch, var(--link-color) 50%, transparent);
-    border-radius: 0;
-    font-size: 0.85em;
-    color: var(--link-color);
-    transition: all 0.2s ease;
+    padding: 2px 8px;
+    margin-right: 8px;
+    background: transparent;
+    border: 1px solid var(--cyan-dim);
+    font-size: 0.82em;
+    color: var(--cyan);
+    letter-spacing: 1px;
+    transition: all 0.12s ease;
 }
 
-.tag::before { content: '#'; opacity: 0.6; }
+.tag::before { content: '#'; color: var(--text-dim); }
 
 .tag:hover {
-    background-color: var(--link-color);
-    color: var(--main-bg-color);
-    border-color: var(--link-color);
-    box-shadow: 0 0 calc(10px * var(--glow-strength)) color-mix(in oklch, var(--link-color) 40%, transparent);
+    background: var(--cyan);
+    color: var(--bg);
+    border-color: var(--cyan);
+    box-shadow: 0 0 10px var(--cyan-glow);
     text-shadow: none;
 }
 
 /* Table of Contents */
 .table-of-contents {
-    background: var(--code-bg);
-    border-left: 3px solid var(--link-color);
+    background: #020602;
+    border-left: 3px solid var(--cyan);
     padding: 1em 1.5em;
     margin-bottom: 2em;
-    font-size: 0.9em;
+    font-size: 0.88em;
 }
 
 .table-of-contents::before {
     content: '// TABLE OF CONTENTS';
     display: block;
-    color: var(--dim-text);
+    color: var(--cyan);
     font-size: 0.8em;
-    letter-spacing: 2px;
+    letter-spacing: 3px;
     margin-bottom: 0.8em;
 }
 
-.table-of-contents a { color: var(--link-color); }
-.table-of-contents a:hover { color: var(--highlight-color); }
+.table-of-contents a { color: var(--cyan); }
+.table-of-contents a:hover { color: var(--green); }
 
 /* Blockquotes */
 blockquote {
-    background: color-mix(in oklch, var(--link-color) 4%, var(--code-bg));
-    border-left: 3px solid var(--link-color);
+    background: #030803;
+    border-left: 3px solid var(--pink);
     margin: 1.5em 0;
     padding: 1em 1.5em;
     font-style: normal;
-    color: var(--main-text-color);
-    box-shadow: inset 0 0 20px color-mix(in oklch, var(--link-color) 3%, transparent);
+    color: var(--text);
+    box-shadow: inset 0 0 20px rgba(255,45,120,0.04);
 }
 
 /* Tables */
@@ -586,493 +647,430 @@ table {
     border-collapse: collapse;
     width: 100%;
     margin: 1.5em 0;
+    font-size: 0.9em;
 }
 
 th, td {
-    border: 1px solid var(--border-color);
+    border: 1px solid var(--border);
     padding: 8px 12px;
     text-align: left;
 }
 
 thead tr {
-    background: color-mix(in oklch, var(--link-color) 8%, var(--card-bg));
-    color: var(--link-color);
-    font-size: 0.85em;
+    background: var(--bg-card);
+    color: var(--pink);
     letter-spacing: 1px;
+    text-transform: uppercase;
+    font-size: 0.82em;
 }
 
-tbody tr:nth-child(even) { background: var(--code-bg); }
-
-tbody tr:hover { background: color-mix(in oklch, var(--link-color) 5%, var(--card-bg)); }
-
-/* Pagination */
-.post {
-    margin-bottom: 60px;
-    padding-bottom: 30px;
-    border-bottom: 1px solid var(--border-color);
-}
-
-.post-title { margin-bottom: 15px; }
+tbody tr:nth-child(even) { background: #040904; }
+tbody tr:hover { background: rgba(57,255,90,0.04); }
 
 /* Blog list */
-.content-h1 a {
-    color: var(--highlight-color);
-}
-
-.content-h1 a:hover {
-    text-shadow: 0 0 calc(8px * var(--glow-strength)) color-mix(in oklch, var(--highlight-color) 60%, transparent);
-}
-
-.content-more a {
-    color: var(--link-color);
-}
+.content-h1 a { color: var(--green); }
+.content-h1 a:hover { text-shadow: 0 0 8px var(--green); }
+.content-more a { color: var(--cyan); }
+.content-summary { color: var(--text-dim); }
 
 /* =============================================
    Homepage — Hero
    ============================================= */
 
-.home-content {
-    text-align: center;
-    max-width: 820px;
-    margin: 0 auto;
-}
-
 .home-hero {
-    text-align: center;
     max-width: 900px;
     margin: 0 auto;
     padding: 20px;
+    text-align: left;
 }
 
 .home-hero > h1 {
-    font-size: 2.6em;
-    letter-spacing: -0.5px;
-    text-shadow:
-        0 0 calc(14px * var(--glow-strength)) var(--highlight-color),
-        0 0 calc(30px * var(--glow-strength)) color-mix(in oklch, var(--highlight-color) 30%, transparent);
+    font-size: 2.8em;
+    margin-bottom: 20px;
+    line-height: 1.15;
+    text-transform: uppercase;
+    letter-spacing: 2px;
 }
 
 .hero-tagline {
-    font-size: 1.15em;
-    line-height: 1.9;
-    margin-bottom: 40px;
-    color: var(--main-text-color);
-    padding: 20px;
-    border-left: 2px solid color-mix(in oklch, var(--link-color) 40%, transparent);
-    text-align: left;
-    background: color-mix(in oklch, var(--link-color) 2%, transparent);
+    font-size: 1em;
+    line-height: 1.85;
+    margin-bottom: 36px;
+    color: var(--text);
+    padding: 14px 16px;
+    border: 1px solid var(--border);
+    border-left: 3px solid var(--cyan);
+    background: rgba(0,229,255,0.03);
 }
+
+.hero-tagline strong { color: var(--text); font-weight: 500; }
 
 /* =============================================
-   Homepage — Differentiator cards
+   Terminal prompt (install command)
    ============================================= */
 
-.differentiator {
-    margin: 60px 0;
-    padding: 40px;
-    text-align: left;
+.term-prompt {
+    display: block;
+    background: #020602;
+    border: 1px solid var(--border-bright);
+    padding: 12px 16px;
+    font-size: 1em;
+    color: var(--green);
+    margin: 20px 0;
+    text-shadow: 0 0 8px rgba(57,255,90,0.5);
+    box-shadow: 0 0 12px var(--green-glow);
 }
 
-.differentiator h2 {
-    margin-top: 0;
-    text-align: center;
+.prompt-prefix {
+    color: var(--pink);
+    margin-right: 10px;
+    user-select: none;
+}
+
+.term-note {
+    color: var(--text-dim);
+    font-size: 0.82em;
+    margin: 8px 0 0;
     letter-spacing: 1px;
 }
 
-.differentiator > p {
-    text-align: center;
-    font-size: 1.1em;
-    margin-bottom: 30px;
-    color: var(--dim-text);
+/* Section intro line */
+.section-intro {
+    color: var(--cyan);
+    font-size: 0.9em;
+    margin-bottom: 20px;
+    letter-spacing: 1px;
+}
+
+/* =============================================
+   Differentiator / term-box internals
+   ============================================= */
+
+.differentiator {
+    text-align: left;
 }
 
 .diff-list {
     list-style: none;
     padding: 0;
-    margin: 0 auto;
-    max-width: 620px;
+    margin: 0 0 16px;
 }
 
 .diff-list li {
-    padding: 12px 0;
+    padding: 10px 0;
     display: flex;
-    align-items: center;
-    gap: 14px;
-    border-bottom: 1px solid color-mix(in oklch, var(--border-color) 50%, transparent);
+    align-items: flex-start;
+    gap: 12px;
+    border-bottom: 1px solid var(--border);
+    font-size: 0.92em;
+    line-height: 1.6;
 }
 
 .diff-list li:last-child { border-bottom: none; }
 
 .diff-list .check {
-    color: var(--highlight-color);
-    font-size: 1.1em;
+    color: var(--pink);
     font-weight: bold;
-    text-shadow: 0 0 calc(6px * var(--glow-strength)) var(--highlight-color);
-    min-width: 20px;
-    text-align: center;
+    min-width: 28px;
+    text-shadow: 0 0 6px rgba(255,45,120,0.5);
+    flex-shrink: 0;
+    letter-spacing: -0.5px;
 }
+
+.diff-list strong { color: var(--green); }
 
 /* =============================================
-   Homepage — Install command
-   ============================================= */
-
-.install-command {
-    display: block;
-    background: var(--code-bg);
-    border: 1px solid var(--highlight-color);
-    border-left: 4px solid var(--highlight-color);
-    border-radius: 0;
-    padding: 16px 24px;
-    font-size: 1.1em;
-    color: var(--highlight-color);
-    margin: 30px auto;
-    text-align: left;
-    max-width: 480px;
-    box-shadow:
-        0 0 calc(16px * var(--glow-strength)) color-mix(in oklch, var(--highlight-color) 20%, transparent),
-        inset 0 0 20px color-mix(in oklch, var(--highlight-color) 3%, transparent);
-    position: relative;
-}
-
-.install-command::before {
-    content: '$ ';
-    color: var(--link-color);
-    opacity: 0.8;
-}
-
-/* =============================================
-   Homepage — How It Works steps
+   How It Works steps
    ============================================= */
 
 .how-it-works {
     display: flex;
     flex-direction: column;
-    gap: 20px;
-    max-width: 620px;
-    margin: 30px auto 0;
+    gap: 2px;
 }
 
 .step {
     display: flex;
     align-items: flex-start;
-    gap: 20px;
-    padding: 16px;
-    background: color-mix(in oklch, var(--link-color) 3%, var(--card-bg));
-    border: 1px solid color-mix(in oklch, var(--link-color) 15%, transparent);
-    border-left: 3px solid var(--link-color);
-    transition: all 0.2s ease;
+    gap: 16px;
+    padding: 14px 12px;
+    background: transparent;
+    border-left: 2px solid var(--border);
+    transition: border-color 0.15s, background 0.15s;
 }
 
 .step:hover {
-    background: color-mix(in oklch, var(--link-color) 6%, var(--card-bg));
-    box-shadow: 0 0 calc(12px * var(--glow-strength)) color-mix(in oklch, var(--link-color) 15%, transparent);
+    border-left-color: var(--cyan);
+    background: rgba(0,229,255,0.03);
 }
 
 .step-num {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 36px;
-    height: 36px;
-    min-width: 36px;
-    background: transparent;
-    border: 1px solid var(--link-color);
-    color: var(--link-color);
+    font-size: 1.6em;
     font-weight: bold;
-    font-size: 1em;
-    text-shadow: 0 0 calc(6px * var(--glow-strength)) var(--link-color);
-    box-shadow: 0 0 calc(8px * var(--glow-strength)) color-mix(in oklch, var(--link-color) 30%, transparent);
-    clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+    color: var(--pink);
+    min-width: 44px;
+    text-align: right;
+    text-shadow: 0 0 10px rgba(255,45,120,0.5);
+    line-height: 1;
+    padding-top: 4px;
+    flex-shrink: 0;
 }
 
 .step strong {
-    color: var(--highlight-color);
+    color: var(--cyan);
     display: block;
-    margin-bottom: 6px;
-    font-size: 0.95em;
-    letter-spacing: 0.5px;
-}
-
-.step p {
-    margin: 0;
+    margin-bottom: 5px;
     font-size: 0.9em;
-    line-height: 1.6;
-    color: var(--dim-text);
-}
-
-/* =============================================
-   Homepage — Use cases
-   ============================================= */
-
-.use-cases {
-    margin: 60px 0;
-    padding-top: 40px;
-    border-top: 1px solid var(--border-color);
-}
-
-.use-cases h2 { margin-bottom: 30px; }
-
-.use-case-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-    gap: 20px;
-    text-align: left;
-}
-
-.use-case-card {
-    background: var(--card-bg);
-    border: 1px solid var(--border-color);
-    padding: 24px;
-    transition: all 0.2s ease;
-    position: relative;
-    clip-path: polygon(0 0, calc(100% - 12px) 0, 100% 12px, 100% 100%, 12px 100%, 0 calc(100% - 12px));
-}
-
-/* Corner accents */
-.use-case-card::before {
-    content: '';
-    position: absolute;
-    top: 0; right: 0;
-    width: 0; height: 0;
-    border-style: solid;
-    border-width: 0 12px 12px 0;
-    border-color: transparent var(--link-color) transparent transparent;
-    opacity: 0.5;
-    transition: opacity 0.2s ease;
-}
-
-.use-case-card:hover {
-    border-color: var(--link-color);
-    background: color-mix(in oklch, var(--link-color) 4%, var(--card-bg));
-    box-shadow: 0 0 calc(20px * var(--glow-strength)) color-mix(in oklch, var(--link-color) 12%, transparent);
-}
-
-.use-case-card:hover::before { opacity: 1; }
-
-.use-case-card h3 {
-    color: var(--link-color);
-    margin-top: 0;
-    margin-bottom: 12px;
-    font-size: 1.05em;
-    letter-spacing: 0.5px;
-}
-
-.use-case-card p {
-    margin: 0;
-    font-size: 0.9em;
-    line-height: 1.7;
-    color: var(--dim-text);
-}
-
-/* =============================================
-   Homepage — CTA
-   ============================================= */
-
-.cta-buttons {
-    margin: 40px 0;
-    display: flex;
-    gap: 16px;
-    justify-content: center;
-    flex-wrap: wrap;
-}
-
-/* =============================================
-   Homepage — Video placeholder
-   ============================================= */
-
-.video-section { margin: 40px 0; }
-
-.video-placeholder {
-    background: var(--code-bg);
-    border: 1px solid color-mix(in oklch, var(--border-color) 80%, transparent);
-    aspect-ratio: 16 / 9;
-    max-width: 700px;
-    margin: 0 auto;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-    overflow: hidden;
-}
-
-.video-placeholder::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(
-        135deg,
-        color-mix(in oklch, var(--link-color) 5%, transparent) 0%,
-        transparent 50%,
-        color-mix(in oklch, var(--highlight-color) 4%, transparent) 100%
-    );
-}
-
-.video-coming-soon { text-align: center; z-index: 1; }
-
-.video-coming-soon .play-icon {
-    font-size: 4em;
-    color: var(--link-color);
-    display: block;
-    margin-bottom: 15px;
-    opacity: 0.5;
-}
-
-.video-coming-soon p {
-    color: var(--link-color);
-    font-size: 1em;
-    margin: 0;
-    opacity: 0.7;
-}
-
-/* =============================================
-   Homepage — Services
-   ============================================= */
-
-.services-section {
-    margin: 60px 0;
-    padding-top: 40px;
-    border-top: 1px solid var(--border-color);
-}
-
-.services-section h2 { margin-bottom: 30px; }
-
-.service-options {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
-    gap: 20px;
-    text-align: left;
-}
-
-.service-card {
-    background: transparent;
-    border: 1px solid var(--border-color);
-    border-top: 2px solid var(--highlight-color);
-    padding: 24px;
-    transition: all 0.2s ease;
-    position: relative;
-}
-
-.service-card:hover {
-    border-color: var(--highlight-color);
-    background: color-mix(in oklch, var(--highlight-color) 3%, transparent);
-    box-shadow: 0 0 calc(20px * var(--glow-strength)) color-mix(in oklch, var(--highlight-color) 10%, transparent);
-}
-
-.service-card h3 {
-    color: var(--highlight-color);
-    margin-top: 0;
-    margin-bottom: 12px;
-    font-size: 1em;
     letter-spacing: 1px;
     text-transform: uppercase;
 }
 
-.service-card p {
+.step p {
     margin: 0;
-    font-size: 0.9em;
-    line-height: 1.7;
-    color: var(--dim-text);
+    font-size: 0.88em;
+    line-height: 1.6;
+    color: var(--text-dim);
 }
 
 /* =============================================
-   Homepage — Final CTA
+   Use cases
+   ============================================= */
+
+.use-cases {
+    margin: 48px 0;
+    padding-top: 36px;
+    border-top: 1px solid var(--border);
+}
+
+.use-cases h2 { margin-bottom: 24px; }
+
+.use-case-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 1px;
+    background: var(--border);
+    border: 1px solid var(--border);
+}
+
+.use-case-card {
+    background: var(--bg-card);
+    padding: 20px;
+    transition: background 0.12s;
+    position: relative;
+}
+
+.use-case-card:hover {
+    background: rgba(0,229,255,0.05);
+}
+
+.use-case-card h3 {
+    color: var(--cyan);
+    margin-top: 0;
+    margin-bottom: 10px;
+    font-size: 0.95em;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.use-case-card p {
+    margin: 0;
+    font-size: 0.87em;
+    line-height: 1.65;
+    color: var(--text-dim);
+}
+
+/* =============================================
+   CTA Buttons row
+   ============================================= */
+
+.cta-buttons {
+    margin: 36px 0;
+    display: flex;
+    gap: 16px;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+}
+
+/* =============================================
+   Services
+   ============================================= */
+
+.services-section {
+    margin: 48px 0;
+    padding-top: 36px;
+    border-top: 1px solid var(--border);
+}
+
+.services-section h2 { margin-bottom: 24px; }
+
+.service-options {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1px;
+    background: var(--border);
+    border: 1px solid var(--border);
+}
+
+.service-card {
+    background: var(--bg-card);
+    padding: 24px 20px 20px;
+    position: relative;
+    transition: background 0.12s;
+}
+
+/* Service card label from data-label attribute */
+.service-card::before {
+    content: attr(data-label);
+    display: block;
+    color: var(--green);
+    font-size: 0.75em;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+    text-shadow: 0 0 8px var(--green);
+}
+
+.service-card:hover {
+    background: rgba(57,255,90,0.04);
+}
+
+.service-card p {
+    margin: 0;
+    font-size: 0.88em;
+    line-height: 1.65;
+    color: var(--text-dim);
+}
+
+.service-card a { color: var(--cyan); }
+
+/* =============================================
+   Final CTA
    ============================================= */
 
 .final-cta {
-    margin: 60px 0 20px;
-    padding: 50px 40px;
-    text-align: center;
-    border: 1px solid color-mix(in oklch, var(--highlight-color) 25%, transparent);
-    background: color-mix(in oklch, var(--highlight-color) 2%, var(--card-bg));
-    position: relative;
-    overflow: hidden;
+    margin: 48px 0 20px;
 }
 
-.final-cta::before {
-    content: '';
-    position: absolute;
-    top: -1px; left: 0; right: 0;
-    height: 2px;
-    background: linear-gradient(
-        90deg,
-        transparent,
-        var(--highlight-color),
-        transparent
-    );
-    box-shadow: 0 0 calc(12px * var(--glow-strength)) var(--highlight-color);
+.final-cta-inner {
+    text-align: center;
+    padding: 40px 32px !important;
 }
 
 .final-cta h3 {
-    font-size: 1.6em;
-    letter-spacing: 0.5px;
+    font-size: 1.5em;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-top: 0;
+    color: var(--green);
 }
 
 .final-cta p {
-    font-size: 1.1em;
+    color: var(--text-dim);
+    font-size: 0.95em;
     margin-bottom: 28px;
-    color: var(--dim-text);
 }
 
 /* =============================================
    Partner page
    ============================================= */
 
-.partner-page { max-width: 820px; margin: 0 auto; }
+.partner-page { max-width: 860px; margin: 0 auto; }
 
 .partner-intro {
-    font-size: 1.1em;
-    margin-bottom: 40px;
-    text-align: center;
-    color: var(--dim-text);
+    font-size: 1em;
+    margin-bottom: 36px;
+    color: var(--text-dim);
+    border-left: 3px solid var(--cyan);
+    padding: 12px 16px;
+    background: rgba(0,229,255,0.03);
 }
 
 .partner-section {
-    margin: 40px 0;
-    padding: 30px;
-    background: var(--card-bg);
-    border: 1px solid var(--border-color);
-    border-left: 3px solid var(--link-color);
+    margin: 36px 0;
+    padding: 24px 24px 20px;
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-left: 3px solid var(--border-bright);
+    position: relative;
 }
 
 .partner-section h2 {
     margin-top: 0;
-    color: var(--link-color);
+    color: var(--cyan);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 1.1em;
 }
 
 .partner-benefits { list-style: none; padding: 0; }
 
 .partner-benefits li {
-    padding: 12px 0;
+    padding: 10px 0;
     display: flex;
     align-items: flex-start;
-    gap: 14px;
-    border-bottom: 1px solid color-mix(in oklch, var(--border-color) 60%, transparent);
+    gap: 12px;
+    border-bottom: 1px solid var(--border);
+    font-size: 0.9em;
 }
 
 .partner-benefits li:last-child { border-bottom: none; }
 
 .partner-benefits .check {
-    color: var(--highlight-color);
-    font-size: 1.1em;
+    color: var(--pink);
+    font-weight: bold;
+    min-width: 28px;
     flex-shrink: 0;
-    text-shadow: 0 0 calc(6px * var(--glow-strength)) var(--highlight-color);
+    text-shadow: 0 0 6px rgba(255,45,120,0.4);
 }
 
 .partner-cta {
     text-align: center;
-    margin-top: 50px;
-    padding: 40px;
-    border: 1px solid color-mix(in oklch, var(--highlight-color) 30%, transparent);
-    background: color-mix(in oklch, var(--highlight-color) 3%, var(--card-bg));
-    animation: neon-pulse 5s ease-in-out infinite;
+    margin-top: 48px;
+    padding: 36px;
+    border: 1px solid var(--border-bright);
+    background: var(--bg-card);
+    box-shadow: 0 0 20px var(--green-glow);
 }
 
-.partner-cta h2 { margin-top: 0; }
+.partner-cta h2 {
+    margin-top: 0;
+    color: var(--green);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
 
 /* Revenue table */
-.partner-section table thead tr {
-    background: color-mix(in oklch, var(--highlight-color) 8%, var(--card-bg));
-    color: var(--highlight-color);
+.partner-section table { font-size: 0.88em; }
+.partner-section thead tr {
+    background: #020602;
+    color: var(--pink);
+}
+
+/* =============================================
+   Pagination
+   ============================================= */
+
+.pagination__buttons { display: flex; gap: 20px; flex-wrap: wrap; }
+
+.button.previous,
+.button.next {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 8px 14px;
+    border: 1px solid var(--border-bright);
+    color: var(--text-dim);
+    font-size: 0.85em;
+    letter-spacing: 1px;
+    transition: all 0.12s;
+}
+
+.button.previous:hover,
+.button.next:hover {
+    border-color: var(--cyan);
+    color: var(--cyan);
+    background: transparent;
+    box-shadow: 0 0 10px var(--cyan-glow);
 }
 
 /* =============================================
@@ -1082,42 +1080,33 @@ tbody tr:hover { background: color-mix(in oklch, var(--link-color) 5%, var(--car
 @media (max-width: 768px) {
     .container { padding: 10px; }
 
-    h1 { font-size: 1.6em; }
-    h2 { font-size: 1.4em; }
-    h3 { font-size: 1.2em; }
+    h1 { font-size: 1.7em; }
+    h2 { font-size: 1.2em; }
 
     nav ul { flex-direction: column; gap: 0; }
-    nav li { padding: 12px 0; min-height: 44px; display: flex; align-items: center; }
+    nav li { padding: 10px 0; min-height: 44px; display: flex; align-items: center; }
 
     .logo { flex-wrap: wrap; gap: 6px; }
-    .gibson-logo { width: 28px; height: 28px; }
 
-    .hero-tagline { font-size: 1em; padding: 14px; }
     .home-hero { padding: 10px; }
-    .home-hero > h1 { font-size: 1.8em; }
+    .home-hero > h1 { font-size: 1.7em; }
+    .hero-tagline { font-size: 0.92em; }
 
     .use-case-grid,
     .service-options { grid-template-columns: 1fr; }
 
     .differentiator { padding: 20px; }
+    .term-box { padding: 20px 14px 18px; }
 
-    .partner-section { padding: 20px; }
-    .partner-cta { padding: 25px; }
+    .partner-section { padding: 16px; }
+    .partner-cta { padding: 20px; }
 
-    .cta-buttons {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .cta-buttons .button {
-        width: 100%;
-        max-width: 280px;
-        text-align: center;
-    }
+    .cta-buttons { flex-direction: column; align-items: flex-start; }
+    .cta-buttons .button { width: 100%; max-width: 320px; }
 
     .post-content { max-width: 100%; }
 
-    .install-command { padding: 12px 16px; font-size: 0.9em; }
+    .bbs-divider { font-size: 0.65em; }
 
     footer .content-p { padding: 0 10px; }
 }
@@ -1139,10 +1128,12 @@ tbody tr:hover { background: color-mix(in oklch, var(--link-color) 5%, var(--car
 
 @media (prefers-reduced-motion: reduce) {
     :root { --glow-strength: 0; }
+    body { text-shadow: none; }
     body::before { display: none; }
     .zda-flicker,
     .content-h1,
     .logo-cursor,
-    .border-glow-green,
-    .partner-cta { animation: none; }
+    .blink-txt,
+    header { animation: none; }
+    .boot-line { animation: none; opacity: 1; transform: none; }
 }

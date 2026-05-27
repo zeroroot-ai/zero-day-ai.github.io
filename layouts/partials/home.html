@@ -1,7 +1,15 @@
 <div class="home-hero">
 
+    <div class="boot-seq" aria-hidden="true">
+        <div class="boot-line">&gt; ZERO-DAY.AI v2.4.1 ... <span class="blink-txt">OK</span></div>
+        <div class="boot-line">&gt; GIBSON AGENT RUNTIME ... <span class="blink-txt">LOADED</span></div>
+        <div class="boot-line">&gt; NEO4J GRAPH DB ......... <span class="blink-txt">CONNECTED</span></div>
+        <div class="boot-line">&gt; MISSION ORCHESTRATOR ... <span class="blink-txt">ARMED</span></div>
+        <div class="boot-line">&gt; STATUS: <span class="status-ok">ALL SYSTEMS NOMINAL</span></div>
+    </div>
+
     <h1 class="zda-flicker">
-        Production Agent Infrastructure. Already Built.
+        Production Agent Infrastructure.<br>Already Built.
     </h1>
 
     <p class="hero-tagline">
@@ -9,25 +17,24 @@
     </p>
 
     <!-- Three Differentiators -->
-    <div class="differentiator glass-hack border-glow-green">
-        <h2>Why Gibson Exists</h2>
+    <div class="differentiator term-box" data-label="WHY GIBSON EXISTS">
         <div class="how-it-works">
             <div class="step">
-                <span class="step-num">1</span>
+                <span class="step-num">01</span>
                 <div>
                     <strong>Architecture that works in production</strong>
                     <p>Everyone else is figuring it out as they go. Gibson has already made the hard decisions — memory tiers, tool distribution, checkpoint/resume, auth, observability. Skip 6-12 months of wrong turns.</p>
                 </div>
             </div>
             <div class="step">
-                <span class="step-num">2</span>
+                <span class="step-num">02</span>
                 <div>
                     <strong>An SDK that encodes what works</strong>
                     <p>Not just tooling. It's "here's how production agents should be built" made tangible. Point your team at the skeleton repo and they're building the right way immediately.</p>
                 </div>
             </div>
             <div class="step">
-                <span class="step-num">3</span>
+                <span class="step-num">03</span>
                 <div>
                     <strong>Runs where your work actually is</strong>
                     <p>Behind the firewall, in your cluster, touching your internal systems. The architecture isn't compromised by cloud hosting constraints. Real network access. Real targets.</p>
@@ -39,51 +46,53 @@
     <!-- CTA Buttons -->
     <div class="cta-buttons">
         <a href="https://calendly.com/zero-day-ai" class="button button-primary">
-            Book Architecture Session
+            [ BOOK ARCHITECTURE SESSION ]
         </a>
         <a href="https://github.com/zero-day-ai/sdk" class="button">
-            View SDK on GitHub
+            [ VIEW SDK ON GITHUB ]
         </a>
     </div>
 
+    <div class="bbs-divider"><span>// ============================================================ //</span></div>
+
     <!-- What You Skip -->
-    <div class="differentiator glass-hack border-glow-green">
-        <h2>What Your Team Doesn't Have to Build</h2>
-        <p>Every team building agents hits the same walls. Gibson already solved them:</p>
+    <div class="differentiator term-box" data-label="WHAT YOU DON'T HAVE TO BUILD">
+        <p class="section-intro">&gt;_ Every team building agents hits the same walls. Gibson already solved them:</p>
         <ul class="diff-list">
-            <li><span class="check">&#10003;</span> <strong>Three-tier memory</strong> - Working memory, mission memory, long-term semantic recall. Not another "just use a vector DB" hack.</li>
-            <li><span class="check">&#10003;</span> <strong>Knowledge graph</strong> - Neo4j-backed entity storage that compounds across runs. Agents learn from what previous agents discovered.</li>
-            <li><span class="check">&#10003;</span> <strong>Mission orchestration</strong> - DAG-based workflows with LLM-driven scheduling, checkpoint/resume, and human-in-the-loop approvals.</li>
-            <li><span class="check">&#10003;</span> <strong>Multi-LLM abstraction</strong> - Declare what you need as slots. Swap Claude, GPT, Gemini, Ollama without code changes. Failover built in.</li>
-            <li><span class="check">&#10003;</span> <strong>Full observability</strong> - OpenTelemetry tracing, Prometheus metrics, Langfuse LLM debugging. See every decision your agent makes and why.</li>
-            <li><span class="check">&#10003;</span> <strong>Distributed tool execution</strong> - Proto-based tools with Redis queues. Horizontally scalable, fault-isolated, type-safe.</li>
+            <li><span class="check">[+]</span> <strong>Three-tier memory</strong> &mdash; Working memory, mission memory, long-term semantic recall. Not another "just use a vector DB" hack.</li>
+            <li><span class="check">[+]</span> <strong>Knowledge graph</strong> &mdash; Neo4j-backed entity storage that compounds across runs. Agents learn from what previous agents discovered.</li>
+            <li><span class="check">[+]</span> <strong>Mission orchestration</strong> &mdash; DAG-based workflows with LLM-driven scheduling, checkpoint/resume, and human-in-the-loop approvals.</li>
+            <li><span class="check">[+]</span> <strong>Multi-LLM abstraction</strong> &mdash; Declare what you need as slots. Swap Claude, GPT, Gemini, Ollama without code changes. Failover built in.</li>
+            <li><span class="check">[+]</span> <strong>Full observability</strong> &mdash; OpenTelemetry tracing, Prometheus metrics, Langfuse LLM debugging. See every decision your agent makes and why.</li>
+            <li><span class="check">[+]</span> <strong>Distributed tool execution</strong> &mdash; Proto-based tools with Redis queues. Horizontally scalable, fault-isolated, type-safe.</li>
         </ul>
-        <pre class="install-command border-glow-green">go get github.com/zero-day-ai/sdk@latest</pre>
-        <p style="margin-top: 20px; font-size: 0.95em; color: var(--dim-text);">
-            TypeScript and Python SDKs coming soon.
-        </p>
+        <div class="term-prompt">
+            <span class="prompt-prefix">root@gibson:~$</span> go get github.com/zero-day-ai/sdk@latest
+        </div>
+        <p class="term-note">// TypeScript and Python SDKs in development</p>
     </div>
 
+    <div class="bbs-divider"><span>// ============================================================ //</span></div>
+
     <!-- How It Works -->
-    <div class="differentiator glass-hack border-glow-green">
-        <h2>How It Works</h2>
+    <div class="differentiator term-box" data-label="HOW IT WORKS">
         <div class="how-it-works">
             <div class="step">
-                <span class="step-num">1</span>
+                <span class="step-num">01</span>
                 <div>
                     <strong>Build agents with the SDK</strong>
                     <p>Define what your agent does: the reasoning, the tools, the systems it connects to. The SDK gives you the harness — LLM access, memory, graph, tool execution — so your agent code stays clean.</p>
                 </div>
             </div>
             <div class="step">
-                <span class="step-num">2</span>
+                <span class="step-num">02</span>
                 <div>
                     <strong>Deploy to your cluster</strong>
                     <p>Agents run in your Kubernetes environment. CI/CD jobs or always-on services. Full network access to internal systems. Your data never leaves your infrastructure.</p>
                 </div>
             </div>
             <div class="step">
-                <span class="step-num">3</span>
+                <span class="step-num">03</span>
                 <div>
                     <strong>Gibson orchestrates</strong>
                     <p>Memory, knowledge graph, mission coordination, and observability. Runs in our SaaS or fully on-prem in your infrastructure.</p>
@@ -92,107 +101,113 @@
         </div>
     </div>
 
+    <div class="bbs-divider"><span>// ============================================================ //</span></div>
+
     <!-- Enterprise -->
-    <div class="differentiator glass-hack border-glow-green">
-        <h2>Your Infrastructure. Your Control.</h2>
-        <p>Gibson deploys on your cluster. Same SDK, same agents, behind your firewall. No architecture compromises.</p>
+    <div class="differentiator term-box" data-label="YOUR INFRASTRUCTURE :: YOUR CONTROL">
+        <p class="section-intro">&gt;_ Gibson deploys on your cluster. Same SDK, same agents, behind your firewall. No architecture compromises.</p>
         <ul class="diff-list">
-            <li><span class="check">&#10003;</span> Air-gapped and classified environments</li>
-            <li><span class="check">&#10003;</span> FedRAMP, ITAR, HIPAA, NYDFS ready</li>
-            <li><span class="check">&#10003;</span> Your data never leaves your network</li>
-            <li><span class="check">&#10003;</span> Bring your own LLM: Claude, GPT, Gemini, or local models via Ollama</li>
-            <li><span class="check">&#10003;</span> OIDC/SSO with Okta, Azure AD, Auth0 — or Kubernetes ServiceAccount auth</li>
+            <li><span class="check">[+]</span> Air-gapped and classified environments</li>
+            <li><span class="check">[+]</span> FedRAMP, ITAR, HIPAA, NYDFS ready</li>
+            <li><span class="check">[+]</span> Your data never leaves your network</li>
+            <li><span class="check">[+]</span> Bring your own LLM: Claude, GPT, Gemini, or local models via Ollama</li>
+            <li><span class="check">[+]</span> OIDC/SSO with Okta, Azure AD, Auth0 — or Kubernetes ServiceAccount auth</li>
         </ul>
     </div>
 
+    <div class="bbs-divider"><span>// ============================================================ //</span></div>
+
     <!-- What Teams Build -->
     <div class="use-cases">
-        <h2>What Teams Build With Gibson</h2>
+        <h2>// WHAT TEAMS BUILD WITH GIBSON</h2>
         <div class="use-case-grid">
             <div class="use-case-card">
-                <h3>Security Automation</h3>
+                <h3>&gt; Security Automation</h3>
                 <p>Autonomous agents that map attack surfaces, detect vulnerabilities, correlate findings, and accumulate knowledge across engagements. Where Gibson was battle-tested.</p>
             </div>
             <div class="use-case-card">
-                <h3>Infrastructure Operations</h3>
+                <h3>&gt; Infrastructure Operations</h3>
                 <p>Agents that discover your APIs, audit configurations, map architecture drift, and keep documentation in sync with reality. Automatically.</p>
             </div>
             <div class="use-case-card">
-                <h3>Compliance Automation</h3>
+                <h3>&gt; Compliance Automation</h3>
                 <p>Gather evidence, validate controls, generate audit-ready reports. SOC 2, PCI-DSS, HIPAA: continuous and autonomous, not annual and manual.</p>
             </div>
             <div class="use-case-card">
-                <h3>Incident Response</h3>
+                <h3>&gt; Incident Response</h3>
                 <p>Correlate logs, diagnose issues, draft the fix. Agents that start working the problem before you get paged.</p>
             </div>
             <div class="use-case-card">
-                <h3>Code Operations</h3>
+                <h3>&gt; Code Operations</h3>
                 <p>Scan repositories for secrets, write remediation PRs, enforce policy. Agent finds the problem, writes the fix, opens the MR. You approve.</p>
             </div>
             <div class="use-case-card">
-                <h3>Anything You Can Define</h3>
+                <h3>&gt; Anything You Can Define</h3>
                 <p>An agent is just code with reasoning, memory, and tools. If you can describe the workflow, you can build the agent. The infrastructure is the same.</p>
             </div>
         </div>
     </div>
 
+    <div class="bbs-divider"><span>// ============================================================ //</span></div>
+
     <!-- What the SDK Gives You -->
     <div class="use-cases">
-        <h2>What the SDK Gives You</h2>
+        <h2>// WHAT THE SDK GIVES YOU</h2>
         <div class="use-case-grid">
             <div class="use-case-card">
-                <h3>Agent Harness</h3>
+                <h3>&gt; Agent Harness</h3>
                 <p>Single interface to LLMs, tools, memory, and knowledge graph. Your agent logic stays clean. Gibson handles the wiring.</p>
             </div>
             <div class="use-case-card">
-                <h3>Multi-LLM Support</h3>
+                <h3>&gt; Multi-LLM Support</h3>
                 <p>Claude, GPT-4, Gemini, Ollama. Declare LLM requirements as abstract slots. Swap providers without code changes.</p>
             </div>
             <div class="use-case-card">
-                <h3>Three-Tier Memory</h3>
+                <h3>&gt; Three-Tier Memory</h3>
                 <p>Working memory for task state. Mission memory for persistence. Long-term memory with vector search for semantic recall.</p>
             </div>
             <div class="use-case-card">
-                <h3>Knowledge Graph</h3>
+                <h3>&gt; Knowledge Graph</h3>
                 <p>Neo4j-backed entity storage. Agents accumulate knowledge across missions. Query relationships, not just documents.</p>
             </div>
             <div class="use-case-card">
-                <h3>Tools and Plugins</h3>
+                <h3>&gt; Tools and Plugins</h3>
                 <p>Proto-based tools with Redis distribution. Plugins for GitHub, GitLab, ServiceNow. Build your own in any language.</p>
             </div>
             <div class="use-case-card">
-                <h3>Full Observability</h3>
+                <h3>&gt; Full Observability</h3>
                 <p>OpenTelemetry tracing, Langfuse for LLM debugging. See every decision your agent makes and why.</p>
             </div>
         </div>
     </div>
 
+    <div class="bbs-divider"><span>// ============================================================ //</span></div>
+
     <!-- Get Started -->
     <div class="services-section">
-        <h2>Get Started</h2>
+        <h2>// GET STARTED</h2>
         <div class="service-options">
-            <div class="service-card">
-                <h3>SaaS</h3>
+            <div class="service-card" data-label="SAAS">
                 <p>Get an API key, start building agents. Gibson Core handles orchestration, memory, and observability in our cloud.</p>
             </div>
-            <div class="service-card">
-                <h3>Enterprise</h3>
+            <div class="service-card" data-label="ENTERPRISE">
                 <p>Gibson Core deployed on your cluster. Full integration with your stack. Custom agents built for your use cases.</p>
             </div>
-            <div class="service-card">
-                <h3>Partner Program</h3>
-                <p>Consultancies and system integrators: deliver production agent capabilities your competitors can't match. <a href="/partner">Learn more</a></p>
+            <div class="service-card" data-label="PARTNER PROGRAM">
+                <p>Consultancies and system integrators: deliver production agent capabilities your competitors can't match. <a href="/partner">Learn more &rarr;</a></p>
             </div>
         </div>
     </div>
 
     <!-- Final CTA -->
     <div class="final-cta">
-        <h3>Stop Building Agent Infrastructure From Scratch</h3>
-        <p>30 minutes to map your use case to Gibson. We'll show you exactly what your first agent looks like — and everything you don't have to build.</p>
-        <a href="https://calendly.com/zero-day-ai" class="button button-primary button-large">
-            Book Architecture Session
-        </a>
+        <div class="final-cta-inner term-box" data-label="ESTABLISH CONNECTION">
+            <h3>Stop Building Agent Infrastructure From Scratch</h3>
+            <p>30 minutes to map your use case to Gibson. We'll show you exactly what your first agent looks like &mdash; and everything you don't have to build.</p>
+            <a href="https://calendly.com/zero-day-ai" class="button button-primary button-large">
+                [ BOOK ARCHITECTURE SESSION ]
+            </a>
+        </div>
     </div>
 
 </div>
