@@ -194,11 +194,16 @@ body::after {
    Glow utilities
    ============================================= */
 
+/* .glow on block containers → box-shadow only; text-shadow only on logo */
 .glow {
+    box-shadow: 0 0 20px var(--green-glow);
+}
+
+.logo.glow {
+    box-shadow: none;
     text-shadow:
         0 0 8px  var(--green),
-        0 0 20px rgba(57,255,90,0.35),
-        0 0 40px rgba(57,255,90,0.12);
+        0 0 20px rgba(57,255,90,0.3);
 }
 
 .text-zd-glow {
@@ -475,13 +480,37 @@ pre code {
    ============================================= */
 
 header {
-    padding: 16px 0;
+    padding: 14px 20px;
     border-bottom: 1px solid var(--border-bright);
     background: var(--bg);
-    box-shadow: 0 3px 20px var(--green-glow);
-    animation: screen-flicker 12s infinite;
+    box-shadow: 0 3px 16px var(--green-glow);
 }
 
+/* Theme layout classes used inside header */
+.header-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 860px;
+    margin: 0 auto;
+    gap: 20px;
+}
+
+.header-right {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+/* Nav inside header — no standalone-page border/margin */
+header nav,
+.header-right nav {
+    border: none;
+    padding: 0;
+    margin: 0;
+}
+
+/* Standalone nav (non-header) */
 nav {
     border-bottom: 1px solid var(--border);
     padding: 18px 0;
@@ -493,15 +522,23 @@ nav ul {
     padding: 0;
     margin: 0;
     display: flex;
-    gap: 28px;
+    gap: 24px;
     flex-wrap: wrap;
+    align-items: center;
 }
 
 nav li {
-    display: inline;
-    font-size: 0.9em;
-    padding: 10px 0;
+    display: inline-flex;
+    align-items: center;
+    font-size: 0.88em;
+    padding: 6px 0;
     letter-spacing: 1px;
+}
+
+/* ./  marker — dim decorative element */
+nav li:first-child {
+    color: var(--border-bright);
+    font-size: 0.85em;
 }
 
 nav a {
@@ -516,6 +553,14 @@ nav a:hover {
     color: var(--green);
     text-shadow: 0 0 8px var(--green);
 }
+
+/* GitHub icon link in header */
+.menu-icon {
+    color: var(--text-dim);
+    font-size: 0.85em;
+    transition: color 0.15s;
+}
+.menu-icon:hover { color: var(--green); }
 
 footer {
     border-top: 1px solid var(--border-bright);
@@ -843,9 +888,9 @@ tbody tr:hover { background: rgba(57,255,90,0.04); }
 
 .step p {
     margin: 0;
-    font-size: 0.88em;
-    line-height: 1.6;
-    color: var(--text-dim);
+    font-size: 0.95em;
+    line-height: 1.65;
+    color: var(--text);
 }
 
 /* =============================================
@@ -890,9 +935,9 @@ tbody tr:hover { background: rgba(57,255,90,0.04); }
 
 .use-case-card p {
     margin: 0;
-    font-size: 0.87em;
+    font-size: 0.92em;
     line-height: 1.65;
-    color: var(--text-dim);
+    color: var(--text);
 }
 
 /* =============================================
@@ -952,9 +997,9 @@ tbody tr:hover { background: rgba(57,255,90,0.04); }
 
 .service-card p {
     margin: 0;
-    font-size: 0.88em;
+    font-size: 0.92em;
     line-height: 1.65;
-    color: var(--text-dim);
+    color: var(--text);
 }
 
 .service-card a { color: var(--cyan); }
