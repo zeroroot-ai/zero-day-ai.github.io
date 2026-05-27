@@ -15,7 +15,7 @@
     --cyan-glow:   rgba(0,229,255,0.15);
     --purple:      #bf5fff;           /* electric purple */
     --text:        #b8f0be;           /* phosphor text */
-    --text-dim:    #4a6e4e;           /* dim terminal text */
+    --text-dim:    #7db882;           /* dim terminal text — readable */
     --border:      #1a3a1e;
     --border-bright: #2a6a30;
 
@@ -97,48 +97,64 @@ body::after {
     50%, 100% { opacity: 0; }
 }
 
-/* VHS-style glitch with color channel separation */
+/* VHS glitch — text-shadow channel split only, never clips text */
 @keyframes vhs-glitch {
-    0%, 85%, 100% {
+    0%, 78%, 100% {
         transform: none;
-        filter: none;
-        text-shadow:
-            0 0 10px rgba(57,255,90,0.6),
-            0 0 20px rgba(57,255,90,0.25);
+        text-shadow: 0 0 10px rgba(57,255,90,0.55), 0 0 20px rgba(57,255,90,0.2);
+        opacity: 1;
     }
-    86% {
-        transform: translateX(-4px);
-        filter: none;
+    /* hit 1: cyan left / pink right split */
+    79% {
+        transform: translateX(-3px);
         text-shadow:
-            4px 0  var(--pink),
-            -4px 0 var(--cyan),
-            0 0 8px var(--green);
-        clip-path: inset(20% 0 72% 0);
+            4px  0   var(--cyan),
+            -4px 0   var(--pink),
+            0    0   6px var(--green);
+        opacity: 0.92;
     }
-    87% {
-        transform: translateX(4px);
-        clip-path: inset(62% 0 18% 0);
+    79.4% {
+        transform: translateX(3px);
         text-shadow:
-            -3px 0 var(--pink),
-            3px 0  var(--cyan);
+            -3px 0  var(--cyan),
+            3px  0  var(--pink);
+        opacity: 0.95;
     }
-    88% {
+    79.8% {
         transform: none;
-        filter: none;
-        clip-path: none;
-        text-shadow: 0 0 10px rgba(57,255,90,0.6);
+        text-shadow: 0 0 10px rgba(57,255,90,0.55);
+        opacity: 1;
     }
-    93% {
-        transform: skew(-0.4deg);
-        text-shadow:
-            2px 0 var(--cyan),
-            -2px 0 var(--pink);
-        clip-path: inset(45% 0 42% 0);
-        opacity: 0.85;
+    /* hit 2: flicker-out briefly */
+    85% {
+        opacity: 0.55;
+        text-shadow: 2px 0 var(--cyan), -2px 0 var(--pink);
+        transform: skew(0.6deg);
     }
-    94% {
+    85.4% {
+        opacity: 1;
+        text-shadow: 0 0 10px rgba(57,255,90,0.55);
         transform: none;
-        clip-path: none;
+    }
+    /* hit 3: fast double-flash */
+    91% {
+        transform: translateX(2px) skew(-0.3deg);
+        text-shadow: -3px 0 var(--pink), 3px 0 var(--cyan);
+        opacity: 0.88;
+    }
+    91.3% {
+        transform: none;
+        text-shadow: 0 0 10px rgba(57,255,90,0.55);
+        opacity: 1;
+    }
+    91.6% {
+        transform: translateX(-1px);
+        text-shadow: 2px 0 var(--cyan), -2px 0 var(--pink);
+        opacity: 0.9;
+    }
+    92% {
+        transform: none;
+        text-shadow: 0 0 10px rgba(57,255,90,0.55);
         opacity: 1;
     }
 }
@@ -489,7 +505,7 @@ nav li {
 }
 
 nav a {
-    color: var(--text-dim);
+    color: var(--text);
     text-transform: uppercase;
     font-size: 0.88em;
     letter-spacing: 2px;
