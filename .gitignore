@@ -1,0 +1,9 @@
+# Hugo build output — published by .github/workflows/deploy.yml, never committed.
+/public/
+/resources/
+.hugo_build.lock
+
+# local build-comparison scratch dirs
+/_verify/
+/_freshbuild/
+/_freshmin/
