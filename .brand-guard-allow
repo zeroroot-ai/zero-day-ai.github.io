@@ -1,0 +1,9 @@
+# Exemptions for the org brand guard (zeroroot-ai/.github actions/brand-guard).
+# Each entry names a file that must carry a retired brand string, with the reason.
+
+# why: the custom domain of the retired site; the redirect only works while GitHub Pages serves that host name
+CNAME
+# why: the redirect page tells a visitor of the old site which company it became
+index.html
+# why: the file starts with the repository name, which GitHub fixed at creation
+README.md
