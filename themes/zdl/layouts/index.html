@@ -1,4 +1,18 @@
 {{ define "main" }}
-  <h1>{{ .Site.Title }}</h1>
-  <p>{{ .Site.Params.description }}</p>
+  <section class="scan" style="padding-block:60px">
+    <div class="wrap">
+      <p class="pixlabel" style="color:var(--acid);margin:0 0 20px">{{ .Site.Params.eyebrow }}</p>
+      <h1 style="margin:0">{{ .Site.Title }}</h1>
+      <p style="color:var(--fg-2);max-width:var(--measure)">{{ .Site.Params.description }}</p>
+    </div>
+  </section>
+  {{ partial "quote.html" . }}
 {{ end }}
+
+{{/* The band is placed inline above, so the shared slot below main must be
+     suppressed. Go templates DISCARD a define whose body is only whitespace
+     and comments, so an empty override does nothing. The printf emits an
+     empty string, which makes the definition non-empty and the override real.
+     Do not "tidy" this to {{ define "quote" }}{{ end }} - the band comes back
+     twice. */}}
+{{ define "quote" }}{{ printf "" }}{{ end }}

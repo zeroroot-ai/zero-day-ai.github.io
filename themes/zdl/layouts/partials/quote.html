@@ -1,0 +1,9 @@
+{{ $q := .Site.Params.quote }}
+{{ $plain := printf "%s %s, %s, %s." $q.text $q.who $q.work $q.year }}
+<div class="ticker" aria-label="{{ $plain }}">
+  <div class="run" aria-hidden="true">
+    {{ range seq 2 }}
+      <q>{{ $q.text }}</q><b>{{ printf "%s &middot; %s &middot; %s" $q.who $q.work $q.year | safeHTML }}</b><i>&#9670;</i>
+    {{ end }}
+  </div>
+</div>

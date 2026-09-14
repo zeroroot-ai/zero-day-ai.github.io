@@ -1,0 +1,14 @@
+<header class="site-head scan">
+  <div class="wrap">
+    <a class="lock" href="{{ "/" | relURL }}">
+      {{/* Cropped to the face. The full lockup is for the hero only. */}}
+      <svg viewBox="309 9 880 880" role="img" aria-label="{{ .Site.Title }}"><use href="#hp-mark"></use></svg>
+      <b>{{ .Site.Title | upper }}</b>
+    </a>
+    <nav>
+      {{ range .Site.Menus.main }}
+        <a href="{{ .URL | relURL }}">{{ .Name }}</a>
+      {{ end }}
+    </nav>
+  </div>
+</header>

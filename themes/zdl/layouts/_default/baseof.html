@@ -1,14 +1,17 @@
 <!doctype html>
 <html lang="{{ .Site.Language.Locale | default "en" }}">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>{{ if .IsHome }}{{ .Site.Title }}{{ else }}{{ .Title }} &middot; {{ .Site.Title }}{{ end }}</title>
-  <meta name="description" content="{{ with .Description }}{{ . }}{{ else }}{{ .Site.Params.description }}{{ end }}">
-  <link rel="canonical" href="{{ .Permalink }}">
+  {{ partial "head.html" . }}
   {{ block "head" . }}{{ end }}
 </head>
 <body>
+  {{ partial "sprite.html" . }}
+  {{ partial "header.html" . }}
   {{ block "main" . }}{{ end }}
+  {{/* Every page gets the band. The home page overrides the block and
+       places it itself, right under the hero. */}}
+  {{ block "quote" . }}{{ partial "quote.html" . }}{{ end }}
+  {{ partial "footer.html" . }}
+  {{ block "scripts" . }}{{ end }}
 </body>
 </html>
