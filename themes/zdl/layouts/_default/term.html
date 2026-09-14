@@ -1,0 +1,21 @@
+{{ define "main" }}
+  <section class="scan section">
+    <div class="wrap">
+      <header class="sechead">
+        <p class="pixlabel">Tagged</p>
+        <h1>#{{ .Title }}</h1>
+      </header>
+      <ul class="postlist">
+        {{ range .Pages.ByPublishDate.Reverse }}
+          <li class="postlist-item">
+            <a class="postlist-link" href="{{ .RelPermalink }}">
+              <time class="pixlabel" datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "2006-01-02" }}</time>
+              <h2>{{ .Title }}</h2>
+              {{ with .Summary }}<p>{{ . | plainify }}</p>{{ end }}
+            </a>
+          </li>
+        {{ end }}
+      </ul>
+    </div>
+  </section>
+{{ end }}
