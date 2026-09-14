@@ -12,6 +12,7 @@ summaryLength     = 30
 [params]
   description = "Hands-on training in how AI systems are attacked, and how to defend the ones you put in production."
   eyebrow     = "Offensive and defensive AI training"
+  buttondown  = "https://buttondown.com/api/emails/embed-subscribe/zerodaylabs"
 
   # The band that scrolls under the hero. One quote, not a slogan reel.
   [params.quote]

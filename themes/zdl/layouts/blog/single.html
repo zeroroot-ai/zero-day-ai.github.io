@@ -11,6 +11,13 @@
 
       <div class="prose">{{ .Content }}</div>
 
+      <div class="post-subscribe">
+        {{ partial "subscribe.html" (dict
+            "ctx" . "tag" "training" "action" "Join"
+            "heading" "More like this"
+            "blurb" "We write up the attacks we run. No schedule, no filler.") }}
+      </div>
+
       <footer class="postfoot">
         <a class="pixlabel" href="{{ "/blog/" | relURL }}">&larr; All writing</a>
       </footer>

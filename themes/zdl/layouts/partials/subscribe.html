@@ -1,0 +1,16 @@
+{{/* The only dynamic thing on this site. A plain form post to Buttondown:
+     no JavaScript, no cookie, no tracker, so no consent banner.
+     Call with: {{ partial "subscribe.html" (dict "ctx" . "tag" "training"
+     "heading" "..." "blurb" "..." "action" "Join") }} */}}
+{{ $tag := .tag }}
+{{ $id := printf "sub-%s-%s" $tag (substr (md5 (printf "%s%s" $tag .ctx.RelPermalink)) 0 6) }}
+<div class="subscribe">
+  {{ with .heading }}<h3>{{ . }}</h3>{{ end }}
+  {{ with .blurb }}<p>{{ . }}</p>{{ end }}
+  <form action="{{ $.ctx.Site.Params.buttondown }}" method="post" target="_blank">
+    <label class="sr-only" for="{{ $id }}">Email address</label>
+    <input id="{{ $id }}" type="email" name="email" placeholder="{{ .placeholder | default "you@wherever" }}" autocomplete="email" required>
+    <input type="hidden" name="tag" value="{{ $tag }}">
+    <button type="submit">{{ .action | default "Join" }}</button>
+  </form>
+</div>
