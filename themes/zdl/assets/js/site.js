@@ -54,19 +54,26 @@
   var mark = document.getElementById("mark");
   var h1 = document.getElementById("h1");
 
+  /* How often the mark splits. One number, on purpose. */
+  var GLITCH_EVERY = 5000;
+  var reflow = 0;
+
   function glitch() {
     if (reduce || !mark) { return; }
     mark.classList.remove("glitching");
     if (h1) { h1.classList.remove("glitching"); }
-    void mark.offsetWidth;                 /* force the animation to restart */
+    /* Committing the removal before re-adding is what restarts the animation.
+       Reading a layout property forces it. The read is assigned so a minifier
+       cannot drop the line as having no effect. */
+    reflow = mark.offsetWidth;
     mark.classList.add("glitching");
     if (h1) { h1.classList.add("glitching"); }
   }
 
   if (mark && !reduce) {
-    setTimeout(glitch, 420);
+    setTimeout(glitch, 500);
     mark.addEventListener("mouseenter", glitch);
-    setInterval(function () { if (Math.random() > 0.55) { glitch(); } }, 7000);
+    setInterval(glitch, GLITCH_EVERY);
   }
 
   /* ---- type the handle ---- */
