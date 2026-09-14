@@ -1,0 +1,13 @@
+# Stands in for a client logo wall, which we have not earned. All public.
+- name: setec
+  blurb: microVM isolation as a Kubernetes primitive.
+  license: Apache-2.0
+- name: gibson
+  blurb: The zero-trust runtime that AI agents execute inside.
+  license: Elastic-2.0
+- name: zerocool
+  blurb: Agents wired into six coding hosts, one tool surface.
+  license: MIT
+- name: cve-triage
+  blurb: An agent that ranks findings and states its reason.
+  license: Apache-2.0

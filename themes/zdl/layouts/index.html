@@ -1,12 +1,10 @@
 {{ define "main" }}
-  <section class="scan" style="padding-block:60px">
-    <div class="wrap">
-      <p class="pixlabel" style="color:var(--acid);margin:0 0 20px">{{ .Site.Params.eyebrow }}</p>
-      <h1 style="margin:0">{{ .Site.Title }}</h1>
-      <p style="color:var(--fg-2);max-width:var(--measure)">{{ .Site.Params.description }}</p>
-    </div>
-  </section>
+  {{ partial "hero.html" . }}
   {{ partial "quote.html" . }}
+  {{ partial "hexdump.html" . }}
+  {{ partial "strata.html" . }}
+  {{ partial "demo.html" . }}
+  {{ partial "evidence.html" . }}
 {{ end }}
 
 {{/* The band is placed inline above, so the shared slot below main must be

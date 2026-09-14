@@ -1,0 +1,21 @@
+{{ $h := .Params.hero }}
+<section class="hero scan">
+  <div class="wrap">
+    <div>
+      <p class="eyebrow pixlabel">{{ .Site.Params.eyebrow }}</p>
+      <h1 id="h1">{{ $h.lead }}<br><span class="u">{{ $h.emphasis }}</span></h1>
+      <p class="lede">{{ $h.sub }}</p>
+      <div class="cta">
+        <a class="btn" href="{{ $h.cta_primary.url }}">{{ $h.cta_primary.label }}</a>
+        <a class="btn ghost" href="{{ $h.cta_ghost.url }}">{{ $h.cta_ghost.label }}</a>
+      </div>
+    </div>
+    {{/* Two ghost copies of the same sprite. They re-colour by redeclaring a
+         custom property, which inherits into the <use> shadow tree. */}}
+    <div class="mark" id="mark">
+      <svg viewBox="0 0 1500 1500" role="img" aria-label="Hack the planet."><use href="#hp-mark"></use></svg>
+      <div class="ghost m" aria-hidden="true"><svg viewBox="0 0 1500 1500"><use href="#hp-mark"></use></svg></div>
+      <div class="ghost c" aria-hidden="true"><svg viewBox="0 0 1500 1500"><use href="#hp-mark"></use></svg></div>
+    </div>
+  </div>
+</section>

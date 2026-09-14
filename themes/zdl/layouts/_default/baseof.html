@@ -12,6 +12,10 @@
        places it itself, right under the hero. */}}
   {{ block "quote" . }}{{ partial "quote.html" . }}{{ end }}
   {{ partial "footer.html" . }}
+  {{ with resources.Get "js/site.js" }}
+    {{ $js := . | minify | fingerprint }}
+    <script src="{{ $js.RelPermalink }}" integrity="{{ $js.Data.Integrity }}" defer></script>
+  {{ end }}
   {{ block "scripts" . }}{{ end }}
 </body>
 </html>
