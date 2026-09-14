@@ -6,6 +6,15 @@
   var reduce = window.matchMedia &&
                window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
+  /* Each behaviour is independent. Before this guard a single exception in the
+     first one killed every one after it, silently, and the page looked merely
+     static rather than broken. */
+  function run(name, fn) {
+    try { fn(); } catch (err) {
+      if (window.console) { console.error("[zdl] " + name + " failed:", err); }
+    }
+  }
+
   /* ---- the transcript types itself ---- */
 
   var tape = document.getElementById("tape");
@@ -19,9 +28,13 @@
            '<span class="' + (l.text_class || "") + '">' + esc(l.text || "") + "</span>";
   }
 
+  run("transcript", function () {
   if (tape && store) {
     var lines = [];
-    try { lines = JSON.parse(store.textContent) || []; } catch (e) { lines = []; }
+    try {
+      var parsed = JSON.parse(store.textContent);
+      lines = Array.isArray(parsed) ? parsed : [];
+    } catch (e) { lines = []; }
 
     if (reduce || !lines.length) {
       /* Show it whole. A transcript nobody sees is worse than no animation. */
@@ -48,6 +61,7 @@
       }, 16);
     }
   }
+  });
 
   /* ---- the mark splits and snaps back ---- */
 
@@ -70,11 +84,13 @@
     if (h1) { h1.classList.add("glitching"); }
   }
 
-  if (mark && !reduce) {
-    setTimeout(glitch, 500);
-    mark.addEventListener("mouseenter", glitch);
-    setInterval(glitch, GLITCH_EVERY);
-  }
+  run("glitch", function () {
+    if (mark && !reduce) {
+      setTimeout(glitch, 500);
+      mark.addEventListener("mouseenter", glitch);
+      setInterval(glitch, GLITCH_EVERY);
+    }
+  });
 
   /* ---- type the handle ---- */
 

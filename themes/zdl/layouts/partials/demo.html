@@ -10,5 +10,5 @@
     </div>
     <p class="kicker">{{ .Params.demo_kicker | markdownify }}</p>
   </div>
-  <script type="application/json" id="tape-data">{{ hugo.Data.demo | jsonify }}</script>
+  <script type="application/json" id="tape-data">{{ hugo.Data.demo | jsonify | safeJS }}</script>
 </section>
