@@ -1,0 +1,14 @@
+<section class="demo scan" id="demo">
+  <div class="wrap">
+    <div class="demo-head">
+      <h2>{{ .Params.demo_heading }}</h2>
+      <span>{{ .Params.demo_aside }}</span>
+    </div>
+    <div class="term">
+      <div class="bar"><i></i><i></i><i></i><span class="t">TRACK-01 / INDIRECT INJECTION / DEMO</span></div>
+      <div class="body"><pre id="tape" aria-live="polite"></pre></div>
+    </div>
+    <p class="kicker">{{ .Params.demo_kicker | markdownify }}</p>
+  </div>
+  <script type="application/json" id="tape-data">{{ hugo.Data.demo | jsonify | safeJS }}</script>
+</section>

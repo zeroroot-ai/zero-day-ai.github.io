@@ -1,0 +1,26 @@
+{{ define "main" }}
+  <article class="scan section">
+    <div class="wrap">
+      <header class="posthead">
+        <time class="pixlabel" datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "2 January 2006" }}</time>
+        <h1>{{ .Title }}</h1>
+        {{ with .Params.tags }}
+          <p class="taglist">{{ range . }}<a href="{{ (printf "/tags/%s/" (. | urlize)) | relURL }}">#{{ . }}</a>{{ end }}</p>
+        {{ end }}
+      </header>
+
+      <div class="prose">{{ .Content }}</div>
+
+      <div class="post-subscribe">
+        {{ partial "subscribe.html" (dict
+            "ctx" . "tag" "training" "action" "Join"
+            "heading" "More like this"
+            "blurb" "We write up the attacks we run. No schedule, no filler.") }}
+      </div>
+
+      <footer class="postfoot">
+        <a class="pixlabel" href="{{ "/blog/" | relURL }}">&larr; All writing</a>
+      </footer>
+    </div>
+  </article>
+{{ end }}

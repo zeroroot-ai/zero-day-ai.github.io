@@ -1,0 +1,17 @@
+{{ define "main" }}
+  {{ partial "hero.html" . }}
+  {{ partial "quote.html" . }}
+  {{ partial "hexdump.html" . }}
+  {{ partial "strata.html" . }}
+  {{ partial "demo.html" . }}
+  {{ partial "evidence.html" . }}
+  {{ partial "get-in.html" . }}
+{{ end }}
+
+{{/* The band is placed inline above, so the shared slot below main must be
+     suppressed. Go templates DISCARD a define whose body is only whitespace
+     and comments, so an empty override does nothing. The printf emits an
+     empty string, which makes the definition non-empty and the override real.
+     Do not "tidy" this to {{ define "quote" }}{{ end }} - the band comes back
+     twice. */}}
+{{ define "quote" }}{{ printf "" }}{{ end }}

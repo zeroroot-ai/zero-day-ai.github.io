@@ -1,8 +1,34 @@
-# zero-day-ai.github.io
+# zero-day.ai
 
-Redirect only. This repository served the old brand's website. It now sends every visitor to https://www.zeroroot.ai/.
+The site for Zero Day AI Labs. Hands-on training in how AI systems are attacked,
+and how to defend the ones you put in production.
 
-The old site's content stays in this tree for the redirect page and is not maintained. Its history before 2026-09-05 is archived offline and does not resolve on GitHub.
+Static. Hugo builds it, GitHub Pages serves it at
+[www.zero-day.ai](https://www.zero-day.ai/). Nothing else runs.
+
+## Run it
+
+```sh
+hugo server          # http://localhost:1313
+hugo                 # build into ./public
+```
+
+Hugo extended 0.165 or later. There are no submodules and no package manager.
+A fresh clone builds.
+
+## Layout
+
+```
+content/          markdown. a post is a file here.
+themes/zdl/       the theme. layouts, partials, styles, the mark.
+static/           files copied as they are, including CNAME.
+hugo.toml         site config.
+```
+
+## Publish
+
+Push to `main`. The `pages` workflow builds and deploys. Writing a post is
+writing markdown.
 
 ## License
 

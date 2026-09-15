@@ -1,0 +1,47 @@
+baseURL           = "https://www.zero-day.ai/"
+locale            = "en-us"
+title             = "Zero Day AI Labs"
+theme             = "zdl"
+enableRobotsTXT   = true
+enableGitInfo     = false
+summaryLength     = 30
+
+[taxonomies]
+  tag = "tags"
+
+[params]
+  description = "Hands-on training in how AI systems are attacked, and how to defend the ones you put in production."
+  eyebrow     = "Offensive and defensive AI training"
+  buttondown  = "https://buttondown.com/api/emails/embed-subscribe/zerodaylabs"
+  ogimage     = "/og.png"
+
+  # The band that scrolls under the hero. One quote, not a slogan reel.
+  [params.quote]
+    text = "There’s a war out there, old friend. A world war. And it’s not about who’s got the most bullets. It’s about who controls the information."
+    who  = "Cosmo"
+    work = "Sneakers"
+    year = "1992"
+
+[markup]
+  [markup.goldmark.renderer]
+    unsafe = true
+  [markup.highlight]
+    noClasses      = false
+    lineNos        = false
+    tabWidth       = 2
+    style          = "github-dark"
+
+
+[menus]
+  [[menus.main]]
+    name   = "Tracks"
+    url    = "/#tracks"
+    weight = 1
+  [[menus.main]]
+    name   = "Blog"
+    url    = "/blog/"
+    weight = 2
+  [[menus.main]]
+    name   = "Consulting"
+    url    = "/#get-in"
+    weight = 3

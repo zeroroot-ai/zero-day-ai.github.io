@@ -1,0 +1,33 @@
+# The five tracks, in depth order. The order is the argument, so it is data,
+# not markup. A slab renders straight from a row here.
+- num: "01"
+  slug: SURFACE
+  name: Prompt
+  color: acid
+  glyph: g-prompt
+  blurb: Where input meets the model, and where what the system prompt says stops mattering.
+  cut: true          # the market-coverage line is drawn after this one
+- num: "02"
+  slug: LOOP
+  name: Agent
+  color: cyan
+  glyph: g-agent
+  blurb: Agents that hack, and agents that break. One tool the operator forgot to bound is the whole story.
+- num: "03"
+  slug: PARAMETERS
+  name: Weights
+  color: mag
+  glyph: g-weights
+  blurb: Surgery on the model itself. Find the refusal direction, take it out, measure what changed.
+- num: "04"
+  slug: SILICON
+  name: Metal
+  color: tang
+  glyph: g-metal
+  blurb: Where the model reaches hardware, and the glitch search runs without a human driving it.
+- num: "05"
+  slug: ALL DEPTHS
+  name: Watch
+  color: violet
+  glyph: g-watch
+  blurb: Red and blue reading one timeline, and the replay that settles the argument afterwards.

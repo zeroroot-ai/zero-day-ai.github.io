@@ -1,0 +1,12 @@
+{{ define "main" }}
+  <section class="scan section">
+    <div class="wrap">
+      <header class="sechead"><h1>Tags</h1></header>
+      <p class="taglist">
+        {{ range .Data.Terms.Alphabetical }}
+          <a href="{{ .Page.RelPermalink }}">#{{ .Page.Title }} <span>{{ .Count }}</span></a>
+        {{ end }}
+      </p>
+    </div>
+  </section>
+{{ end }}

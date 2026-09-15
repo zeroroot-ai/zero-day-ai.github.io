@@ -1,0 +1,4 @@
+name        = "zdl"
+license     = "Elastic-2.0"
+description = "The Zero Day AI Labs theme. Built for this site, not for distribution."
+min_version = "0.128.0"

@@ -1,0 +1,27 @@
+{{/* Five slabs, no gaps. Each steps further in and one shade lighter than the
+     one above, so the depth is visible rather than described. */}}
+<section class="strata scan" id="tracks">
+  <div class="wrap">
+    <div class="sechead-row">
+      <h2>{{ .Params.tracks_heading }}</h2>
+      <span>{{ .Params.tracks_aside }}</span>
+    </div>
+
+    {{ range $i, $t := hugo.Data.tracks }}
+      <div class="slab s{{ add $i 1 }}" style="--k:var(--{{ $t.color }})">
+        <div class="edge"></div>
+        <div class="in">
+          <svg class="gl" viewBox="0 0 12 12" shape-rendering="crispEdges" aria-hidden="true"><use href="#{{ $t.glyph }}"></use></svg>
+          <div class="nm">
+            <span class="n">{{ $t.num }} {{ $t.slug }}</span>
+            <strong>{{ $t.name }}</strong>
+          </div>
+          <p>{{ $t.blurb }}</p>
+        </div>
+      </div>
+      {{ if $t.cut }}
+        <div class="cutline"><b>{{ $.Params.cut_label }}</b><i></i></div>
+      {{ end }}
+    {{ end }}
+  </div>
+</section>

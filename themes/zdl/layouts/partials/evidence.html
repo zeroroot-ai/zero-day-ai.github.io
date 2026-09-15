@@ -1,0 +1,16 @@
+{{/* The one bright band on the site. */}}
+<section class="evidence" id="evidence">
+  <div class="wrap">
+    <h2>{{ .Params.evidence_heading }}</h2>
+    <p class="sub">{{ .Params.evidence_sub }}</p>
+    <div class="repos">
+      {{ range hugo.Data.repos }}
+        <div class="repo">
+          <b>{{ .name }}</b>
+          <span>{{ .blurb }}</span>
+          <u class="pixlabel">{{ .license }}</u>
+        </div>
+      {{ end }}
+    </div>
+  </div>
+</section>

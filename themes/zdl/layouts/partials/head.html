@@ -1,0 +1,30 @@
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{{ if .IsHome }}{{ .Site.Title }}{{ else }}{{ .Title }} &middot; {{ .Site.Title }}{{ end }}</title>
+<meta name="description" content="{{ with .Description }}{{ . }}{{ else }}{{ .Site.Params.description }}{{ end }}">
+<link rel="canonical" href="{{ .Permalink }}">
+
+{{ partial "social.html" . }}
+
+<link rel="icon" href="{{ "/favicon.svg" | relURL }}" type="image/svg+xml">
+<link rel="icon" href="{{ "/favicon-32.png" | relURL }}" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="{{ "/apple-touch-icon.png" | relURL }}">
+<meta name="theme-color" content="#020203">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600;700&family=Silkscreen:wght@400;700&family=Space+Mono:wght@400;700&display=swap">
+
+{{ with resources.Get "css/syntax.css" }}
+  {{ $syn := . | minify | fingerprint }}
+  <link rel="stylesheet" href="{{ $syn.RelPermalink }}" integrity="{{ $syn.Data.Integrity }}">
+{{ end }}
+
+{{ with resources.Get "css/main.css" }}
+  {{ $css := . | minify | fingerprint }}
+  <link rel="stylesheet" href="{{ $css.RelPermalink }}" integrity="{{ $css.Data.Integrity }}">
+{{ end }}
+
+{{ range .AlternativeOutputFormats -}}
+  <link rel="{{ .Rel }}" type="{{ .MediaType.Type }}" href="{{ .Permalink | safeURL }}" title="{{ $.Site.Title }}">
+{{ end -}}
