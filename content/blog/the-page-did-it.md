@@ -2,7 +2,7 @@
 title: "Nobody typed a malicious prompt. The wiki page did."
 date: 2026-09-14
 summary: >
-  An agent was asked to summarise an onboarding page. It sent an SSH key
+  An agent was asked to summarize an onboarding page. It sent an SSH key
   first, then wrote a perfectly normal summary. No one prompted it to.
 tags: ["prompt", "agents", "indirect-injection"]
 ---
@@ -13,7 +13,7 @@ helpful. You have built the whole vulnerability. Nothing else is required.
 Here is the shape of it. An operator asks for something dull.
 
 ```console
-$ agent run --task "summarise the onboarding wiki"
+$ agent run --task "summarize the onboarding wiki"
 » tool_call fetch_url("https://wiki.internal/onboarding")
 « 200 OK   4.2 KB   text/html
 ```
