@@ -87,8 +87,9 @@ Copy says "December 2026" and "announced to the list first" until the owner
 sets them in `data/courses.yaml`.
 
 **Founder bio**: written 2026-09-29 from the owner's resume, kept general on
-purpose (DoD, HFT, AI C2 prototyping). No clearance, no employer names, no
-contact details. Nothing on the site may invent a credential.
+purpose (DoD, HFT, AI C2 prototyping). **No name anywhere on the site**
+(owner, 2026-09-29). No clearance, no employer names, no contact details.
+Nothing on the site may invent a credential.
 
 **Checkout**: no course has an `enroll_url` yet. Until Circle checkout exists
 the course page renders the training list form in place of a buy button.

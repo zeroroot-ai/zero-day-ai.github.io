@@ -11,14 +11,18 @@ to know it is true.
 
 ## The founder
 
-Zero Day AI Labs is run by Anthony Fresta. Fifteen years of infrastructure
-where downtime, latency, and security were not options. Sub-microsecond
-market data at the exchange colos for high-frequency trading. Air-gapped
-Kubernetes platforms for the Department of Defense. AI-driven command and
-control prototypes with a self-hosted model on the event floor and no data
-leaving the room. He has run the security program, the incident response,
-and the teams. He built Gibson because every one of those jobs ended at the
-same missing line: the one the agent is not allowed to cross.
+Labs is one engineer and the people he brings in per engagement. Fifteen
+years of infrastructure where downtime, latency, and security were not
+options. Sub-microsecond market data at the exchange colos for high-frequency
+trading. Air-gapped Kubernetes platforms for the Department of Defense.
+AI-driven command and control prototypes with a self-hosted model on the
+event floor and no data leaving the room. He has run the security program,
+the incident response, and the teams. He built Gibson because every one of
+those jobs ended at the same missing line: the one the agent is not allowed
+to cross.
+
+He does not put his name on the site. The code is signed, the courses are
+taught live, and you will know who he is by the end of the first hour.
 
 ## What we built
 
