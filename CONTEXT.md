@@ -106,8 +106,9 @@ the course page renders the training list form in place of a buy button.
 | 2026-09-14 | The look is settled. Black ground, neon green, the Hack the Planet smiley. |
 | 2026-09-14 | Hero: "Break it. Ship it." Labs teaches offense and defense, not offense alone. |
 | 2026-09-14 | Five tracks, ordered as a ladder down the stack. The order is the claim. |
-| 2026-09-29 | Reversed "copy must not name a course or a date". The site now sells three named courses with a price and a month. The December run is LLM Infrastructure on Kubernetes at 2,500 USD, 30 seats. |
-| 2026-09-29 | The public seat price is 2,500 USD. The Emage channel price is 3,000 USD and never appears on this site. |
+| 2026-09-29 | Reversed "copy must not name a course or a date". The site now sells three named courses with a price and a month. The December run is LLM Infrastructure on Kubernetes at 3,000 USD, 30 seats. |
+| 2026-09-29 | The first research piece (the wiki-page injection, 2026-09-14) is deleted. The home page demo still shows the same transcript. |
+| 2026-09-29 | The Kubernetes course is 3,000 USD on this site and through Emage alike. The two agent courses are 2,500 USD until the owner says otherwise. Price lives in `data/courses.yaml` only. |
 | 2026-09-29 | Two fixed consulting offers with public price ranges. No hourly rate anywhere on the site. |
 | 2026-09-29 | `/blog/` becomes `/research/`. Research is the home page's front door and the archive stays public forever. |
 | 2026-09-29 | Every research piece ends with the offer line: next course date and assessment price. Rendered from data, never typed. |
