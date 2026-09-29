@@ -338,3 +338,77 @@ body.invert { --acid:#ff2e88; }
 
 .post-subscribe { margin-top:52px; padding-top:28px; border-top:1px solid var(--rule); }
 .post-subscribe .subscribe h3 { font-size:19px; }
+
+/* --------------------------------------------------------------- nextrun -- */
+
+.nextrun { border-bottom:1px solid var(--rule); background:var(--panel); }
+.nextrun .wrap {
+  display:flex; align-items:center; gap:10px 22px; flex-wrap:wrap;
+  padding-block:14px;
+}
+.nextrun .pixlabel { color:var(--acid); }
+.nextrun b { font-weight:700; font-size:16px; letter-spacing:-.02em; }
+.nextrun .meta { color:var(--fg-2); font-size:14px; }
+.nextrun .btn { margin-left:auto; }
+.btn.small { font-size:13.5px; padding:9px 16px; box-shadow:3px 3px 0 var(--mag); }
+
+/* --------------------------------------------------------------- courses -- */
+
+.courses { display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:14px; }
+.course {
+  display:flex; flex-direction:column; gap:10px; text-decoration:none; color:inherit;
+  background:var(--panel); border:1px solid var(--rule); border-top:4px solid var(--k);
+  padding:20px 20px 22px;
+}
+.course:hover, .course:focus-visible { border-color:var(--k); }
+.course .st { color:var(--k); }
+.course b { font-weight:700; font-size:22px; letter-spacing:-.03em; line-height:1.1; }
+.course p { margin:0; color:var(--fg-2); font-size:14.5px; flex:1; }
+.course .meta { font-family:var(--mono); font-size:12px; color:var(--fg-3); }
+.course.is-next { background:var(--panel-2); }
+.course.is-next b { color:var(--k); }
+
+.team { margin-top:40px; padding:22px 22px 24px; border:1px solid var(--rule); border-left:4px solid var(--mag); background:var(--panel); }
+.team h2 { margin:0 0 8px; font-weight:700; font-size:21px; letter-spacing:-.03em; }
+.team p { margin:0; color:var(--fg-2); max-width:56ch; }
+
+/* ----------------------------------------------------------- course page -- */
+
+.course-page .st { color:var(--k); display:block; }
+.course-page .posthead .lede { margin-top:18px; }
+.facts { display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); gap:14px; margin:26px 0 0; }
+.facts div { border:1px solid var(--rule); background:var(--panel); padding:14px 16px; }
+.facts dt { font-family:var(--pix); font-size:10px; text-transform:uppercase; letter-spacing:.04em; color:var(--k); }
+.facts dd { margin:8px 0 0; color:var(--fg-2); font-size:14.5px; }
+.course-page .posthead .cta { margin-top:26px; }
+
+/* ----------------------------------------------------------------- offer -- */
+
+.offer { margin-top:36px; display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:14px; }
+.offer-row {
+  display:flex; flex-direction:column; gap:7px; text-decoration:none; color:inherit;
+  border:1px solid var(--rule); background:var(--panel); padding:16px 18px 18px;
+}
+.offer-row:hover, .offer-row:focus-visible { border-color:var(--acid); }
+.offer-row .pixlabel { color:var(--acid); }
+.offer-row b { font-weight:700; font-size:17px; letter-spacing:-.02em; }
+.offer-row .meta { color:var(--fg-3); font-family:var(--mono); font-size:12px; }
+
+/* -------------------------------------------------------------- services -- */
+
+.offers { display:grid; grid-template-columns:repeat(auto-fit,minmax(300px,1fr)); gap:16px; }
+.offer-card { border:1px solid var(--rule); border-top:4px solid var(--acid); background:var(--panel); padding:22px 22px 24px; }
+.offer-card:nth-child(2) { border-top-color:var(--cyan); }
+.offer-card .pixlabel { color:var(--fg-3); }
+.offer-card h2 { margin:10px 0 0; font-weight:700; font-size:26px; letter-spacing:-.03em; line-height:1.1; }
+.offer-card .blurb { margin:14px 0 0; color:var(--fg); font-size:16px; }
+.offer-card .team { margin:10px 0 0; padding:0; border:0; background:none; color:var(--fg-3); font-size:14px; }
+.offer-card h3 { margin:22px 0 8px; font-family:var(--pix); font-size:10px; text-transform:uppercase; letter-spacing:.04em; color:var(--acid); }
+.offer-card ul { margin:0; padding-left:1.1em; color:var(--fg-2); font-size:14.5px; }
+.offer-card li + li { margin-top:.45em; }
+
+/* ---------------------------------------------------------------- latest -- */
+
+.latest { padding-block:60px 24px; }
+.latest .more { color:var(--fg-2); text-decoration:none; font-size:14px; }
+.latest .more:hover { color:var(--acid); }

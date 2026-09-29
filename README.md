@@ -19,11 +19,18 @@ A fresh clone builds.
 ## Layout
 
 ```
-content/          markdown. a post is a file here.
+content/research/ markdown. a research piece is a file here.
+content/training/ one file per course. The facts come from data/courses.yaml.
+content/services.md, content/about.md
+data/courses.yaml courses: name, month, price, seats, status, enroll_url.
+data/services.yaml the two fixed offers.
 themes/zdl/       the theme. layouts, partials, styles, the mark.
 static/           files copied as they are, including CNAME.
 hugo.toml         site config.
 ```
+
+To announce a run, edit one row in `data/courses.yaml`. The home strip, the
+course page, and the offer line under every piece update together.
 
 ## Publish
 

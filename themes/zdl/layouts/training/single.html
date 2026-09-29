@@ -1,0 +1,40 @@
+{{ define "main" }}
+  {{ $c := index (where hugo.Data.courses "slug" .Params.course) 0 }}
+  <article class="scan section course-page" style="--k:var(--{{ $c.color }})">
+    <div class="wrap">
+      <header class="posthead">
+        <span class="pixlabel st">{{ if eq $c.status "scheduled" }}Next run &middot; {{ $c.when }}{{ else }}Planned &middot; {{ $c.when }}{{ end }}</span>
+        <h1>{{ .Title }}</h1>
+        <p class="lede">{{ $c.blurb }}</p>
+        <dl class="facts">
+          <div><dt>Format</dt><dd>{{ $c.dates }}</dd></div>
+          <div><dt>Price</dt><dd>{{ lang.FormatNumberCustom 0 $c.price }} USD per seat. Recordings included.</dd></div>
+          <div><dt>Seats</dt><dd>{{ $c.seats }}. Team seats available.</dd></div>
+        </dl>
+        <div class="cta">
+          {{ if $c.enroll_url }}
+            <a class="btn" href="{{ $c.enroll_url }}">Buy a seat</a>
+          {{ else }}
+            <a class="btn" href="#hold">Hold a seat</a>
+          {{ end }}
+          <a class="btn ghost" href="{{ "/training/" | relURL }}">All courses</a>
+        </div>
+      </header>
+
+      <div class="prose">{{ .Content }}</div>
+
+      <div class="post-subscribe" id="hold">
+        {{ if $c.enroll_url }}
+          <a class="btn" href="{{ $c.enroll_url }}">Buy a seat &middot; {{ lang.FormatNumberCustom 0 $c.price }} USD</a>
+        {{ else }}
+          {{ partial "subscribe.html" (dict
+              "ctx" . "tag" "training" "action" "Hold a seat"
+              "heading" "Hold a seat"
+              "blurb" (printf "Leave an address and you get the dates and the payment link before anyone else. %d seats." $c.seats)) }}
+        {{ end }}
+      </div>
+
+      {{ partial "offer.html" . }}
+    </div>
+  </article>
+{{ end }}

@@ -1,0 +1,37 @@
+{{ define "main" }}
+  <section class="scan section">
+    <div class="wrap">
+      <header class="sechead">
+        <h1>{{ .Title }}</h1>
+        {{ with .Params.intro }}<p class="sechead-sub">{{ . }}</p>{{ end }}
+      </header>
+
+      <div class="offers">
+        {{ range hugo.Data.services }}
+          <div class="offer-card" id="{{ .slug }}">
+            <span class="pixlabel">{{ .length }} &middot; {{ lang.FormatNumberCustom 0 .price_low }} to {{ lang.FormatNumberCustom 0 .price_high }} USD</span>
+            <h2>{{ .name }}</h2>
+            <p class="blurb">{{ .blurb }}</p>
+            <p class="team">{{ .team }}</p>
+            <h3>You get</h3>
+            <ul>{{ range .deliver }}<li>{{ . }}</li>{{ end }}</ul>
+          </div>
+        {{ end }}
+      </div>
+
+      <div class="prose" style="margin-top:44px">
+        <h2>{{ .Params.pipeline_heading }}</h2>
+        <p>{{ .Params.pipeline }}</p>
+        {{ .Content }}
+      </div>
+
+      <div class="post-subscribe">
+        {{ partial "subscribe.html" (dict
+            "ctx" . "tag" "consulting" "action" "Contact"
+            "placeholder" "you@company"
+            "heading" .Params.contact_heading
+            "blurb" .Params.contact_blurb) }}
+      </div>
+    </div>
+  </section>
+{{ end }}

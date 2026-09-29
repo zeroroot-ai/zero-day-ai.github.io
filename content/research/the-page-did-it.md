@@ -5,6 +5,7 @@ summary: >
   An agent was asked to summarize an onboarding page. It sent an SSH key
   first, then wrote a perfectly normal summary. No one prompted it to.
 tags: ["prompt", "agents", "indirect-injection"]
+aliases: ["/blog/the-page-did-it/"]
 ---
 
 Give an agent a tool that reads the web, a credential, and an instruction to be

@@ -1,0 +1,49 @@
+# The live courses. A course carries a date, a price and a syllabus. A track
+# does not. The first row with status "scheduled" is the one every post and
+# the home page point at, so keep the list in run order.
+#
+# enroll_url stays empty until checkout exists. While it is empty the course
+# page renders the training list form in place of a buy button.
+- slug: llm-infrastructure-on-kubernetes
+  name: LLM Infrastructure on Kubernetes
+  short: Kubernetes
+  status: scheduled            # scheduled | planned
+  when: December 2026
+  dates: "Two days, live online. Exact dates announced to the list first."
+  price: 2500
+  seats: 30
+  tracks: ["05"]
+  color: cyan
+  blurb: >
+    GPU nodes, schedulers, model serving, and the boundary around the agents
+    that call the models. The course we already taught, now with Slurm,
+    the NVIDIA stack, and KServe.
+  enroll_url: ""
+- slug: agents-in-production
+  name: Agents in Production
+  short: Agents
+  status: planned
+  when: Early 2027
+  dates: "Two days, live online. Date set after the December run."
+  price: 2500
+  seats: 30
+  tracks: ["02", "05"]
+  color: acid
+  blurb: >
+    How to run an agent fleet for real. Identity, grants, sandboxed
+    execution, budgets, and replay. The patterns come from Gibson.
+  enroll_url: ""
+- slug: securing-agents
+  name: Securing Agents
+  short: Security
+  status: planned
+  when: 2027
+  dates: "Two days, live online. Date set after the December run."
+  price: 2500
+  seats: 30
+  tracks: ["01", "02", "05"]
+  color: mag
+  blurb: >
+    Offense and defense of the runtime boundary. Break an agent deployment
+    in the morning. Stand up one that refuses the same attack by evening.
+  enroll_url: ""
