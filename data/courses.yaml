@@ -9,7 +9,7 @@
   short: Kubernetes
   status: scheduled            # scheduled | planned
   when: December 2026
-  dates: "Two days, live online. The list hears the exact dates first."
+  dates: "Twelve weeks, live online. Two one-hour sessions a week and one lab a week. The list hears the start date first."
   price: 3000
   seats: 30
   color: cyan
@@ -23,7 +23,7 @@
   short: Agents
   status: planned
   when: Early 2027
-  dates: "Two days, live online. We set the date after the December run."
+  dates: "Twelve weeks, live online. Two one-hour sessions a week and one lab a week. We set the start date after the December run."
   price: 2500
   seats: 30
   color: acid
@@ -36,12 +36,12 @@
   short: Agents, offense and defense
   status: planned
   when: 2027
-  dates: "Two days, live online. We set the date after the December run."
+  dates: "Twelve weeks, live online. Two one-hour sessions a week and one lab a week. We set the start date after the December run."
   price: 2500
   seats: 30
   color: mag
   blurb: >
-    Day one you break agents the way the published attacks do. Day two you
-    rebuild one that refuses every one of them, and you measure it on
-    AgentDojo before and after.
+    The first half breaks agents the way the published attacks do. The
+    second half rebuilds one that refuses every one of them, and you measure
+    it on AgentDojo before and after.
   enroll_url: ""

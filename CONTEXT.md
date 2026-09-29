@@ -117,6 +117,7 @@ the course page renders the training list form in place of a buy button.
 | 2026-09-14 | ~~Hero: "Break it. Ship it."~~ **Amended 2026-09-29.** Hero is "Break it. Secure it. Ship it." Three lines, the last one highlighted. |
 | 2026-09-14 | Five tracks, ordered as a ladder down the stack. The order is the claim. |
 | 2026-09-29 | Reversed "copy must not name a course or a date". The site now sells three named courses with a price and a month. The December run is LLM Infrastructure on Kubernetes at 3,000 USD, 30 seats. |
+| 2026-09-29 | A course is twelve weeks, two one-hour live sessions a week, one lab a week, recorded. Not two days. Each course page carries a week-by-week outline that is a template the owner revises per cohort. |
 | 2026-09-29 | The first research piece (the wiki-page injection, 2026-09-14) is deleted. The home page demo still shows the same transcript. |
 | 2026-09-29 | The Kubernetes course is 3,000 USD on this site and through Emage alike. The two agent courses are 2,500 USD until the owner says otherwise. Price lives in `data/courses.yaml` only. |
 | 2026-09-29 | Two fixed consulting offers with public price ranges. No hourly rate anywhere on the site. |
