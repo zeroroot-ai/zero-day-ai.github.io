@@ -9,20 +9,23 @@ systems are attacked, and how to run the ones you put in production inside a
 boundary that holds. We teach on code we wrote, because that is the only way
 to know it is true.
 
-## The founder
+## Who teaches this
 
-Labs is one engineer and the people he brings in per engagement. Fifteen
-years of infrastructure where downtime, latency, and security were not
-options. Sub-microsecond market data at the exchange colos for high-frequency
-trading. Air-gapped Kubernetes platforms for the Department of Defense.
-AI-driven command and control prototypes with a self-hosted model on the
-event floor and no data leaving the room. He has run the security program,
-the incident response, and the teams. He built Gibson because every one of
-those jobs ended at the same missing line: the one the agent is not allowed
-to cross.
+I spent fifteen years running infrastructure where being wrong was
+expensive. Trading systems at the exchange colos, where a microsecond was
+money. Air-gapped Kubernetes platforms for the Department of Defense, where a
+bad config was a report to someone with a rank. Most recently, AI for
+military command and control, with the model running on a box in the room
+and nothing leaving it.
 
-He does not put his name on the site. The code is signed, the courses are
-taught live, and you will know who he is by the end of the first hour.
+Along the way I ran the security program, the on-call rotation, and the
+teams. I have been the person who broke it, the person who got paged for it,
+and the person who had to explain it the next morning.
+
+I built Gibson because every one of those jobs had the same hole in it. An
+agent could do the work, and nothing in the stack could say what it was not
+allowed to do. That hole is what this company is about, and closing it is
+what every course here teaches.
 
 ## What we built
 
