@@ -12,7 +12,7 @@
   dates: "Two days, live online. Exact dates announced to the list first."
   price: 2500
   seats: 30
-  tracks: ["05"]
+
   color: cyan
   blurb: >
     GPU nodes, schedulers, model serving, and the boundary around the agents
@@ -27,7 +27,7 @@
   dates: "Two days, live online. Date set after the December run."
   price: 2500
   seats: 30
-  tracks: ["02", "05"]
+
   color: acid
   blurb: >
     How to run an agent fleet for real. Identity, grants, sandboxed
@@ -41,7 +41,7 @@
   dates: "Two days, live online. Date set after the December run."
   price: 2500
   seats: 30
-  tracks: ["01", "02", "05"]
+
   color: mag
   blurb: >
     Offense and defense of the runtime boundary. Break an agent deployment

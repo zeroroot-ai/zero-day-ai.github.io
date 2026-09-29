@@ -25,18 +25,19 @@ _Avoid_: parent, umbrella, house brand.
 it means the hands-on environment a student works in. Copy must not use the
 bare word for the environment. See the term that resolves this.
 
-**Track**:
-One rung of the stack that Labs attacks. Five exist, ordered by depth, and the
-order is the claim. A track is a standing statement about what Labs knows. It
-never carries a date, a price, or a syllabus.
-_Avoid_: course, class, module, curriculum (all imply a date and a syllabus).
+**Track** (retired 2026-09-29):
+Was one rung of the stack that Labs attacks, five in a ladder on the home page.
+The ladder was a taxonomy, not an argument, and the owner cut it. The word
+stays out of copy. What Labs teaches is stated in prose on the home page under
+"Everyone will teach you to break the chatbot."
+_Avoid_: track, depth ladder, "prompt to silicon".
 
 **Course**:
-One live run with a date, a price, a seat count, and a syllabus. A course maps
-onto one or more tracks and lives at `/training/<slug>/`. Its facts live in
+One live run with a date, a price, a seat count, and a syllabus. It lives at
+`/training/<slug>/`. Its facts live in
 `data/courses.yaml`, never in prose, so a new run is one edit. Three exist.
-_Avoid_: track (a standing claim), cohort (reserved for the 12-week flagship),
-class, bootcamp.
+_Avoid_: track (retired), cohort (reserved for the 12-week flagship), class,
+bootcamp.
 
 **Offer**:
 One fixed-price consulting product with a length and a deliverable list. Two
@@ -110,6 +111,9 @@ the course page renders the training list form in place of a buy button.
 | 2026-09-29 | Two fixed consulting offers with public price ranges. No hourly rate anywhere on the site. |
 | 2026-09-29 | `/blog/` becomes `/research/`. Research is the home page's front door and the archive stays public forever. |
 | 2026-09-29 | Every research piece ends with the offer line: next course date and assessment price. Rendered from data, never typed. |
-| 2026-09-29 | Nav is Research, Training, Services, About. Tracks stay on the home page as the standing claim. |
+| 2026-09-29 | Nav is Research, Training, Services, About. |
+| 2026-09-29 | The five-track ladder, the hex dump band, and the course strip under the hero are gone. One prose argument replaces the ladder. |
+| 2026-09-29 | The scrolling band on every page carries the next live course, not a film quote. It renders from `data/courses.yaml` and links to the course. |
+| 2026-09-29 | Copy is written to a person, the way Seth Godin writes. Short lines, one idea, the reader's situation first, no feature grids where a paragraph will do. |
 | 2026-09-29 | Circle replaces Buttondown for the list, the courses, and the community. Forms swap to Circle embeds when the owner turns on its Marketing Hub. Until then the Buttondown action is dead and known to be dead. |
 | 2026-09-29 | Labs run home-grown at `labs.zero-day.ai`, not on a lab vendor and not under zeroroot.ai. Out of scope for the site. |

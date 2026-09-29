@@ -78,7 +78,8 @@ img, svg { max-width:100%; }
 
 /* ----------------------------------------------------------------- quote -- */
 
-.ticker { background:var(--acid); color:var(--ink); overflow:hidden; white-space:nowrap; }
+.ticker { display:block; background:var(--acid); color:var(--ink); overflow:hidden; white-space:nowrap; text-decoration:none; }
+.ticker:hover { background:var(--mag); color:#fff; }
 .ticker .run { display:inline-block; padding-block:11px; }
 .ticker q { quotes:none; font-family:var(--pix); font-size:11.5px; letter-spacing:.02em; padding-inline:18px; }
 .ticker b { font-family:var(--pix); font-size:11.5px; font-weight:700; letter-spacing:.08em; padding-inline:18px; }
@@ -217,59 +218,20 @@ img, svg { max-width:100%; }
 .mark .ghost.c { --acid:#25e0e0; --ink:transparent; }
 body.invert { --acid:#ff2e88; }
 
-/* --------------------------------------------------------------- hexdump -- */
+/* ------------------------------------------------------------------- why -- */
 
-.hex { border-bottom:1px solid var(--rule); }
-.hex .wrap { overflow-x:auto; padding-block:13px; }
-.hex pre { margin:0; font-family:var(--mono); font-size:12px; line-height:1.7; color:var(--fg-3); white-space:pre; }
-.hex pre b { color:var(--acid); font-weight:400; }
-.hex pre u { text-decoration:none; color:var(--fg); }
-
-/* ---------------------------------------------------------------- strata -- */
-
-.strata { padding-block:62px 72px; }
-.sechead-row {
-  display:flex; align-items:baseline; justify-content:space-between;
-  gap:18px; flex-wrap:wrap; margin-bottom:26px;
+.why { padding-block:70px 30px; }
+.why h2 {
+  font-weight:700; font-size:clamp(30px,5.4vw,52px); letter-spacing:-.04em;
+  line-height:1.02; margin:0; max-width:18ch; text-wrap:balance;
 }
-.sechead-row h2 { font-weight:700; font-size:clamp(25px,4.2vw,36px); letter-spacing:-.04em; margin:0; }
-.sechead-row span { color:var(--fg-3); font-family:var(--mono); font-size:12.5px; }
-
-.gl { --gk:var(--fg); --ga:var(--k,var(--acid)); }
-
-.slab { display:grid; grid-template-columns:6px 1fr; background:var(--panel); border-top:1px solid var(--rule); }
-.slab:last-of-type { border-bottom:1px solid var(--rule); }
-.slab .edge { background:var(--k); }
-.slab .in { display:grid; grid-template-columns:56px 158px 1fr; gap:20px; align-items:center; padding:21px 22px; }
-.slab .gl { width:36px; height:36px; }
-.slab .nm { display:flex; flex-direction:column; gap:7px; }
-.slab .nm .n { font-family:var(--pix); font-size:10px; color:var(--k); letter-spacing:.05em; }
-.slab .nm strong { font-weight:700; font-size:25px; letter-spacing:-.03em; line-height:1; }
-.slab p { margin:0; color:var(--fg-2); font-size:14.5px; }
-
-/* The staircase. Each slab sits 24px deeper and one shade lighter. */
-.s1 .in { padding-left:22px; }
-.s2 .in { padding-left:46px;  background:#0e0e11; }
-.s3 .in { padding-left:70px;  background:#121216; }
-.s4 .in { padding-left:94px;  background:#16161b; }
-.s5 .in { padding-left:118px; background:#1a1a20; }
-
-/* Below 800px the steps would eat half the text width, so they flatten. */
-@media (max-width:800px) {
-  .slab .in { grid-template-columns:44px 1fr; gap:14px; padding-left:18px !important; }
-  .slab .in p { grid-column:1 / -1; }
-}
-
-.slab:hover .nm strong { color:var(--k); }
-.slab:hover .edge { box-shadow:0 0 14px var(--k); }
-
-.cutline { display:flex; align-items:center; gap:12px; background:var(--ink); padding:11px 22px; }
-.cutline b { font-family:var(--pix); font-size:10px; color:var(--mag); letter-spacing:.05em; white-space:nowrap; }
-.cutline i { flex:1; height:1px; min-width:20px; background:repeating-linear-gradient(90deg,var(--mag) 0 5px,transparent 5px 10px); }
+.why-body { max-width:58ch; margin-top:26px; font-size:19px; line-height:1.55; color:var(--fg-2); }
+.why-body p + p { margin-top:1em; }
+.why-body strong { color:var(--acid); font-weight:700; }
 
 /* ------------------------------------------------------------------ demo -- */
 
-.demo { padding-block:8px 66px; }
+.demo { padding-block:34px 66px; }
 .demo-head { display:flex; align-items:baseline; gap:16px; margin-bottom:22px; flex-wrap:wrap; }
 .demo-head h2 { font-weight:700; font-size:27px; letter-spacing:-.03em; margin:0; }
 .demo-head span { color:var(--fg-2); font-size:14.5px; }
@@ -338,19 +300,6 @@ body.invert { --acid:#ff2e88; }
 
 .post-subscribe { margin-top:52px; padding-top:28px; border-top:1px solid var(--rule); }
 .post-subscribe .subscribe h3 { font-size:19px; }
-
-/* --------------------------------------------------------------- nextrun -- */
-
-.nextrun { border-bottom:1px solid var(--rule); background:var(--panel); }
-.nextrun .wrap {
-  display:flex; align-items:center; gap:10px 22px; flex-wrap:wrap;
-  padding-block:14px;
-}
-.nextrun .pixlabel { color:var(--acid); }
-.nextrun b { font-weight:700; font-size:16px; letter-spacing:-.02em; }
-.nextrun .meta { color:var(--fg-2); font-size:14px; }
-.nextrun .btn { margin-left:auto; }
-.btn.small { font-size:13.5px; padding:9px 16px; box-shadow:3px 3px 0 var(--mag); }
 
 /* --------------------------------------------------------------- courses -- */
 

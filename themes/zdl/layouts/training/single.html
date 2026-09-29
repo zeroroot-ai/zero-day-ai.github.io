@@ -15,7 +15,7 @@
           {{ if $c.enroll_url }}
             <a class="btn" href="{{ $c.enroll_url }}">Buy a seat</a>
           {{ else }}
-            <a class="btn" href="#hold">Hold a seat</a>
+            <a class="btn" href="#hold">Get the dates</a>
           {{ end }}
           <a class="btn ghost" href="{{ "/training/" | relURL }}">All courses</a>
         </div>
@@ -28,9 +28,9 @@
           <a class="btn" href="{{ $c.enroll_url }}">Buy a seat &middot; {{ lang.FormatNumberCustom 0 $c.price }} USD</a>
         {{ else }}
           {{ partial "subscribe.html" (dict
-              "ctx" . "tag" "training" "action" "Hold a seat"
-              "heading" "Hold a seat"
-              "blurb" (printf "Leave an address and you get the dates and the payment link before anyone else. %d seats." $c.seats)) }}
+              "ctx" . "tag" "training" "action" "Send them"
+              "heading" "Get the dates first"
+              "blurb" (printf "%d seats. The list hears the dates and gets the payment link a week before anyone else does." $c.seats)) }}
         {{ end }}
       </div>
 
