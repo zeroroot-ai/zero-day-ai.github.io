@@ -2,27 +2,27 @@
 title: Gibson Runtime
 layout: product
 eyebrow: "Products · from zeroroot.ai"
-description: The runtime our agents execute inside. It is the lab in every course and the reference design in every engagement. Built and sold by zeroroot.ai.
+description: Gibson is the runtime our agents execute inside. It is the lab in every course and the reference design in every engagement. zeroroot.ai builds and sells it.
 lede: >
-  The runtime an agent executes inside, where the boundary is a property of
-  execution and not a check applied afterwards.
+  Gibson is the runtime an agent executes inside. The boundary is a property
+  of execution, not a check that runs afterwards.
 cta: { label: "Go to zeroroot.ai", url: "https://www.zeroroot.ai/" }
 cta_ghost: { label: "Read the code", url: "https://github.com/zeroroot-ai/gibson" }
 parts:
   - name: Gibson Runtime
-    blurb: The substrate. Every call an agent makes is identified, budgeted, journaled, and refusable.
+    blurb: The substrate. It identifies, budgets, and journals every call an agent makes, and it can refuse any of them.
     license: Elastic-2.0
     url: https://github.com/zeroroot-ai/gibson
   - name: Gibson Console
-    blurb: Missions, grants, traces, and replay. The screen the person who has to answer for the agent looks at.
+    blurb: It shows missions, grants, traces, and replay. It is the screen for the person who has to answer for the agent.
     license: Elastic-2.0
     url: https://github.com/zeroroot-ai/dashboard
   - name: Execution environment
-    blurb: Setec. microVM isolation as a Kubernetes primitive. Untrusted work goes in, and only what was granted comes out.
+    blurb: Setec gives microVM isolation as a Kubernetes primitive. Untrusted work goes in. Only what the grant allows comes out.
     license: Apache-2.0
     url: https://github.com/zeroroot-ai/setec
   - name: ADK
-    blurb: Build agents, and the gibson CLI. Apache licensed, so what you build on it is yours.
+    blurb: You build agents with it, and it ships the gibson CLI. It is Apache licensed, so what you build on it is yours.
     license: Apache-2.0
     url: https://github.com/zeroroot-ai/adk
 outro: >
@@ -37,18 +37,18 @@ the agent could not cross, and a record of every step it took up to that line.
 So there are two ideas in it, and only two.
 
 **A grant, not a prompt.** A named person gives an agent the rights it may
-use. Read, write, execute. Bounded by what that person holds. Set once, up
-front. There is no runtime approval pop-up, because a pop-up is a prompt with
-a button on it.
+use: read, write, and execute. The rights are bounded by what that person
+holds. The person sets them once, up front. There is no runtime approval
+pop-up, because a pop-up is a prompt with a button on it.
 
 **Enforced, not advisory.** A control that inspects the output and scores it
 afterwards is advice. A control that makes the disallowed thing
 unrepresentable is a guarantee. Gibson only claims the second kind.
 
-Everything else is plumbing for those two ideas. Identity for every agent.
-A sandbox for untrusted work. A budget per session. A journal you can replay
-in front of the person who asks what happened.
+Everything else is plumbing for those two ideas. Every agent gets an
+identity. Untrusted work gets a sandbox. Every session gets a budget. Every
+run gets a journal you can replay for the person who asks what happened.
 
-Gibson is built and sold by [zeroroot.ai](https://www.zeroroot.ai/), our
-sibling company. We teach on it because we wrote it. You do not need it to
-take a course, and you do not need a course to run it.
+Our sibling company, [zeroroot.ai](https://www.zeroroot.ai/), builds and
+sells Gibson. We teach on it because we wrote it. You do not need it to take
+a course, and you do not need a course to run it.

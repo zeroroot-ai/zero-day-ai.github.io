@@ -21,5 +21,5 @@ did afterwards.
 
 ## Syllabus
 
-The full syllabus is published when the date is set. Join the list and you
-get both first.
+We publish the full syllabus when we set the date. Join the list and you get
+both first.

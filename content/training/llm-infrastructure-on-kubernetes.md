@@ -42,5 +42,5 @@ scheduler, and a serving layer into one cluster and kept it up.
 ## The lab
 
 Each student gets their own tenant on a live cluster with real GPUs. Nothing
-is simulated. Your work stays up for a week after the course so you can finish
+is a simulation. Your work stays up for a week after the course so you can finish
 what you started.

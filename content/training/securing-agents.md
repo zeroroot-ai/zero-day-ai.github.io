@@ -13,7 +13,7 @@ must refuse for that attack to fail.
 ## What you leave with
 
 - A working set of attacks against agents. Indirect injection, tool abuse,
-  memory poisoning, and exfiltration through the tools the agent was given.
+  memory poisoning, and exfiltration through the tools the agent holds.
 - A deployment of the same agent inside a boundary, and the proof that each
   attack now fails.
 - The difference between a control that inspects and a control that refuses,
@@ -21,5 +21,5 @@ must refuse for that attack to fail.
 
 ## Syllabus
 
-The full syllabus is published when the date is set. Join the list and you
-get both first.
+We publish the full syllabus when we set the date. Join the list and you get
+both first.

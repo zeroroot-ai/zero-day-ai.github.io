@@ -5,12 +5,12 @@
   price_low: 45000
   price_high: 75000
   length: Three weeks
-  team: One senior operator, with review by the founder.
+  team: One senior operator does the work. The founder reviews it.
   blurb: >
     We attack your agent deployment the way an adversary would, then we
     tell you what a control has to refuse, not merely detect.
   deliver:
-    - A written report. Findings ranked, each with the input that produced it and the control that stops it.
+    - A written report, with findings ranked. Each finding names the input that produced it and the control that stops it.
     - A live replay of every successful attack, in your environment, for your team.
     - A reference design for the boundary, mapped onto what you already run.
     - One public write-up on this site, with your name removed. You approve it first.
@@ -19,7 +19,7 @@
   price_low: 150000
   price_high: 400000
   length: Eight to twelve weeks
-  team: Two operators, with review by the founder.
+  team: Two operators do the work. The founder reviews it.
   blurb: >
     We stand up the runtime your agents execute inside. Identity, grants,
     sandboxed execution, budgets, and replay. Gibson is the reference

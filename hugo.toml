@@ -10,7 +10,7 @@ summaryLength     = 30
   tag = "tags"
 
 [params]
-  description = "Hands-on training for the engineer who has to see the whole picture. How AI systems break, why they broke, and how to ship one that holds."
+  description = "Hands-on training for the engineer who has to see the whole picture. You learn how AI systems break, why they broke, and how to ship one that holds."
   eyebrow     = "Offensive and defensive AI training"
   buttondown  = "https://buttondown.com/api/emails/embed-subscribe/zerodaylabs"
   ogimage     = "/og.png"

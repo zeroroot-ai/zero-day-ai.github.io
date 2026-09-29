@@ -9,26 +9,26 @@
   short: Kubernetes
   status: scheduled            # scheduled | planned
   when: December 2026
-  dates: "Two days, live online. Exact dates announced to the list first."
+  dates: "Two days, live online. The list hears the exact dates first."
   price: 3000
   seats: 30
   color: cyan
   blurb: >
-    GPU nodes, schedulers, model serving, and the boundary around the agents
-    that call the models. The course we already taught, now with Slurm,
-    the NVIDIA stack, and KServe.
+    You build GPU nodes, schedulers, model serving, and the boundary around
+    the agents that call the models. We taught this course before. This run
+    adds Slurm, the NVIDIA stack, and KServe.
   enroll_url: ""
 - slug: agents-in-production
   name: Agents in Production
   short: Agents
   status: planned
   when: Early 2027
-  dates: "Two days, live online. Date set after the December run."
+  dates: "Two days, live online. We set the date after the December run."
   price: 2500
   seats: 30
   color: acid
   blurb: >
-    How to run an agent fleet for real. Identity, grants, sandboxed
+    You learn how to run an agent fleet for real: identity, grants, sandboxed
     execution, budgets, and replay. The patterns come from Gibson.
   enroll_url: ""
 - slug: securing-agents
@@ -36,11 +36,12 @@
   short: Security
   status: planned
   when: 2027
-  dates: "Two days, live online. Date set after the December run."
+  dates: "Two days, live online. We set the date after the December run."
   price: 2500
   seats: 30
   color: mag
   blurb: >
-    Offense and defense of the runtime boundary. Break an agent deployment
-    in the morning. Stand up one that refuses the same attack by evening.
+    You learn the offense and the defense of the runtime boundary. You break
+    an agent deployment in the morning. You stand up one that refuses the
+    same attack by evening.
   enroll_url: ""
