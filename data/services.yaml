@@ -1,19 +1,22 @@
-# Two fixed offers. We do not sell hours. Prices are ranges in US dollars and
-# the low end is the number every post quotes.
+# Two fixed offers. Prices are ranges in US dollars and the low end is the
+# number every research piece quotes.
 - slug: assessment
-  name: Agent Security Assessment
+  name: Agent Production Readiness Assessment
   price_low: 45000
   price_high: 75000
-  length: Three weeks
+  length: ""
   team: One senior operator does the work. The founder reviews it.
   blurb: >
-    We attack your agent deployment the way an adversary would, then we
-    tell you what a control has to refuse, not merely detect.
+    Everything that stands between your agents and production, in one
+    engagement. We attack them the way the published attacks do. We also find every other
+    gap: identity, authorization, isolation, models, cost, and audit. You get
+    the list, ranked, and the plan that closes it.
   deliver:
-    - A written report, with findings ranked. Each finding names the input that produced it and the control that stops it.
+    - A readiness report. Every gap ranked, with the control or the change that closes it.
+    - The attack results. Each finding names the input that produced it and the control that stops it, mapped to the OWASP Agentic Top 10 and MITRE ATLAS.
     - A live replay of every successful attack, in your environment, for your team.
-    - A reference design for the boundary, mapped onto what you already run.
-    - One public write-up on this site, with your name removed. You approve it first.
+    - A reference architecture for your agents on your stack, whether that stack is Gibson, something you already built, or something you build next.
+    - A plan to production, with the order of work, and a fixed price for the build if you want us to do it.
 - slug: build
   name: Agent Platform Build
   price_low: 150000
@@ -21,11 +24,11 @@
   length: Eight to twelve weeks
   team: Two operators do the work. The founder reviews it.
   blurb: >
-    We stand up the runtime your agents execute inside. Identity, grants,
-    sandboxed execution, budgets, and replay. Gibson is the reference
-    architecture, and you own the result.
+    We stand up an agentic software factory on your cluster, in your cloud or
+    your datacenter. It links to your identity provider, your secrets, and
+    your models. Gibson is the reference architecture, and you own the result.
   deliver:
-    - A running platform in your account, with the agents you name on it.
-    - Every step of every agent run journaled and replayable.
-    - Your engineers trained on it. They keep it after we leave.
-    - One public write-up on this site, with your name removed. You approve it first.
+    - A running platform on your Kubernetes, with the first three agents you named in production.
+    - Sign-off from your security team, because they can read what each agent may do and replay what it did.
+    - Your engineers trained on it. They ship the fourth agent without us.
+    - A map from the OWASP Agentic Top 10 to the control that refuses each one, written for your platform.

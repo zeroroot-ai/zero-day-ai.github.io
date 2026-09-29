@@ -124,7 +124,7 @@ the course page renders the training list form in place of a buy button.
 | 2026-09-29 | Every research piece ends with the offer line: next course date and assessment price. Rendered from data, never typed. |
 | 2026-09-29 | Nav is Research, Training, Services, Products, About. |
 | 2026-09-29 | `/products/` is a landing for Gibson on this site. It names zeroroot.ai as the company that builds and sells it, and links out. Labs never sells the product. |
-| 2026-09-29 | The five-track ladder, the hex dump band, and the course strip under the hero are gone. One prose argument replaces the ladder. |
+| 2026-09-29 | The five-track ladder, the hex dump band, the course strip under the hero, and the typed injection demo are gone. One prose argument replaces the ladder. |
 | 2026-09-29 | The scrolling band on every page carries the next live course, not a film quote. It renders from `data/courses.yaml` and links to the course. |
 | 2026-09-29 | Copy is written to a person, the way Seth Godin writes. Short lines, one idea, the reader's situation first, no feature grids where a paragraph will do. |
 | 2026-09-29 | Circle replaces Buttondown for the list, the courses, and the community. Forms swap to Circle embeds when the owner turns on its Marketing Hub. Until then the Buttondown action is dead and known to be dead. |
