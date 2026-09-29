@@ -47,8 +47,11 @@ package, hours.
 
 **Research**:
 The public archive of every technical piece Labs publishes, at `/research/`.
-It is the front door and the marketing arm. Every piece ends with the offer
-line: the next course date and the assessment price. `/blog/` redirects here.
+It is the front door and the marketing arm. Every piece is about zeroroot:
+what Gibson does, why it is built that way, grounded in the ADRs and the code.
+A piece about an attack with no Gibson in it does not belong here (owner,
+2026-09-29). Every piece ends with the offer line: the next course date and
+the assessment price. `/blog/` redirects here.
 _Avoid_: blog, writing, posts, newsletter (the newsletter is the mail that
 points at a piece, never the piece itself).
 
