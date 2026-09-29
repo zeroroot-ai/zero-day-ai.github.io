@@ -1,9 +1,13 @@
-{{ $q := .Site.Params.quote }}
-{{ $plain := printf "%s %s, %s, %s." $q.text $q.who $q.work $q.year }}
-<div class="ticker" aria-label="{{ $plain }}">
+{{/* The band on every page. It carries the next live course, nothing else.
+     The course comes from data, so a new run is one edit. */}}
+{{ with index (where hugo.Data.courses "status" "scheduled") 0 }}
+{{ $c := . }}
+{{ $line := printf "Next live course: %s. %s. %s USD. %d seats. Recorded." .name .when (lang.FormatNumberCustom 0 .price) .seats }}
+<a class="ticker" href="{{ (printf "/training/%s/" .slug) | relURL }}" aria-label="{{ $line }}">
   <div class="run" aria-hidden="true">
     {{ range seq 2 }}
-      <q>{{ $q.text }}</q><b>{{ printf "%s &middot; %s &middot; %s" $q.who $q.work $q.year | safeHTML }}</b><i>&#9670;</i>
+      <b>Next live course</b><q>{{ $c.name }} &middot; {{ $c.when }} &middot; {{ lang.FormatNumberCustom 0 $c.price }} USD &middot; {{ $c.seats }} seats &middot; recorded</q><i>&#9670;</i>
     {{ end }}
   </div>
-</div>
+</a>
+{{ end }}

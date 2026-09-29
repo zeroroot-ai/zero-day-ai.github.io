@@ -10,17 +10,11 @@ summaryLength     = 30
   tag = "tags"
 
 [params]
-  description = "Hands-on training in how AI systems are attacked, and how to defend the ones you put in production."
+  description = "Hands-on training for the engineer who has to see the whole picture. You learn how AI systems break, why they broke, and how to ship one that holds."
   eyebrow     = "Offensive and defensive AI training"
   buttondown  = "https://buttondown.com/api/emails/embed-subscribe/zerodaylabs"
   ogimage     = "/og.png"
 
-  # The band that scrolls under the hero. One quote, not a slogan reel.
-  [params.quote]
-    text = "There’s a war out there, old friend. A world war. And it’s not about who’s got the most bullets. It’s about who controls the information."
-    who  = "Cosmo"
-    work = "Sneakers"
-    year = "1992"
 
 [markup]
   [markup.goldmark.renderer]
@@ -34,14 +28,22 @@ summaryLength     = 30
 
 [menus]
   [[menus.main]]
-    name   = "Tracks"
-    url    = "/#tracks"
+    name   = "Research"
+    url    = "/research/"
     weight = 1
   [[menus.main]]
-    name   = "Blog"
-    url    = "/blog/"
+    name   = "Training"
+    url    = "/training/"
     weight = 2
   [[menus.main]]
-    name   = "Consulting"
-    url    = "/#get-in"
+    name   = "Services"
+    url    = "/services/"
     weight = 3
+  [[menus.main]]
+    name   = "Products"
+    url    = "/products/"
+    weight = 4
+  [[menus.main]]
+    name   = "About"
+    url    = "/about/"
+    weight = 5

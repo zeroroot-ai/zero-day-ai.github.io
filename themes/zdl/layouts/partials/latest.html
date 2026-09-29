@@ -1,0 +1,22 @@
+{{/* The three newest research pieces. The home page is the archive's front
+     door, so the newest work sits on it. */}}
+{{ $posts := where .Site.RegularPages "Section" "research" }}
+<section class="latest scan" id="research">
+  <div class="wrap">
+    <div class="sechead-row">
+      <h2>{{ .Params.latest_heading }}</h2>
+      <a class="more" href="{{ "/research/" | relURL }}">All research &rarr;</a>
+    </div>
+    <ul class="postlist">
+      {{ range first 3 $posts.ByPublishDate.Reverse }}
+        <li class="postlist-item">
+          <a class="postlist-link" href="{{ .RelPermalink }}">
+            <time class="pixlabel" datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "2006-01-02" }}</time>
+            <h2>{{ .Title }}</h2>
+            {{ with .Summary }}<p>{{ . | plainify }}</p>{{ end }}
+          </a>
+        </li>
+      {{ end }}
+    </ul>
+  </div>
+</section>

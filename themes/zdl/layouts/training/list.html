@@ -1,0 +1,21 @@
+{{ define "main" }}
+  <section class="scan section">
+    <div class="wrap">
+      <header class="sechead">
+        <h1>{{ .Title }}</h1>
+        {{ with .Params.intro }}<p class="sechead-sub">{{ . }}</p>{{ end }}
+      </header>
+      {{ partial "courses.html" . }}
+      <div class="team">
+        <h2>{{ .Params.team_heading }}</h2>
+        <p>{{ .Params.team_blurb }}</p>
+      </div>
+      <div class="post-subscribe">
+        {{ partial "subscribe.html" (dict
+            "ctx" . "tag" "training" "action" "Join"
+            "heading" "Hear the dates first"
+            "blurb" "We announce every run to the list before it goes public. Thirty seats go fast.") }}
+      </div>
+    </div>
+  </section>
+{{ end }}

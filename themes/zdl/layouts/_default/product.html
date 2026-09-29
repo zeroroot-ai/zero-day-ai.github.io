@@ -1,0 +1,32 @@
+{{ define "main" }}
+  <article class="scan section product">
+    <div class="wrap">
+      <header class="posthead">
+        <span class="pixlabel st">{{ .Params.eyebrow }}</span>
+        <h1>{{ .Title }}</h1>
+        <p class="lede">{{ .Params.lede }}</p>
+        <div class="cta">
+          <a class="btn" href="{{ .Params.cta.url }}" rel="noopener">{{ .Params.cta.label }}</a>
+          <a class="btn ghost" href="{{ .Params.cta_ghost.url }}" rel="noopener">{{ .Params.cta_ghost.label }}</a>
+        </div>
+      </header>
+
+      <div class="prose">{{ .Content }}</div>
+
+      <div class="parts">
+        {{ range .Params.parts }}
+          <a class="part" href="{{ .url }}" rel="noopener">
+            <b>{{ .name }}</b>
+            <span>{{ .blurb }}</span>
+            <u class="pixlabel">{{ .license }}</u>
+          </a>
+        {{ end }}
+      </div>
+
+      <div class="post-subscribe">
+        <p class="lede" style="margin:0 0 18px">{{ .Params.outro }}</p>
+        <a class="btn" href="{{ .Params.cta.url }}" rel="noopener">{{ .Params.cta.label }}</a>
+      </div>
+    </div>
+  </article>
+{{ end }}

@@ -1,0 +1,13 @@
+{{ define "main" }}
+  <article class="scan section">
+    <div class="wrap">
+      <header class="sechead">
+        <h1>{{ .Title }}</h1>
+        {{ with .Description }}<p class="sechead-sub">{{ . }}</p>{{ end }}
+      </header>
+      <div class="prose">{{ .Content }}</div>
+    </div>
+  </article>
+  {{/* The same two forms as the home page. A person reads both. */}}
+  {{ partial "get-in.html" . }}
+{{ end }}

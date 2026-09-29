@@ -1,0 +1,47 @@
+# The live courses. A course carries a date, a price and a syllabus. The first
+# row with status "scheduled" is the one every post, the band on every page,
+# and the home page point at, so keep the list in run order.
+#
+# enroll_url stays empty until checkout exists. While it is empty the course
+# page renders the training list form in place of a buy button.
+- slug: llm-infrastructure-on-kubernetes
+  name: LLM Infrastructure on Kubernetes
+  short: Kubernetes
+  status: scheduled            # scheduled | planned
+  when: December 2026
+  dates: "Two days, live online. The list hears the exact dates first."
+  price: 3000
+  seats: 30
+  color: cyan
+  blurb: >
+    You build GPU nodes, schedulers, model serving, and the boundary around
+    the agents that call the models. We taught this course before. This run
+    adds Slurm, the NVIDIA stack, and KServe.
+  enroll_url: ""
+- slug: agents-in-production
+  name: Agents in Production
+  short: Agents
+  status: planned
+  when: Early 2027
+  dates: "Two days, live online. We set the date after the December run."
+  price: 2500
+  seats: 30
+  color: acid
+  blurb: >
+    You learn how to run an agent fleet for real: identity, grants, sandboxed
+    execution, budgets, and replay. The patterns come from Gibson.
+  enroll_url: ""
+- slug: attacking-and-defending-ai-agents
+  name: Attacking and Defending AI Agents
+  short: Agents, offense and defense
+  status: planned
+  when: 2027
+  dates: "Two days, live online. We set the date after the December run."
+  price: 2500
+  seats: 30
+  color: mag
+  blurb: >
+    Day one you break agents the way the published attacks do. Day two you
+    rebuild one that refuses every one of them, and you measure it on
+    AgentDojo before and after.
+  enroll_url: ""

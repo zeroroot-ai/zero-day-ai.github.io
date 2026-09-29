@@ -1,0 +1,21 @@
+{{/* The line every piece ends with: the next course date and the assessment
+     offer. Both come from data, so a new run or a new price is one edit.
+     Call with the page context. */}}
+{{ $next := index (where hugo.Data.courses "status" "scheduled") 0 }}
+{{ $asmt := index (where hugo.Data.services "slug" "assessment") 0 }}
+<aside class="offer" aria-label="Next course and services">
+  {{ with $next }}
+    <a class="offer-row" href="{{ (printf "/training/%s/" .slug) | relURL }}">
+      <span class="pixlabel">Next live course</span>
+      <b>{{ .name }}</b>
+      <span class="meta">{{ .when }} &middot; {{ lang.FormatNumberCustom 0 .price }} USD &middot; {{ .seats }} seats</span>
+    </a>
+  {{ end }}
+  {{ with $asmt }}
+    <a class="offer-row" href="{{ "/services/" | relURL }}">
+      <span class="pixlabel">Running agents in production?</span>
+      <b>{{ .name }}</b>
+      <span class="meta">{{ .length }} &middot; from {{ lang.FormatNumberCustom 0 .price_low }} USD</span>
+    </a>
+  {{ end }}
+</aside>

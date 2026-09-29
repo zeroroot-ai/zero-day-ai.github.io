@@ -3,7 +3,7 @@
   <div class="wrap">
     <div>
       <p class="eyebrow pixlabel">{{ .Site.Params.eyebrow }}</p>
-      <h1 id="h1">{{ $h.lead }}<br><span class="u">{{ $h.emphasis }}</span></h1>
+      <h1 id="h1">{{ $h.lead }}<br>{{ with $h.mid }}{{ . }}<br>{{ end }}<span class="u">{{ $h.emphasis }}</span></h1>
       <p class="lede">{{ $h.sub }}</p>
       <div class="cta">
         <a class="btn" href="{{ $h.cta_primary.url }}">{{ $h.cta_primary.label }}</a>
