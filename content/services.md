@@ -31,7 +31,17 @@ everything they build.
 The rest of this page says what each offer delivers, where the platform runs,
 and how it fits the systems you have.
 
-## The Agent Platform Build, in detail
+## The Agentic Software Factory, in detail
+
+### Why this is not a build from scratch
+
+A platform built from scratch takes a year, and the consultant who built it
+is the only one who can maintain it. We bring Gibson instead. It is a runtime
+that already runs, with identity, grants, sandboxes, budgets, and replay
+built in, and with every design decision written down in the repository.
+The engagement is the work of installing it on your cluster, linking it to
+your systems, and putting your agents on it. That is weeks, not quarters,
+and at the end your engineers hold all of it.
 
 ### Where it runs
 

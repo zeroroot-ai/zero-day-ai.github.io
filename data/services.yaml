@@ -18,17 +18,19 @@
     - A reference architecture for your agents on your stack, whether that stack is Gibson, something you already built, or something you build next.
     - A plan to production, with the order of work, and a fixed price for the build if you want us to do it.
 - slug: build
-  name: Agent Platform Build
+  name: Agentic Software Factory
   price_low: 150000
   price_high: 400000
   length: Eight to twelve weeks
   team: Two operators do the work. The founder reviews it.
   blurb: >
-    We stand up an agentic software factory on your cluster, in your cloud or
-    your datacenter. It links to your identity provider, your secrets, and
-    your models. Gibson is the reference architecture, and you own the result.
+    Every consultant will build you an agent platform from scratch. We do
+    not. We bring one that already runs. Gibson ships identity, grants,
+    sandboxes, budgets, and replay, and it passes our own tests every day.
+    The engagement installs it on your cluster, links it to your systems, and
+    puts your first agents on it. You own the result.
   deliver:
     - A running platform on your Kubernetes, with the first three agents you named in production.
     - Sign-off from your security team, because they can read what each agent may do and replay what it did.
     - Your engineers trained on it. They ship the fourth agent without us.
-    - A map from the OWASP Agentic Top 10 to the control that refuses each one, written for your platform.
+    - Nothing bespoke that only we can maintain. The runtime is source-available, the SDK is Apache 2.0, and the repository holds every design decision.
