@@ -11,9 +11,14 @@ to know it is true.
 
 ## The founder
 
-[DRAFT. Owner writes this. Two or three sentences: the name as it should
-appear in public, what you have run, and the one credential a practitioner
-cares about.]
+Zero Day AI Labs is run by Anthony Fresta. Fifteen years of infrastructure
+where downtime, latency, and security were not options. Sub-microsecond
+market data at the exchange colos for high-frequency trading. Air-gapped
+Kubernetes platforms for the Department of Defense. AI-driven command and
+control prototypes with a self-hosted model on the event floor and no data
+leaving the room. He has run the security program, the incident response,
+and the teams. He built Gibson because every one of those jobs ended at the
+same missing line: the one the agent is not allowed to cross.
 
 ## What we built
 

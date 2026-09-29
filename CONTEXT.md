@@ -77,12 +77,18 @@ _Avoid_: Matrix green. That film is 1999 and a different visual world.
 
 ## Open, not settled
 
+**The theme** (owner, 2026-09-29): AI lets one person do the work of a whole
+row of specialties, so a career in one silo is over. The engineer we teach
+has to see the whole picture: break the thing, know why it broke, secure it,
+ship it. Every page and every research piece serves that theme.
+
 **Exact dates for the December run**: the month is set, the days are not.
 Copy says "December 2026" and "announced to the list first" until the owner
 sets them in `data/courses.yaml`.
 
-**Founder bio and talks**: `content/about.md` carries two TODO comments. The
-owner writes both. Nothing on the site may invent a credential.
+**Founder bio**: written 2026-09-29 from the owner's resume, kept general on
+purpose (DoD, HFT, AI C2 prototyping). No clearance, no employer names, no
+contact details. Nothing on the site may invent a credential.
 
 **Checkout**: no course has an `enroll_url` yet. Until Circle checkout exists
 the course page renders the training list form in place of a buy button.
@@ -107,7 +113,7 @@ the course page renders the training list form in place of a buy button.
 | 2026-09-14 | This repo stands alone. No org guards, no brand-guard, no link-check. |
 | 2026-09-14 | Hugo builds it, a Pages workflow deploys it. Pages build_type moves legacy to workflow. |
 | 2026-09-14 | The look is settled. Black ground, neon green, the Hack the Planet smiley. |
-| 2026-09-14 | Hero: "Break it. Ship it." Labs teaches offense and defense, not offense alone. |
+| 2026-09-14 | ~~Hero: "Break it. Ship it."~~ **Amended 2026-09-29.** Hero is "Break it. Secure it. Ship it." Three lines, the last one highlighted. |
 | 2026-09-14 | Five tracks, ordered as a ladder down the stack. The order is the claim. |
 | 2026-09-29 | Reversed "copy must not name a course or a date". The site now sells three named courses with a price and a month. The December run is LLM Infrastructure on Kubernetes at 3,000 USD, 30 seats. |
 | 2026-09-29 | The first research piece (the wiki-page injection, 2026-09-14) is deleted. The home page demo still shows the same transcript. |
