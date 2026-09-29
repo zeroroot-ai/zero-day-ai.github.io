@@ -9,7 +9,7 @@
       <div class="offers">
         {{ range hugo.Data.services }}
           <div class="offer-card" id="{{ .slug }}">
-            <span class="pixlabel">{{ .length }} &middot; {{ lang.FormatNumberCustom 0 .price_low }} to {{ lang.FormatNumberCustom 0 .price_high }} USD</span>
+            <span class="pixlabel">{{ with .length }}{{ . }} &middot; {{ end }}{{ lang.FormatNumberCustom 0 .price_low }} to {{ lang.FormatNumberCustom 0 .price_high }} USD</span>
             <h2>{{ .name }}</h2>
             <p class="blurb">{{ .blurb }}</p>
             <p class="team">{{ .team }}</p>
@@ -19,11 +19,7 @@
         {{ end }}
       </div>
 
-      <div class="prose" style="margin-top:44px">
-        <h2>{{ .Params.pipeline_heading }}</h2>
-        <p>{{ .Params.pipeline }}</p>
-        {{ .Content }}
-      </div>
+      <div class="prose" style="margin-top:52px">{{ .Content }}</div>
 
       <div class="post-subscribe">
         {{ partial "subscribe.html" (dict

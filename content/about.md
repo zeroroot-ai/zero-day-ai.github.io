@@ -16,8 +16,8 @@ fifteen years. Both are places where a mistake is expensive.
 
 For the DoD I built air-gapped Kubernetes platforms. Most recently I built
 AI for command and control, with the model on a box in the room and no data
-leaving it. For HFT I built the trading infrastructure at the exchange
-colos, where a microsecond was money.
+leaving it. For HFT I built the trading infrastructure inside the trading
+exchanges, where a microsecond was money.
 
 Along the way I ran the security program, the on-call rotation, and the
 teams. I have been the person who broke it, the person who got paged, and

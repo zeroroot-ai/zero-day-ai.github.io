@@ -15,7 +15,7 @@
     <a class="offer-row" href="{{ "/services/" | relURL }}">
       <span class="pixlabel">Running agents in production?</span>
       <b>{{ .name }}</b>
-      <span class="meta">{{ .length }} &middot; from {{ lang.FormatNumberCustom 0 .price_low }} USD</span>
+      <span class="meta">{{ with .length }}{{ . }} &middot; {{ end }}from {{ lang.FormatNumberCustom 0 .price_low }} USD</span>
     </a>
   {{ end }}
 </aside>
