@@ -6,6 +6,10 @@
         {{ with .Params.intro }}<p class="sechead-sub">{{ . }}</p>{{ end }}
       </header>
       {{ partial "courses.html" . }}
+      <div class="prose" style="margin-top:44px">
+        <h2>{{ .Params.week_heading }}</h2>
+        {{ .Params.week_body | markdownify }}
+      </div>
       <div class="team">
         <h2>{{ .Params.team_heading }}</h2>
         <p>{{ .Params.team_blurb }}</p>
