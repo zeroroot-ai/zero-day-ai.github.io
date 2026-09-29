@@ -31,9 +31,9 @@
     You learn how to run an agent fleet for real: identity, grants, sandboxed
     execution, budgets, and replay. The patterns come from Gibson.
   enroll_url: ""
-- slug: securing-agents
-  name: Securing Agents
-  short: Security
+- slug: attacking-and-defending-ai-agents
+  name: Attacking and Defending AI Agents
+  short: Agents, offense and defense
   status: planned
   when: 2027
   dates: "Two days, live online. We set the date after the December run."

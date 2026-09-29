@@ -1,6 +1,6 @@
 ---
-title: Securing Agents
-course: securing-agents
+title: Attacking and Defending AI Agents
+course: attacking-and-defending-ai-agents
 description: Two days, live. Day one you break agents the way the published attacks do. Day two you rebuild one that refuses every attack from day one, and you measure it.
 ---
 
