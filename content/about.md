@@ -11,12 +11,13 @@ to know it is true.
 
 ## Who teaches this
 
-I spent fifteen years running infrastructure where being wrong was
-expensive. Trading systems at the exchange colos, where a microsecond was
-money. Air-gapped Kubernetes platforms for the Department of Defense, where a
-bad config was a report to someone with a rank. Most recently, AI for
-military command and control, with the model running on a box in the room
-and nothing leaving it.
+Department of Defense and high-frequency trading. That is where I spent
+fifteen years, and both are places where being wrong is expensive.
+
+For the DoD I built air-gapped Kubernetes platforms and, most recently, AI
+for command and control, with the model running on a box in the room and
+nothing leaving it. For HFT I built the trading infrastructure at the
+exchange colos, where a microsecond was money.
 
 Along the way I ran the security program, the on-call rotation, and the
 teams. I have been the person who broke it, the person who got paged for it,
