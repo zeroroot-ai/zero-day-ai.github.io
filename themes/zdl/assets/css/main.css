@@ -251,18 +251,6 @@ body.invert { --acid:#ff2e88; }
 .demo .kicker { margin:20px 0 0; font-size:17px; max-width:56ch; }
 .demo .kicker strong { color:var(--acid); font-weight:700; }
 
-/* -------------------------------------------------------------- evidence -- */
-
-.evidence { background:var(--acid); color:var(--ink); }
-.evidence .wrap { padding-block:56px 62px; }
-.evidence h2 { font-weight:700; font-size:clamp(28px,5vw,44px); letter-spacing:-.04em; margin:0; max-width:18ch; }
-.evidence .sub { margin:16px 0 34px; max-width:54ch; font-size:16.5px; }
-.repos { display:grid; grid-template-columns:repeat(auto-fit,minmax(216px,1fr)); gap:14px; }
-.repo { background:var(--ink); color:var(--fg); padding:18px 16px 20px; }
-.repo b { font-family:var(--mono); font-weight:700; font-size:15px; color:var(--acid); display:block; }
-.repo span { display:block; color:var(--fg-2); font-size:13.5px; line-height:1.5; margin-top:9px; }
-.repo u { display:block; text-decoration:none; margin-top:14px; color:var(--fg-3); }
-
 /* ---------------------------------------------------- home-only motion --- */
 
 @media (prefers-reduced-motion: no-preference) {
@@ -358,6 +346,18 @@ body.invert { --acid:#ff2e88; }
 
 /* ---------------------------------------------------------------- latest -- */
 
-.latest { padding-block:60px 24px; }
+.latest { padding-block:8px 24px; }
 .latest .more { color:var(--fg-2); text-decoration:none; font-size:14px; }
 .latest .more:hover { color:var(--acid); }
+
+/* --------------------------------------------------------------- product -- */
+
+.product .st { color:var(--acid); display:block; }
+.product .posthead .lede { margin-top:18px; }
+.product .posthead .cta { margin-top:26px; }
+.parts { display:grid; grid-template-columns:repeat(auto-fit,minmax(216px,1fr)); gap:14px; margin-top:44px; }
+.part { display:block; text-decoration:none; color:inherit; background:var(--panel); border:1px solid var(--rule); padding:18px 16px 20px; }
+.part:hover, .part:focus-visible { border-color:var(--acid); }
+.part b { font-family:var(--mono); font-weight:700; font-size:15px; color:var(--acid); display:block; }
+.part span { display:block; color:var(--fg-2); font-size:13.5px; line-height:1.5; margin-top:9px; }
+.part u { display:block; text-decoration:none; margin-top:14px; color:var(--fg-3); }

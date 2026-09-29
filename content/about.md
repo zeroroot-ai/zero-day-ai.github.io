@@ -25,9 +25,9 @@ buy a seat.
 - **cve-triage.** An agent that ranks findings and states its reason.
 
 All of it lives under the [zeroroot-ai](https://github.com/zeroroot-ai)
-organization on GitHub. Gibson is the product of our sibling company,
-[zeroroot.ai](https://www.zeroroot.ai). It is the lab in every course and the
-reference design in every engagement.
+organization on GitHub. Gibson is the [product](/products/) of our sibling
+company, [zeroroot.ai](https://www.zeroroot.ai). It is the lab in every course
+and the reference design in every engagement.
 
 ## Contact
 

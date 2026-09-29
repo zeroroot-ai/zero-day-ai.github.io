@@ -95,7 +95,7 @@ the course page renders the training list form in place of a buy button.
 | 2026-09-14 | Full site shape at launch. Five track cards stand in for a catalog. |
 | 2026-09-14 | A card names a track, never a course. A track never goes stale. |
 | 2026-09-14 | Copy talks to a practitioner. One page carries the letter and invoice. |
-| 2026-09-14 | First proof block is the public code, not a logo wall. |
+| 2026-09-14 | ~~First proof block is the public code, not a logo wall.~~ **Reversed 2026-09-29.** The "No logo wall" block is cut. Proof is the research and the product page. |
 | 2026-09-14 | ~~Astro, matching www.~~ **Reversed.** Hugo, self-contained in this repo. |
 | 2026-09-14 | Labs gets its own visual language. It does not consume @zeroroot/brand. |
 | 2026-09-14 | The site is static. Two email forms are the only dynamic parts. |
@@ -111,7 +111,8 @@ the course page renders the training list form in place of a buy button.
 | 2026-09-29 | Two fixed consulting offers with public price ranges. No hourly rate anywhere on the site. |
 | 2026-09-29 | `/blog/` becomes `/research/`. Research is the home page's front door and the archive stays public forever. |
 | 2026-09-29 | Every research piece ends with the offer line: next course date and assessment price. Rendered from data, never typed. |
-| 2026-09-29 | Nav is Research, Training, Services, About. |
+| 2026-09-29 | Nav is Research, Training, Services, Products, About. |
+| 2026-09-29 | `/products/` is a landing for Gibson on this site. It names zeroroot.ai as the company that builds and sells it, and links out. Labs never sells the product. |
 | 2026-09-29 | The five-track ladder, the hex dump band, and the course strip under the hero are gone. One prose argument replaces the ladder. |
 | 2026-09-29 | The scrolling band on every page carries the next live course, not a film quote. It renders from `data/courses.yaml` and links to the course. |
 | 2026-09-29 | Copy is written to a person, the way Seth Godin writes. Short lines, one idea, the reader's situation first, no feature grids where a paragraph will do. |
