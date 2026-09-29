@@ -13,7 +13,7 @@ why_heading: "The silo is closing."
 why_body: |
   For twenty years the deal was simple. You picked a lane, you went deep in
   it, and you got paid for the depth. The network person did not touch the
-  model, and the security person did not ship the code.
+  database, and the security person did not ship the code.
 
   AI ended that deal, and not by replacing you. It let one person do the work
   of a whole row of lanes, and the person who can see across all of them is
