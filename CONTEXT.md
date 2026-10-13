@@ -101,14 +101,6 @@ the home page say "Coming soon".
 _Avoid_: blog, writing, posts, newsletter (the newsletter is the mail that
 points at a piece, never the piece itself).
 
-| # | Track | Covers |
-|---|---|---|
-| 01 | Prompt | injection, context, tool calls |
-| 02 | Agent | agents that hack, agents that break |
-| 03 | Weights | abliteration, poisoning, extraction |
-| 04 | Metal | OT, IoT, firmware, fault injection |
-| 05 | Watch | red and blue, detect, contain, replay |
-
 **Emage**:
 The partner, at `emagetech.io`, that does the housekeeping of the courses and
 sells seats beside this site at the same price. Labs ran one pilot with Emage
