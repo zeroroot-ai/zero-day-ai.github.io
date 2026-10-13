@@ -1,7 +1,7 @@
 ---
 title: Attacking and Defending AI Agents
 course: attacking-and-defending-ai-agents
-description: Twelve weeks, live. The first half breaks agents the way the published attacks do. The second half rebuilds one that refuses every attack from the first half, and measures it.
+description: Ten weeks, live. The first half breaks agents the way the published attacks do. The second half rebuilds one that refuses every attack from the first half, and measures it.
 ---
 
 ## Who it is for
@@ -33,7 +33,7 @@ from the design-pattern papers and the systems that hold up on AgentDojo. We
 name the source for every attack and every control, so you can check our
 work.
 
-## The twelve weeks
+## The weeks
 
 This outline is the shape of the course. We revise the attacks between
 cohorts, because the attacks change.

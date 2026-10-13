@@ -1,15 +1,13 @@
-# The live courses. A course carries a date, a price and a syllabus. The first
-# row with status "scheduled" is the one every post, the band on every page,
-# and the home page point at, so keep the list in run order.
+# The courses. A course is one curriculum with a price and thirty seats per
+# cohort. Every course runs in every cohort, so a course carries no date. The
+# dates live in data/cohorts.yaml and the format line lives in hugo.toml.
 #
-# enroll_url stays empty until checkout exists. While it is empty the course
-# page renders the training list form in place of a buy button.
+# enroll_url stays empty until the owner says the cohort is on sale. While it
+# is empty the course page renders the training list form in place of a buy
+# button.
 - slug: llm-infrastructure-on-kubernetes
   name: LLM Infrastructure on Kubernetes
   short: Kubernetes
-  status: scheduled            # scheduled | planned
-  when: December 2026
-  dates: "Twelve weeks, live online. Two one-hour sessions a week and one lab a week. The list hears the start date first."
   price: 3000
   seats: 30
   color: cyan
@@ -21,9 +19,6 @@
 - slug: agents-in-production
   name: Agents in Production
   short: Agents
-  status: planned
-  when: Early 2027
-  dates: "Twelve weeks, live online. Two one-hour sessions a week and one lab a week. We set the start date after the December run."
   price: 2500
   seats: 30
   color: acid
@@ -34,9 +29,6 @@
 - slug: attacking-and-defending-ai-agents
   name: Attacking and Defending AI Agents
   short: Agents, offense and defense
-  status: planned
-  when: 2027
-  dates: "Twelve weeks, live online. Two one-hour sessions a week and one lab a week. We set the start date after the December run."
   price: 2500
   seats: 30
   color: mag

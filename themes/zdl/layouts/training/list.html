@@ -13,6 +13,7 @@
       <div class="team">
         <h2>{{ .Params.team_heading }}</h2>
         <p>{{ .Params.team_blurb }}</p>
+        {{ with .Params.partner_line }}<p>{{ . | markdownify }}</p>{{ end }}
       </div>
       <div class="post-subscribe">
         {{ partial "subscribe.html" (dict
