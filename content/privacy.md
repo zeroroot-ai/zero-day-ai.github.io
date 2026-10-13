@@ -17,10 +17,10 @@ mail carries an unsubscribe link, and that link removes you.
 
 ## Analytics
 
-The site asks before it sets a cookie. If you accept, Google Analytics
-records the pages you read and the page you left from. If you decline, no
-analytics cookie is set and nothing is recorded. The choice is remembered in
-your browser and you can change it there.
+Google Analytics counts the pages you read and the page you left from. It
+sets a cookie to tell one visit from the next. We see counts, not names. To
+opt out, block the cookie in your browser or install Google's opt-out
+extension, and the count skips you.
 
 ## Payment
 

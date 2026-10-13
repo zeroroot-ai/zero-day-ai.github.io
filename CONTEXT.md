@@ -207,7 +207,7 @@ automation, with reply-to `info@zero-day.ai`. Approved by the owner
 | 2026-09-29 | Labs run home-grown at `labs.zero-day.ai`, not on a lab vendor and not under zeroroot.ai. Out of scope for the site. |
 | 2026-10-13 | The site shows one contact detail: the shared mailbox `info@zero-day.ai`. No booking link, no phone. The consulting form stays, and the owner replies by hand. |
 | 2026-10-13 | Google Analytics is added to every page. Interest is measured as page views per course page, list signups by tag, and mail to the mailbox. |
-| 2026-10-13 | Google Analytics loads in consent mode behind a banner. The banner asks before any cookie is set. |
+| 2026-10-13 | ~~Google Analytics loads in consent mode behind a banner. The banner asks before any cookie is set.~~ **Reversed 2026-10-13, later the same day.** The plain Google tag on every page, no banner, no consent gate. The privacy page says so and names the browser opt-out. |
 | 2026-10-13 | Two legal pages, linked from the footer: a privacy page and a terms page. The privacy page names the list tool, Google Analytics, and the mailbox. The terms page carries the course refund rule and the legal entity name. Both come from the owner, never invented. |
 | 2026-10-13 | The legal entity is Hack The Planet LLC, DBA zeroroot.ai and zero-day.ai. The refund rule is a full refund until the first live session starts, none after. |
 | 2026-10-13 | The terms page names Hack The Planet LLC only, with no DBA. |
@@ -232,6 +232,6 @@ automation, with reply-to `info@zero-day.ai`. Approved by the owner
 | 2026-10-13 | Three addresses exist. info@ is the site contact and the beehiiv sender. class@ is the buyer and cohort address and goes on the Stripe receipt. help@ is unused for now. |
 | 2026-10-13 | The winter 2027 cohort starts 2027-01-11. The other three cohorts keep a season and no day. |
 | 2026-10-13 | ~~beehiiv is on the Scale plan with a custom sending domain on zero-day.ai. The owner pastes the three generated CNAMEs into DNS at Namecheap.~~ **Reversed the same day.** The publication is `zero-day-ai.beehiiv.com` on the default sending address. DNS at Namecheap gets only the DMARC row for Google Workspace mail. |
-| 2026-10-13 | Google Analytics property `G-RY564021YS` is live on every page in consent mode behind the banner. |
+| 2026-10-13 | Google Analytics property `G-RY564021YS` is live on every page, the plain tag, no banner. |
 | 2026-10-13 | The community is one Discord server with one private channel per cohort. The sessions run on Google Meet. Recordings go to Drive and the link to the cohort channel. |
 | 2026-10-13 | The card statement descriptor is ZERO DAY AI LABS. The support address on receipts is class@zero-day.ai. |
