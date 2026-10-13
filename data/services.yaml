@@ -4,11 +4,11 @@
   name: Agent Production Readiness Assessment
   price_low: 45000
   price_high: 75000
-  length: ""
+  length: Scoped on the first call
   team: One senior operator does the work. The founder reviews it.
   blurb: >
     Everything that stands between your agents and production, in one
-    engagement. We attack them the way the published attacks do. We also find every other
+    assessment. We attack them the way the published attacks do. We also find every other
     gap: identity, authorization, isolation, models, cost, and audit. You get
     the list, ranked, and the plan that closes it.
   deliver:
@@ -27,7 +27,7 @@
     Every consultant will build you an agent platform from scratch. We do
     not. We bring one that already runs. Gibson ships identity, grants,
     sandboxes, budgets, and replay, and it passes our own tests every day.
-    The engagement installs it on your cluster, links it to your systems, and
+    The build installs it on your cluster, links it to your systems, and
     puts your first agents on it. You own the result.
   deliver:
     - A running platform on your Kubernetes, with the first three agents you named in production.
