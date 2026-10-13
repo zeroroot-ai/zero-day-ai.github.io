@@ -22,15 +22,18 @@ A fresh clone builds.
 content/research/ markdown. a research piece is a file here.
 content/training/ one file per course. The facts come from data/courses.yaml.
 content/services.md, content/about.md
-data/courses.yaml courses: name, month, price, seats, status, enroll_url.
+data/cohorts.yaml cohorts: name, season, start, end, status. The first
+                  scheduled row is the one every page points at.
+data/courses.yaml courses: name, price, seats, enroll_url. No dates.
 data/services.yaml the two fixed offers.
 themes/zdl/       the theme. layouts, partials, styles, the mark.
 static/           files copied as they are, including CNAME.
 hugo.toml         site config.
 ```
 
-To announce a run, edit one row in `data/courses.yaml`. The home strip, the
-course page, and the offer line under every piece update together.
+To announce a cohort, edit one row in `data/cohorts.yaml`. The band on every
+page, the course cards, the course pages, and the offer line under every
+piece update together.
 
 ## Publish
 

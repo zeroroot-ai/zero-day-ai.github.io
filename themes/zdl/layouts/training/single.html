@@ -1,13 +1,15 @@
 {{ define "main" }}
   {{ $c := index (where hugo.Data.courses "slug" .Params.course) 0 }}
+  {{ $n := partial "cohort.html" . }}
   <article class="scan section course-page" style="--k:var(--{{ $c.color }})">
     <div class="wrap">
       <header class="posthead">
-        <span class="pixlabel st">{{ if eq $c.status "scheduled" }}Next run &middot; {{ $c.when }}{{ else }}Planned &middot; {{ $c.when }}{{ end }}</span>
+        <span class="pixlabel st">{{ with $n.row }}Next cohort &middot; {{ .name }}{{ end }}</span>
         <h1>{{ .Title }}</h1>
         <p class="lede">{{ $c.blurb }}</p>
         <dl class="facts">
-          <div><dt>Format</dt><dd>{{ $c.dates }}</dd></div>
+          <div><dt>Format</dt><dd>{{ .Site.Params.course_format }}</dd></div>
+          <div><dt>Dates</dt><dd>{{ with $n.row }}{{ if .start }}{{ (time .start).Format "Monday 2 January 2006" }} to {{ (time .end).Format "2 January 2006" }}.{{ else }}{{ .when }}. The list hears the start date first.{{ end }}{{ end }} Every course runs in every cohort.</dd></div>
           <div><dt>Price</dt><dd>{{ lang.FormatNumberCustom 0 $c.price }} USD per seat. Your seat includes the recordings of every session.</dd></div>
           <div><dt>Seats</dt><dd>{{ $c.seats }}. Team seats available.</dd></div>
         </dl>

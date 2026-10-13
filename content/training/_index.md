@@ -1,10 +1,11 @@
 ---
 title: Training
-description: Each course runs live for twelve weeks, with thirty seats, and we record every session. You leave with a thing that runs, not a certificate.
+description: Each course runs live for ten weeks, with thirty seats, and we record every session. You leave with a thing that runs, not a certificate.
 intro: >
   The people who wrote the code teach every course live, online. Each course
-  has thirty seats and runs twelve weeks. Your seat includes the recordings.
-  The lab is a real cluster, and every student gets their own tenant on it.
+  has thirty seats and runs ten weeks. All three courses run in every cohort,
+  and there are four cohorts a year. Your seat includes the recordings. The
+  lab is a real cluster, and every student gets their own tenant on it.
 week_heading: How a week runs
 week_body: |
   Each week has two live sessions of one hour and one lab. The first session
