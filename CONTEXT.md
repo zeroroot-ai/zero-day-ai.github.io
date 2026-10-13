@@ -234,4 +234,4 @@ automation, with reply-to `info@zero-day.ai`. Approved by the owner
 | 2026-10-13 | ~~beehiiv is on the Scale plan with a custom sending domain on zero-day.ai. The owner pastes the three generated CNAMEs into DNS at Namecheap.~~ **Reversed the same day.** The publication is `zero-day-ai.beehiiv.com` on the default sending address. DNS at Namecheap gets only the DMARC row for Google Workspace mail. |
 | 2026-10-13 | Google Analytics property `G-RY564021YS` is live on every page, the plain tag, no banner. |
 | 2026-10-13 | The community is one Discord server with one private channel per cohort. The sessions run on Google Meet. Recordings go to Drive and the link to the cohort channel. |
-| 2026-10-13 | The card statement descriptor is ZERO DAY AI LABS. The support address on receipts is class@zero-day.ai. |
+| 2026-10-13 | ~~The card statement descriptor is ZERO DAY AI LABS.~~ **Amended the same day.** The descriptor stays ZERO-DAY.AI, which the account already carried. The public business name at checkout is Zero Day AI Labs. The support address on receipts is class@zero-day.ai. Stripe refuses API writes on its own account, so all three are dashboard settings. |
