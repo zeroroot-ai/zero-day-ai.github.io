@@ -33,11 +33,18 @@ stays out of copy. What Labs teaches is stated in prose on the home page under
 _Avoid_: track, depth ladder, "prompt to silicon".
 
 **Course**:
-One live run with a date, a price, a seat count, and a syllabus. It lives at
-`/training/<slug>/`. Its facts live in
-`data/courses.yaml`, never in prose, so a new run is one edit. Three exist.
-_Avoid_: track (retired), cohort (reserved for the 12-week flagship), class,
-bootcamp.
+One curriculum with a price, thirty seats per cohort, and a ten-week
+outline. It lives at `/training/<slug>/` and its facts live in
+`data/courses.yaml`, never in prose. Three exist, and all three run in every
+cohort.
+_Avoid_: track (retired), class, bootcamp, program.
+
+**Cohort**:
+One ten-week window in which every course runs at once, live. Four run in
+2027: winter, spring, summer, autumn. The cohort owns the start date. A
+course owns the price and the seats. (Owner, 2026-10-13. Before this, cohort
+was reserved for a twelve-week flagship, and a course was one run.)
+_Avoid_: run, session (that is one live hour), term, semester, intake.
 
 **Offer**:
 One fixed-price consulting product with a length and a deliverable list. Two
@@ -45,13 +52,52 @@ exist, in `data/services.yaml`. Labs does not sell hours.
 _Avoid_: engagement (the instance of an offer, not the offer), retainer,
 package, hours.
 
+**The list**:
+The one mailing list, on beehiiv, that every form on the site feeds. The
+form's `utm_source` of `training` or `consulting` records which form the
+address came from. The list is the lead path for training until checkout
+exists, and the lead path for consulting beside the mailbox.
+_Avoid_: newsletter (the newsletter is a mail sent to the list), subscribers
+list, audience, community.
+
+**The mailbox**:
+One shared email address, `info@zero-day.ai`, on Google Workspace. It is the
+one contact detail the site shows, on the Services page and in the footer,
+and it is the beehiiv sender. A person reads it and replies within two
+working days. A `consulting` signup on the list also lands here through the
+beehiiv new-subscriber notification.
+_Avoid_: a personal address, a phone number, a street address, a booking link.
+
+**The class address**:
+`class@zero-day.ai`. The address a buyer hears from after checkout, the
+address on the Stripe receipt, and the sender of every cohort logistics
+mail. It never appears on the site. `help@zero-day.ai` exists and is unused
+until there is a support load (owner, 2026-10-13).
+_Avoid_: support address, instructor address.
+
+**The entity**:
+Hack The Planet LLC. It is the one legal name on the terms page, and it
+signs every seat sale and every assessment contract. The terms page shows
+no DBA. The site title above it carries the brand.
+_Avoid_: Zero Day AI Labs as a legal party, zeroroot.ai as a company name on
+a contract.
+
+**The refund rule**:
+A seat is refunded in full for any reason until the first live session
+starts. After that session, no refund. The terms page states it and the
+course page repeats it in one line.
+_Avoid_: prorated, transfer, credit.
+
 **Research**:
 The public archive of every technical piece Labs publishes, at `/research/`.
-It is the front door and the marketing arm. Every piece is about zeroroot:
-what Gibson does, why it is built that way, grounded in the ADRs and the code.
-A piece about an attack with no Gibson in it does not belong here (owner,
-2026-09-29). Every piece ends with the offer line: the next course date and
-the assessment price. `/blog/` redirects here.
+It is the front door and the marketing arm. A piece is about an attack Labs
+ran, a thing Labs broke, or what Gibson does and why. A piece about an attack
+with no Gibson in it belongs here (owner, 2026-10-13, reversing 2026-09-29).
+**The owner writes every piece. Research is never AI-driven** (owner,
+2026-10-13). An agent may fix spelling in a piece and nothing else. Every
+piece ends with the offer line: the next cohort and the assessment price.
+`/blog/` redirects here. Until the first piece is published, the archive and
+the home page say "Coming soon".
 _Avoid_: blog, writing, posts, newsletter (the newsletter is the mail that
 points at a piece, never the piece itself).
 
@@ -62,6 +108,13 @@ points at a piece, never the piece itself).
 | 03 | Weights | abliteration, poisoning, extraction |
 | 04 | Metal | OT, IoT, firmware, fault injection |
 | 05 | Watch | red and blue, detect, contain, replay |
+
+**Emage**:
+The partner, at `emagetech.io`, that does the housekeeping of the courses and
+sells seats beside this site at the same price. Labs ran one pilot with Emage
+on GPUs, how LLMs work, and deployment on Kubernetes. That pilot is the only
+proof behind "We taught this course before."
+_Avoid_: reseller, vendor, platform.
 
 **The lineage**:
 The company names come from Hackers (1995) and Sneakers (1992). `zerocool` is
@@ -82,17 +135,44 @@ row of specialties, so a career in one silo is over. The engineer we teach
 has to see the whole picture: break the thing, know why it broke, secure it,
 ship it. Every page and every research piece serves that theme.
 
-**Exact dates for the December run**: the month is set, the days are not.
-Copy says "December 2026" and "announced to the list first" until the owner
-sets them in `data/courses.yaml`.
+**Cohort dates**: the winter cohort starts Monday 2027-01-11 and ends
+2027-03-19 (owner, 2026-10-13). Spring, summer and autumn have a season and
+no day until the winter cohort sells.
+
+**The GPU lab**: a cloud account, nodes up only during sessions, scaled to
+zero between them. The cloud and the cost are parked by the owner
+(2026-10-13). No seat goes on sale before both exist.
 
 **Founder bio**: written 2026-09-29 from the owner's resume, kept general on
 purpose (DoD, HFT, AI C2 prototyping). **No name anywhere on the site**
 (owner, 2026-09-29). No clearance, no employer names, no contact details.
 Nothing on the site may invent a credential.
 
-**Checkout**: no course has an `enroll_url` yet. Until Circle checkout exists
-the course page renders the training list form in place of a buy button.
+**The list offer**: a signup hears the dates first and gets the payment
+link a week before anyone else. There is no lead magnet. The owner reaches
+out to each signup in person. That outreach is a separate funnel, out of
+scope for the site.
+
+**The ten-week cut**: each outline still shows twelve weeks. The owner cuts
+two weeks per course later. Course content is parked (owner, 2026-10-13).
+
+**Checkout**: a Stripe Payment Link per course, on the Hack the Planet LLC
+Stripe account, with the seat as a one-time price. The three links exist. No
+course has an `enroll_url` until the cohort start day and the GPU lab exist.
+Until then the course page renders the training list form in place of a buy
+button.
+
+**The community**: one Discord server, invite `https://discord.gg/Z5rW4U6Ng`.
+The public server is in the welcome mail. Each cohort gets one private channel, and a buyer gets it from
+`class@` after checkout. Recording links live in the cohort channel.
+_Avoid_: forum, Slack, Circle, server (say Discord).
+
+**The sessions**: Google Meet, from the Workspace that holds `class@`.
+Recordings go to Drive and the link goes to the cohort channel.
+_Avoid_: Zoom, webinar, call.
+
+**The welcome mail**: one short mail from `info@zero-day.ai`, set once in
+beehiiv. Drafted for the owner, who edits and approves it before it is on.
 
 ## Decisions
 
@@ -108,7 +188,7 @@ the course page renders the training list form in place of a buy button.
 | 2026-09-14 | ~~First proof block is the public code, not a logo wall.~~ **Reversed 2026-09-29.** The "No logo wall" block is cut. Proof is the research and the product page. |
 | 2026-09-14 | ~~Astro, matching www.~~ **Reversed.** Hugo, self-contained in this repo. |
 | 2026-09-14 | Labs gets its own visual language. It does not consume @zeroroot/brand. |
-| 2026-09-14 | The site is static. Two email forms are the only dynamic parts. |
+| 2026-09-14 | ~~The site is static. Two email forms are the only dynamic parts.~~ **Amended 2026-10-13.** The site is static. The two email forms and Google Analytics are the only dynamic parts. |
 | 2026-09-14 | No payment, no booking, no challenge on the site. The hook is the code. |
 | 2026-09-14 | Both forms post to Buttondown. Tags split training from consulting. |
 | 2026-09-14 | This repo stands alone. No org guards, no brand-guard, no link-check. |
@@ -128,5 +208,34 @@ the course page renders the training list form in place of a buy button.
 | 2026-09-29 | The five-track ladder, the hex dump band, the course strip under the hero, and the typed injection demo are gone. One prose argument replaces the ladder. |
 | 2026-09-29 | The scrolling band on every page carries the next live course, not a film quote. It renders from `data/courses.yaml` and links to the course. |
 | 2026-09-29 | Copy is written to a person, the way Seth Godin writes. Short lines, one idea, the reader's situation first, no feature grids where a paragraph will do. |
-| 2026-09-29 | Circle replaces Buttondown for the list, the courses, and the community. Forms swap to Circle embeds when the owner turns on its Marketing Hub. Until then the Buttondown action is dead and known to be dead. |
+| 2026-09-29 | ~~Circle replaces Buttondown for the list, the courses, and the community.~~ **Amended 2026-10-13.** Buttondown owns the list. The owner recreates the `zerodaylabs` newsletter so every form on the live site works with no code change. Circle comes in only for the paid course and the community, once a seat is on sale. One list tool at a time. No form action may point at a tool that is not live. |
 | 2026-09-29 | Labs run home-grown at `labs.zero-day.ai`, not on a lab vendor and not under zeroroot.ai. Out of scope for the site. |
+| 2026-10-13 | The site shows one contact detail: the shared mailbox `info@zero-day.ai`. No booking link, no phone. The consulting form stays, and the owner replies by hand. |
+| 2026-10-13 | Google Analytics is added to every page. Interest is measured as page views per course page, list signups by tag, and mail to the mailbox. |
+| 2026-10-13 | Google Analytics loads in consent mode behind a banner. The banner asks before any cookie is set. |
+| 2026-10-13 | Two legal pages, linked from the footer: a privacy page and a terms page. The privacy page names the list tool, Google Analytics, and the mailbox. The terms page carries the course refund rule and the legal entity name. Both come from the owner, never invented. |
+| 2026-10-13 | The legal entity is Hack The Planet LLC, DBA zeroroot.ai and zero-day.ai. The refund rule is a full refund until the first live session starts, none after. |
+| 2026-10-13 | The terms page names Hack The Planet LLC only, with no DBA. |
+| 2026-10-13 | The first cohort moves from December 2026 to January 2027. Price lives in `data/courses.yaml` only. |
+| 2026-10-13 | The GPU lab runs on a cloud account, nodes up only during sessions. The cloud and the cost per session are open. |
+| 2026-10-13 | The newsletter sends from `info@zero-day.ai` through a Buttondown custom domain. DKIM and the return-path CNAME go on zero-day.ai. |
+| 2026-10-13 | Reversed: a research piece about an attack with no Gibson in it belongs at `/research/`. The Research page promise stands as written. |
+| 2026-10-13 | The list offer stays "dates first". No lead magnet. Personal outreach to each signup is a separate funnel, out of scope for the site. |
+| 2026-10-13 | A course is ten weeks, not twelve. Each outline loses two weeks. The 2026-09-29 twelve-week decision is reversed. |
+| 2026-10-13 | All three courses run in parallel in every cohort. Four cohorts in 2027: winter, spring, summer, autumn. |
+| 2026-10-13 | Emage is named twice: one sentence on the Kubernetes course page that backs the pilot claim, and one line on the training page that a seat is also for sale through Emage, with the link. |
+| 2026-10-13 | The band on every page and the offer line under every piece show the cohort line, not one course: the next cohort, three courses, the month, ten weeks, thirty seats each. Both link to `/training/`. |
+| 2026-10-13 | One start day per cohort. All three courses start that week. The data holds one row per cohort with the date, and a course carries no date. |
+| 2026-10-13 | Thirty seats per course per cohort, ninety a cohort. |
+| 2026-10-13 | The one research piece, "Stop asking the model how sure it is", is deleted. `/research/` and the home page say "Coming soon" until the owner publishes. The owner writes every piece. Research is never AI-driven. |
+| 2026-10-13 | Checkout is a Circle Paywall per course. `enroll_url` stays empty until the Circle community is live. The list stays on Buttondown. |
+| 2026-10-13 | Three cross-repo fixes are in scope, each in its own lane: a link from zeroroot.ai to zero-day.ai in the www repo, the GitHub org website field set to www.zeroroot.ai, and the Setec and Zerocool repo descriptions matched to the site. |
+| 2026-10-13 | One welcome mail in Buttondown. Drafted for the owner, approved by the owner before it is on. |
+| 2026-10-13 | Reversed the same day: beehiiv owns the list, not Buttondown. The forms swap to the beehiiv subscribe form. Buttondown is not recreated. |
+| 2026-10-13 | Reversed the same day: no Circle. Checkout is a Stripe Payment Link per course on the Hack the Planet LLC account. The seat is a one-time price. Circle is too expensive. |
+| 2026-10-13 | The newsletter sends from `info@zero-day.ai` through beehiiv's custom sending domain, not Buttondown's. |
+| 2026-10-13 | Three addresses exist. info@ is the site contact and the beehiiv sender. class@ is the buyer and cohort address and goes on the Stripe receipt. help@ is unused for now. |
+| 2026-10-13 | The winter 2027 cohort starts 2027-01-11. The other three cohorts keep a season and no day. |
+| 2026-10-13 | beehiiv is on the Scale plan with a custom sending domain on zero-day.ai. The owner pastes the three generated CNAMEs into DNS at Namecheap. |
+| 2026-10-13 | The community is one Discord server with one private channel per cohort. The sessions run on Google Meet. Recordings go to Drive and the link to the cohort channel. |
+| 2026-10-13 | The card statement descriptor is ZERO DAY AI LABS. The support address on receipts is class@zero-day.ai. |
