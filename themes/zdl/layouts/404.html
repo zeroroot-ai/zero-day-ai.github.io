@@ -1,0 +1,15 @@
+{{ define "main" }}
+  <section class="scan section">
+    <div class="wrap">
+      <header class="sechead">
+        <span class="pixlabel st">404</span>
+        <h1>There is nothing here.</h1>
+        <p class="sechead-sub">The page moved, or it never existed. The research, the courses, and the offers are one click away.</p>
+      </header>
+      <div class="cta">
+        <a class="btn" href="{{ "/" | relURL }}">Home</a>
+        <a class="btn ghost" href="{{ "/training/" | relURL }}">Courses</a>
+      </div>
+    </div>
+  </section>
+{{ end }}

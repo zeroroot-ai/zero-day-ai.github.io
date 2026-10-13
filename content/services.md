@@ -10,8 +10,8 @@ intro: >
   passed review at the Department of Defense and at the trading exchanges.
 contact_heading: Talk to us
 contact_blurb: >
-  Leave an address. You get a reply from a person, not a sequence, within two
-  working days.
+  Leave an address here, or write to info@zero-day.ai. You get a reply from a
+  person, not a sequence, within two working days.
 ---
 
 ## What an agentic software factory is
