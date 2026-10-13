@@ -100,21 +100,6 @@ img, svg { max-width:100%; }
 .foot-nav { display:flex; flex-wrap:wrap; gap:6px 18px; font-family:var(--mono); font-size:13px; }
 .coin { color:var(--acid); }
 
-/* --------------------------------------------------------------- consent -- */
-
-.consent {
-  position:fixed; inset:auto 0 0 0; z-index:50;
-  display:flex; flex-wrap:wrap; gap:12px 24px; align-items:center; justify-content:center;
-  padding:14px var(--gutter);
-  background:var(--panel); color:var(--fg-2); border-top:1px solid var(--rule-2);
-  font-size:14px;
-}
-.consent[hidden] { display:none; }
-.consent p { margin:0; max-width:52ch; }
-.consent a { color:var(--acid); }
-.consent-cta { display:flex; gap:12px; }
-.consent .btn { font-family:inherit; font-size:14px; padding:8px 16px; cursor:pointer; }
-
 /* ---------------------------------------------------------------- motion -- */
 
 @media (prefers-reduced-motion: no-preference) {

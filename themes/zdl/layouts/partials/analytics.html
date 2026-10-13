@@ -1,22 +1,12 @@
-{{/* Google Analytics in consent mode. The consent default runs before the
-     tag loads, and it is "denied" until the visitor has said yes on the
-     banner in consent.html. While denied, the tag sets no cookie. The
-     visitor's choice lives in localStorage under "zdl-consent", so the
-     banner shows once. No choice, no cookie. */}}
+{{/* Google Analytics, the plain tag. It counts page views on every page
+     from the first load. The privacy page says so and names the browser
+     opt-out. One site param, ga_id, turns it on. */}}
 {{ with .Site.Params.ga_id }}
+<script async src="https://www.googletagmanager.com/gtag/js?id={{ . }}"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){ dataLayer.push(arguments); }
-  var zdlConsent = null;
-  try { zdlConsent = localStorage.getItem("zdl-consent"); } catch (e) {}
-  gtag("consent", "default", {
-    ad_storage: "denied",
-    ad_user_data: "denied",
-    ad_personalization: "denied",
-    analytics_storage: zdlConsent === "granted" ? "granted" : "denied"
-  });
   gtag("js", new Date());
   gtag("config", {{ . }});
 </script>
-<script async src="https://www.googletagmanager.com/gtag/js?id={{ . }}"></script>
 {{ end }}
