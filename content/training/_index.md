@@ -24,4 +24,7 @@ team_heading: Team seats
 team_blurb: >
   Ten seats is one call. Send the team, and the last four labs run against
   your own stack.
+partner_line: >
+  A seat is also for sale through our partner [Emage](https://emagetech.io/),
+  at the same price.
 ---

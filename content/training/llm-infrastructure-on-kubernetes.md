@@ -10,6 +10,10 @@ You run, or are about to run, models on your own hardware or your own cloud
 account. You know Kubernetes. You have not yet put a GPU node pool, a training
 scheduler, and a serving layer into one cluster and kept it up.
 
+We ran a pilot of this course with our partner
+[Emage](https://emagetech.io/) in 2026: GPUs, how LLMs work, and deployment
+on Kubernetes. This cohort is the full ten weeks.
+
 ## What you leave with
 
 - A cluster with GPU nodes, drivers, and the NVIDIA GPU Operator installed
