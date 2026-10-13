@@ -16,7 +16,9 @@ Training.
 
 **zeroroot.ai**:
 The product company, served at `www.zeroroot.ai`. It sells the Gibson Runtime.
-Labs copy names it as a sibling, never as the seller of the training.
+Labs copy names it as a sibling, never as the seller of the training. The
+relationship is one way: zeroroot.ai never names Labs and never links to
+zero-day.ai (owner, 2026-10-13).
 _Avoid_: parent, umbrella, house brand.
 
 ## Flagged ambiguities
@@ -221,7 +223,7 @@ beehiiv. Drafted for the owner, who edits and approves it before it is on.
 | 2026-10-13 | Thirty seats per course per cohort, ninety a cohort. |
 | 2026-10-13 | The one research piece, "Stop asking the model how sure it is", is deleted. `/research/` and the home page say "Coming soon" until the owner publishes. The owner writes every piece. Research is never AI-driven. |
 | 2026-10-13 | Checkout is a Circle Paywall per course. `enroll_url` stays empty until the Circle community is live. The list stays on Buttondown. |
-| 2026-10-13 | Three cross-repo fixes are in scope, each in its own lane: a link from zeroroot.ai to zero-day.ai in the www repo, the GitHub org website field set to www.zeroroot.ai, and the Setec and Zerocool repo descriptions matched to the site. |
+| 2026-10-13 | ~~Three cross-repo fixes are in scope, each in its own lane: a link from zeroroot.ai to zero-day.ai in the www repo, the GitHub org website field set to www.zeroroot.ai, and the Setec and Zerocool repo descriptions matched to the site.~~ **Amended the same day.** Two cross-repo fixes: the org website field and the two repo descriptions, both done. zeroroot.ai does not link to Labs and does not need to know about it. The org brand guard no longer treats zero-day.ai as a retired string (.github#271), so a link is possible if the owner ever wants one. |
 | 2026-10-13 | One welcome mail in Buttondown. Drafted for the owner, approved by the owner before it is on. |
 | 2026-10-13 | Reversed the same day: beehiiv owns the list, not Buttondown. The forms swap to the beehiiv subscribe form. Buttondown is not recreated. |
 | 2026-10-13 | Reversed the same day: no Circle. Checkout is a Stripe Payment Link per course on the Hack the Planet LLC account. The seat is a one-time price. Circle is too expensive. |
