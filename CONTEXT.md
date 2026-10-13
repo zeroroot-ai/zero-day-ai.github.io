@@ -135,13 +135,13 @@ row of specialties, so a career in one silo is over. The engineer we teach
 has to see the whole picture: break the thing, know why it broke, secure it,
 ship it. Every page and every research piece serves that theme.
 
-**Exact dates for the winter cohort**: the month is January 2027, the days
-are not set. Copy says "January 2027" and "the list hears the start date
-first" until the owner sets the days in the data.
+**Cohort dates**: the winter cohort starts Monday 2027-01-11 and ends
+2027-03-19 (owner, 2026-10-13). Spring, summer and autumn have a season and
+no day until the winter cohort sells.
 
 **The GPU lab**: a cloud account, nodes up only during sessions, scaled to
-zero between them. The cloud is not named and the cost per session is not
-estimated. No seat goes on sale before both exist.
+zero between them. The cloud and the cost are parked by the owner
+(2026-10-13). No seat goes on sale before both exist.
 
 **Founder bio**: written 2026-09-29 from the owner's resume, kept general on
 purpose (DoD, HFT, AI C2 prototyping). **No name anywhere on the site**
@@ -229,3 +229,5 @@ beehiiv. Drafted for the owner, who edits and approves it before it is on.
 | 2026-10-13 | Reversed the same day: no Circle. Checkout is a Stripe Payment Link per course on the Hack the Planet LLC account. The seat is a one-time price. Circle is too expensive. |
 | 2026-10-13 | The newsletter sends from `info@zero-day.ai` through beehiiv's custom sending domain, not Buttondown's. |
 | 2026-10-13 | Three addresses exist. info@ is the site contact and the beehiiv sender. class@ is the buyer and cohort address and goes on the Stripe receipt. help@ is unused for now. |
+| 2026-10-13 | The winter 2027 cohort starts 2027-01-11. The other three cohorts keep a season and no day. |
+| 2026-10-13 | beehiiv is on the Scale plan with a custom sending domain on zero-day.ai. The owner pastes the three generated CNAMEs into DNS at Namecheap. |
