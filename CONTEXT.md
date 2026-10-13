@@ -162,8 +162,14 @@ course has an `enroll_url` until the cohort start day and the GPU lab exist.
 Until then the course page renders the training list form in place of a buy
 button.
 
-**The community and the sessions**: open. Discord for the community and
-Google Meet for the sessions are proposed, not decided.
+**The community**: one Discord server. The public server is in the welcome
+mail. Each cohort gets one private channel, and a buyer gets it from
+`class@` after checkout. Recording links live in the cohort channel.
+_Avoid_: forum, Slack, Circle, server (say Discord).
+
+**The sessions**: Google Meet, from the Workspace that holds `class@`.
+Recordings go to Drive and the link goes to the cohort channel.
+_Avoid_: Zoom, webinar, call.
 
 **The welcome mail**: one short mail from `info@zero-day.ai`, set once in
 beehiiv. Drafted for the owner, who edits and approves it before it is on.
@@ -231,3 +237,5 @@ beehiiv. Drafted for the owner, who edits and approves it before it is on.
 | 2026-10-13 | Three addresses exist. info@ is the site contact and the beehiiv sender. class@ is the buyer and cohort address and goes on the Stripe receipt. help@ is unused for now. |
 | 2026-10-13 | The winter 2027 cohort starts 2027-01-11. The other three cohorts keep a season and no day. |
 | 2026-10-13 | beehiiv is on the Scale plan with a custom sending domain on zero-day.ai. The owner pastes the three generated CNAMEs into DNS at Namecheap. |
+| 2026-10-13 | The community is one Discord server with one private channel per cohort. The sessions run on Google Meet. Recordings go to Drive and the link to the cohort channel. |
+| 2026-10-13 | The card statement descriptor is ZERO DAY AI LABS. The support address on receipts is class@zero-day.ai. |
