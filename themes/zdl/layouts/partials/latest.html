@@ -16,6 +16,10 @@
             {{ with .Summary }}<p>{{ . | plainify }}</p>{{ end }}
           </a>
         </li>
+      {{ else }}
+        {{/* Nothing published yet. The section keeps its place so the page
+             shape does not change when the first piece lands. */}}
+        <li class="postlist-item"><p class="lede">Coming soon.</p></li>
       {{ end }}
     </ul>
   </div>
