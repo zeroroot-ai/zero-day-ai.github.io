@@ -4,11 +4,11 @@
   name: Agent Production Readiness Assessment
   price_low: 45000
   price_high: 75000
-  length: ""
+  length: Scoped on the first call
   team: One senior operator does the work. The founder reviews it.
   blurb: >
     Everything that stands between your agents and production, in one
-    engagement. We attack them the way the published attacks do. We also find every other
+    assessment. We attack them the way the published attacks do. We also find every other
     gap: identity, authorization, isolation, models, cost, and audit. You get
     the list, ranked, and the plan that closes it.
   deliver:
