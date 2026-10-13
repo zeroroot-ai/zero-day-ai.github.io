@@ -65,7 +65,7 @@ list, audience, community.
 **The mailbox**:
 One shared email address, `info@zero-day.ai`, on Google Workspace. It is the
 one contact detail the site shows, on the Services page and in the footer,
-and it is the beehiiv sender. A person reads it and replies within two
+and it is the reply-to address of the newsletter. A person reads it and replies within two
 working days. A `consulting` signup on the list also lands here through the
 beehiiv new-subscriber notification.
 _Avoid_: a personal address, a phone number, a street address, a booking link.
@@ -165,8 +165,9 @@ _Avoid_: forum, Slack, Circle, server (say Discord).
 Recordings go to Drive and the link goes to the cohort channel.
 _Avoid_: Zoom, webinar, call.
 
-**The welcome mail**: one short mail from `info@zero-day.ai`, set once in
-beehiiv. Drafted for the owner, who edits and approves it before it is on.
+**The welcome mail**: one short mail, set once in beehiiv as the welcome
+automation, with reply-to `info@zero-day.ai`. Approved by the owner
+2026-10-13. The final text is on issue #40.
 
 ## Decisions
 
@@ -227,9 +228,10 @@ beehiiv. Drafted for the owner, who edits and approves it before it is on.
 | 2026-10-13 | One welcome mail in Buttondown. Drafted for the owner, approved by the owner before it is on. |
 | 2026-10-13 | Reversed the same day: beehiiv owns the list, not Buttondown. The forms swap to the beehiiv subscribe form. Buttondown is not recreated. |
 | 2026-10-13 | Reversed the same day: no Circle. Checkout is a Stripe Payment Link per course on the Hack the Planet LLC account. The seat is a one-time price. Circle is too expensive. |
-| 2026-10-13 | The newsletter sends from `info@zero-day.ai` through beehiiv's custom sending domain, not Buttondown's. |
+| 2026-10-13 | ~~The newsletter sends from `info@zero-day.ai` through beehiiv's custom sending domain.~~ **Reversed the same day.** The newsletter sends from beehiiv's default address, `zero-day-ai@mail.beehiiv.com`, with reply-to `info@zero-day.ai`. No custom sending domain for now. |
 | 2026-10-13 | Three addresses exist. info@ is the site contact and the beehiiv sender. class@ is the buyer and cohort address and goes on the Stripe receipt. help@ is unused for now. |
 | 2026-10-13 | The winter 2027 cohort starts 2027-01-11. The other three cohorts keep a season and no day. |
-| 2026-10-13 | beehiiv is on the Scale plan with a custom sending domain on zero-day.ai. The owner pastes the three generated CNAMEs into DNS at Namecheap. |
+| 2026-10-13 | ~~beehiiv is on the Scale plan with a custom sending domain on zero-day.ai. The owner pastes the three generated CNAMEs into DNS at Namecheap.~~ **Reversed the same day.** The publication is `zero-day-ai.beehiiv.com` on the default sending address. DNS at Namecheap gets only the DMARC row for Google Workspace mail. |
+| 2026-10-13 | Google Analytics property `G-RY564021YS` is live on every page in consent mode behind the banner. |
 | 2026-10-13 | The community is one Discord server with one private channel per cohort. The sessions run on Google Meet. Recordings go to Drive and the link to the cohort channel. |
 | 2026-10-13 | The card statement descriptor is ZERO DAY AI LABS. The support address on receipts is class@zero-day.ai. |
