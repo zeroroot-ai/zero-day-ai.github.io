@@ -3,6 +3,15 @@
     <span class="pixlabel">zero-day.ai</span>
     <span class="pixlabel coin">Insert coin</span>
     <i class="sp"></i>
+    <nav class="foot-nav" aria-label="Footer">
+      {{ range .Site.Menus.main }}
+        <a href="{{ .URL | relURL }}">{{ .Name }}</a>
+      {{ end }}
+      {{ range .Site.Menus.footer }}
+        <a href="{{ .URL | relURL }}">{{ .Name }}</a>
+      {{ end }}
+      <a href="mailto:{{ .Site.Params.mailbox }}">{{ .Site.Params.mailbox }}</a>
+    </nav>
     <span class="pixlabel">&copy; {{ now.Year }}</span>
   </div>
 </footer>

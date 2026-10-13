@@ -71,4 +71,5 @@ License 2.0.
 ## Contact
 
 There are two forms. One is for training and one is for consulting. A
-person reads both, and you get a reply from that person.
+person reads both, and you get a reply from that person. If you would
+rather write, the address is info@zero-day.ai.
