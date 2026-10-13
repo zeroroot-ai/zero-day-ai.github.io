@@ -40,9 +40,8 @@ It gives an agent an identity, a grant for every tool it touches, a sandbox
 for untrusted work, and a replayable record of what it did. Identity is
 SPIFFE inside the cluster and a signed capability grant outside it. Gibson
 checks every tool call against the grant at call time. It does not assume
-the grant at start time. The brain is a Bayes net over the tenant's graph,
-and the write-up on [why](/research/stop-asking-the-model-how-sure-it-is/)
-is the first thing we published. Elastic License 2.0.
+the grant at start time. The brain is a Bayes net over the tenant's graph.
+Elastic License 2.0.
 
 **[Setec](https://github.com/zeroroot-ai/setec).** Setec is the sandbox
 layer, and a Kubernetes operator you can use without the rest. It has one
