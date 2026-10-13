@@ -53,9 +53,9 @@ _Avoid_: engagement (the instance of an offer, not the offer), retainer,
 package, hours.
 
 **The list**:
-The one mailing list, on beehiiv, that every form on the site feeds. The
-form's `utm_source` of `training` or `consulting` records which form the
-address came from. The list is the lead path for training until checkout
+The one mailing list, on beehiiv at `zero-day-ai.beehiiv.com`, that every
+form on the site feeds. The form's `utm_source` of `training` or
+`consulting` records which form the address came from. The list is the lead path for training until checkout
 exists, and the lead path for consulting beside the mailbox.
 _Avoid_: newsletter (the newsletter is a mail sent to the list), subscribers
 list, audience, community.

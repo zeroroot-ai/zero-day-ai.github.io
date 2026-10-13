@@ -1,5 +1,7 @@
-{{/* The only dynamic thing on this site. A plain form post to Buttondown:
-     no JavaScript, no cookie, no tracker, so no consent banner.
+{{/* The only dynamic thing on this site. A plain form that opens the beehiiv
+     subscribe page with the address filled in: no JavaScript, no cookie, no
+     tracker, so no consent banner for this. The source tag tells the list
+     which form the address came from.
      Call with: {{ partial "subscribe.html" (dict "ctx" . "tag" "training"
      "heading" "..." "blurb" "..." "action" "Join") }} */}}
 {{ $tag := .tag }}
@@ -7,10 +9,11 @@
 <div class="subscribe">
   {{ with .heading }}<h3>{{ . }}</h3>{{ end }}
   {{ with .blurb }}<p>{{ . }}</p>{{ end }}
-  <form action="{{ $.ctx.Site.Params.buttondown }}" method="post" target="_blank">
+  <form action="{{ $.ctx.Site.Params.beehiiv }}/subscribe" method="get" target="_blank">
     <label class="sr-only" for="{{ $id }}">Email address</label>
     <input id="{{ $id }}" type="email" name="email" placeholder="{{ .placeholder | default "you@wherever" }}" autocomplete="email" required>
-    <input type="hidden" name="tag" value="{{ $tag }}">
+    <input type="hidden" name="utm_source" value="{{ $tag }}">
+    <input type="hidden" name="utm_medium" value="site">
     <button type="submit">{{ .action | default "Join" }}</button>
   </form>
 </div>
