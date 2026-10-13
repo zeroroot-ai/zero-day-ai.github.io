@@ -62,10 +62,18 @@ list, audience, community.
 
 **The mailbox**:
 One shared email address, `info@zero-day.ai`, on Google Workspace. It is the
-one contact detail the site shows, on the Services page and in the footer. A
-person reads it and replies within two working days. A `consulting` signup on
-the list also lands here through the beehiiv new-subscriber notification.
+one contact detail the site shows, on the Services page and in the footer,
+and it is the beehiiv sender. A person reads it and replies within two
+working days. A `consulting` signup on the list also lands here through the
+beehiiv new-subscriber notification.
 _Avoid_: a personal address, a phone number, a street address, a booking link.
+
+**The class address**:
+`class@zero-day.ai`. The address a buyer hears from after checkout, the
+address on the Stripe receipt, and the sender of every cohort logistics
+mail. It never appears on the site. `help@zero-day.ai` exists and is unused
+until there is a support load (owner, 2026-10-13).
+_Avoid_: support address, instructor address.
 
 **The entity**:
 Hack The Planet LLC. It is the one legal name on the terms page, and it
@@ -220,3 +228,4 @@ beehiiv. Drafted for the owner, who edits and approves it before it is on.
 | 2026-10-13 | Reversed the same day: beehiiv owns the list, not Buttondown. The forms swap to the beehiiv subscribe form. Buttondown is not recreated. |
 | 2026-10-13 | Reversed the same day: no Circle. Checkout is a Stripe Payment Link per course on the Hack the Planet LLC account. The seat is a one-time price. Circle is too expensive. |
 | 2026-10-13 | The newsletter sends from `info@zero-day.ai` through beehiiv's custom sending domain, not Buttondown's. |
+| 2026-10-13 | Three addresses exist. info@ is the site contact and the beehiiv sender. class@ is the buyer and cohort address and goes on the Stripe receipt. help@ is unused for now. |
