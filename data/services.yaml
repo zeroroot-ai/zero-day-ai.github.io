@@ -27,7 +27,7 @@
     Every consultant will build you an agent platform from scratch. We do
     not. We bring one that already runs. Gibson ships identity, grants,
     sandboxes, budgets, and replay, and it passes our own tests every day.
-    The engagement installs it on your cluster, links it to your systems, and
+    The build installs it on your cluster, links it to your systems, and
     puts your first agents on it. You own the result.
   deliver:
     - A running platform on your Kubernetes, with the first three agents you named in production.
