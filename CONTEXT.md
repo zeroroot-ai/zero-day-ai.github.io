@@ -162,8 +162,8 @@ course has an `enroll_url` until the cohort start day and the GPU lab exist.
 Until then the course page renders the training list form in place of a buy
 button.
 
-**The community**: one Discord server. The public server is in the welcome
-mail. Each cohort gets one private channel, and a buyer gets it from
+**The community**: one Discord server, invite `https://discord.gg/Z5rW4U6Ng`.
+The public server is in the welcome mail. Each cohort gets one private channel, and a buyer gets it from
 `class@` after checkout. Recording links live in the cohort channel.
 _Avoid_: forum, Slack, Circle, server (say Discord).
 
