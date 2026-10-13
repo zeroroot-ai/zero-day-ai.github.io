@@ -1,0 +1,23 @@
+# The cohorts. A cohort is one ten-week window in which every course runs at
+# once. The cohort owns the start date. A course owns its price and seats.
+# The first row with status "scheduled" is the one the band on every page,
+# the offer line under every piece, and every course page point at, so keep
+# the list in run order. A row with no start carries only a season.
+- slug: winter-2027
+  name: Winter 2027
+  status: scheduled            # scheduled | planned
+  when: January 2027
+  start: 2027-01-11
+  end: 2027-03-19
+- slug: spring-2027
+  name: Spring 2027
+  status: planned
+  when: Spring 2027
+- slug: summer-2027
+  name: Summer 2027
+  status: planned
+  when: Summer 2027
+- slug: autumn-2027
+  name: Autumn 2027
+  status: planned
+  when: Autumn 2027

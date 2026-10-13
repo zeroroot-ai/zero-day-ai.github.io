@@ -1,7 +1,7 @@
 ---
 title: LLM Infrastructure on Kubernetes
 course: llm-infrastructure-on-kubernetes
-description: Twelve weeks, live. GPU nodes, schedulers, model serving, Slurm beside Kubernetes, and the boundary around the agents that call the models.
+description: Ten weeks, live. GPU nodes, schedulers, model serving, Slurm beside Kubernetes, and the boundary around the agents that call the models.
 ---
 
 ## Who it is for
@@ -22,7 +22,7 @@ scheduler, and a serving layer into one cluster and kept it up.
 - A repository that brings all of it back on a fresh cluster in one command.
 - The recordings, the manifests, and the Terraform. All of it is yours.
 
-## The twelve weeks
+## The weeks
 
 This outline is the shape of the course. We revise the order and the tools
 between cohorts, because the tools in this space ship fast and the course

@@ -1,7 +1,7 @@
 ---
 title: Agents in Production
 course: agents-in-production
-description: Twelve weeks, live. Identity, grants, sandboxed execution, budgets, and replay for an agent fleet that runs unattended.
+description: Ten weeks, live. Identity, grants, sandboxed execution, budgets, and replay for an agent fleet that runs unattended.
 ---
 
 ## Who it is for
@@ -20,7 +20,7 @@ did afterwards.
 - A journal that replays any run, step by step, for the person who asks why.
 - Your own agent, shipped through GitOps, with a security sign-off packet.
 
-## The twelve weeks
+## The weeks
 
 This outline is the shape of the course. We revise the order and the tools
 between cohorts.
