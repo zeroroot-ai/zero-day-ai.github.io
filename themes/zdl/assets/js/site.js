@@ -44,6 +44,26 @@
     }
   });
 
+  /* ---- the analytics banner ---- */
+
+  run("consent", function () {
+    var box = document.getElementById("consent");
+    if (!box) { return; }
+    var choice = null;
+    try { choice = localStorage.getItem("zdl-consent"); } catch (e) {}
+    if (choice === "granted" || choice === "denied") { return; }
+    box.hidden = false;
+    function decide(value) {
+      try { localStorage.setItem("zdl-consent", value); } catch (e) {}
+      if (value === "granted" && typeof window.gtag === "function") {
+        window.gtag("consent", "update", { analytics_storage: "granted" });
+      }
+      box.hidden = true;
+    }
+    box.querySelector("[data-accept]").addEventListener("click", function () { decide("granted"); });
+    box.querySelector("[data-decline]").addEventListener("click", function () { decide("denied"); });
+  });
+
   /* ---- type the handle ---- */
 
   var buf = "";

@@ -15,6 +15,7 @@ summaryLength     = 30
   beehiiv     = "https://zero-day-ai.beehiiv.com"
   ogimage     = "/og.png"
   mailbox     = "info@zero-day.ai"
+  ga_id       = "G-RY564021YS"
   course_format = "Ten weeks, live online. Two one-hour sessions a week and one lab a week."
 
 

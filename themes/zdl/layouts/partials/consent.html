@@ -1,0 +1,13 @@
+{{/* The one banner on the site. It asks before Google Analytics sets a
+     cookie. Hidden until site.js finds no stored choice. Without JavaScript
+     the banner stays hidden and the tag stays denied, which is the same as
+     a decline. */}}
+{{ with .Site.Params.ga_id }}
+<div class="consent" id="consent" role="region" aria-label="Analytics choice" hidden>
+  <p>We count page views with Google Analytics, after you say yes. <a href="{{ "/privacy/" | relURL }}">What it holds</a>.</p>
+  <div class="consent-cta">
+    <button type="button" class="btn" data-accept>Accept</button>
+    <button type="button" class="btn ghost" data-decline>Decline</button>
+  </div>
+</div>
+{{ end }}
