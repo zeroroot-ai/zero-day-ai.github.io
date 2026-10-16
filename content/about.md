@@ -8,11 +8,13 @@ I was thirteen when I worked out that every system has a way in that its
 builders did not plan for. I have spent my career finding those ways in, and
 then closing them.
 
-Most of that career was in places where losing is expensive. In
-high-frequency trading, a slow system loses money to a faster one, every
-second of the day. In defense, the network has no internet, and nobody is
-coming to help. I ran the distributed systems, then the teams that built
-them, then the AI on top of them.
+Most of that career was in two industries where somebody is always trying to
+beat you. In high-frequency trading, it is the firm in the next rack with
+faster code, and you lose in microseconds. In defense, it is a foreign
+government with a big budget and a lot of patience. Every package you ship
+needs approval before it runs, and much of it runs on networks that never
+touch the internet. I built the systems in both, and later I ran the teams
+that built them.
 
 This company is how I pass it on. I build things, I break them, and I teach
 people to do both. I would rather hand you something that works on Monday
