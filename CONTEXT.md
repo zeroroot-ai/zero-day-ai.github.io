@@ -35,8 +35,8 @@ stays out of copy. What Labs teaches is stated in prose on the home page under
 _Avoid_: track, depth ladder, "prompt to silicon".
 
 **Course**:
-One curriculum with a price, thirty seats per cohort, and a ten-week
-outline. It lives at `/training/<slug>/` and its facts live in
+One curriculum with a limited number of seats per cohort and a ten-week
+outline. The site shows no price and no seat count. It lives at `/training/<slug>/` and its facts live in
 `data/courses.yaml`, never in prose. Three exist, and all three run in every
 cohort.
 _Avoid_: track (retired), class, bootcamp, program.
@@ -44,7 +44,7 @@ _Avoid_: track (retired), class, bootcamp, program.
 **Cohort**:
 One ten-week window in which every course runs at once, live. Four run in
 2027: winter, spring, summer, autumn. The cohort owns the start date. A
-course owns the price and the seats. (Owner, 2026-10-13. Before this, cohort
+course owns its curriculum. (Owner, 2026-10-13. Before this, cohort
 was reserved for a twelve-week flagship, and a course was one run.)
 _Avoid_: run, session (that is one live hour), term, semester, intake.
 
@@ -97,7 +97,7 @@ ran, a thing Labs broke, or what Gibson does and why. A piece about an attack
 with no Gibson in it belongs here (owner, 2026-10-13, reversing 2026-09-29).
 **The owner writes every piece. Research is never AI-driven** (owner,
 2026-10-13). An agent may fix spelling in a piece and nothing else. Every
-piece ends with the offer line: the next cohort and the assessment price.
+piece ends with the offer line: the next cohort and the assessment.
 `/blog/` redirects here. Until the first piece is published, the archive and
 the home page say "Coming soon".
 _Avoid_: blog, writing, posts, newsletter (the newsletter is the mail that
@@ -235,3 +235,4 @@ automation, with reply-to `info@zero-day.ai`. Approved by the owner
 | 2026-10-13 | Google Analytics property `G-RY564021YS` is live on every page, the plain tag, no banner. |
 | 2026-10-13 | The community is one Discord server with one private channel per cohort. The sessions run on Google Meet. Recordings go to Drive and the link to the cohort channel. |
 | 2026-10-13 | ~~The card statement descriptor is ZERO DAY AI LABS.~~ **Amended the same day.** The descriptor stays ZERO-DAY.AI, which the account already carried. The public business name at checkout is Zero Day AI Labs. The support address on receipts is class@zero-day.ai. Stripe refuses API writes on its own account, so all three are dashboard settings. |
+| 2026-10-16 | The site shows no prices and no seat counts. Courses say "a limited number of seats". The offers show no price. The price lives only on the Stripe Payment Link. This replaces the price and thirty-seat rows of 2026-09-29 and 2026-10-13. |

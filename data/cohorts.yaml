@@ -1,5 +1,5 @@
 # The cohorts. A cohort is one ten-week window in which every course runs at
-# once. The cohort owns the start date. A course owns its price and seats.
+# once. The cohort owns the start date. A course owns its curriculum.
 # The first row with status "scheduled" is the one the band on every page,
 # the offer line under every piece, and every course page point at, so keep
 # the list in run order. A row with no start carries only a season.

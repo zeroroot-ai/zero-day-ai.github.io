@@ -1,5 +1,5 @@
 {{/* The line every piece ends with: the next cohort and the assessment
-     offer. Both come from data, so a new cohort or a new price is one edit.
+     offer. Both come from data, so a new cohort is one edit.
      Call with the page context. */}}
 {{ $n := partial "cohort.html" . }}
 {{ $asmt := index (where hugo.Data.services "slug" "assessment") 0 }}
@@ -8,14 +8,14 @@
     <a class="offer-row" href="{{ "/training/" | relURL }}">
       <span class="pixlabel">Next cohort</span>
       <b>{{ .name }}{{ with $n.starts }}, {{ . }}{{ end }}</b>
-      <span class="meta">{{ $n.courses }} courses &middot; ten weeks, live &middot; {{ $n.seats }} seats each</span>
+      <span class="meta">{{ $n.courses }} courses &middot; ten weeks, live &middot; limited number of seats</span>
     </a>
   {{ end }}
   {{ with $asmt }}
     <a class="offer-row" href="{{ "/services/" | relURL }}">
       <span class="pixlabel">Running agents in production?</span>
       <b>{{ .name }}</b>
-      <span class="meta">{{ with .length }}{{ . }} &middot; {{ end }}from {{ lang.FormatNumberCustom 0 .price_low }} USD</span>
+      <span class="meta">{{ .length }}</span>
     </a>
   {{ end }}
 </aside>

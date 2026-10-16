@@ -1,30 +1,31 @@
 ---
 title: Training
-description: Each course runs live for ten weeks, with thirty seats, and we record every session. You leave with a thing that runs, not a certificate.
+description: Three courses, ten weeks each, taught live by the people who wrote the code. Seats are limited, every session is recorded, and you keep a repository that rebuilds everything you made.
 intro: >
-  The people who wrote the code teach every course live, online. Each course
-  has thirty seats and runs ten weeks. All three courses run in every cohort,
-  and there are four cohorts a year. Your seat includes the recordings. The
-  lab is a real cluster, and every student gets their own tenant on it.
+  Three courses, taught live by the people who wrote the code. Each one runs
+  ten weeks, and all three start together four times a year. Seats are
+  limited. You get your own tenant on a real cluster, and every session is
+  recorded.
 week_heading: How a week runs
 week_body: |
-  Each week has two live sessions of one hour and one lab. The first session
-  builds the idea. The second picks up where the first stopped and runs the
-  lab with you. Every lab is a numbered set of steps, so a student who missed
-  the session can run it alone. The failures in the labs are on purpose. Half
-  of the teaching happens when the cluster refuses a step and you learn why.
+  Two live hours and one lab. In the first hour we cover the idea. In the
+  second, we run the lab together.
 
-  Everything you build lives in Git from week two. The shared environment is
-  torn down after every session, and nothing in your namespace survives. What
-  you carry out is a repository that brings it all back in one command.
+  Every lab is written as numbered steps, so if you miss a session you can
+  still do it on your own. A lot of them are built to fail. At some point the
+  cluster will refuse a step, and figuring out why is half the lesson.
 
-  There is no homework and no grade. Each week ends with an optional list of
-  deeper reading and exercises. No later week depends on any of it.
+  From week two, everything you build goes into Git. We tear the shared
+  environment down after each session, so nothing in your namespace lasts.
+  What you keep is a repository that rebuilds all of it with one command.
+
+  No homework and no grades. Each week ends with extra reading if you want
+  it, and nothing later in the course depends on it.
 team_heading: Team seats
 team_blurb: >
-  Ten seats is one call. Send the team, and the last four labs run against
-  your own stack.
+  Sending a team? Ten seats takes one call, and the last four labs run
+  against your own stack instead of ours.
 partner_line: >
-  A seat is also for sale through our partner [Emage](https://emagetech.io/),
-  at the same price.
+  You can also buy a seat through our partner [Emage](https://emagetech.io/).
+  Same course, same price.
 ---

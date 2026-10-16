@@ -1,5 +1,6 @@
-# The courses. A course is one curriculum with a price and thirty seats per
-# cohort. Every course runs in every cohort, so a course carries no date. The
+# The courses. A course is one curriculum with a limited number of seats per
+# cohort. The site shows no price and no seat count. The price lives on the
+# Stripe Payment Link. Every course runs in every cohort, so a course carries no date. The
 # dates live in data/cohorts.yaml and the format line lives in hugo.toml.
 #
 # enroll_url stays empty until the owner says the cohort is on sale. While it
@@ -8,8 +9,6 @@
 - slug: llm-infrastructure-on-kubernetes
   name: LLM Infrastructure on Kubernetes
   short: Kubernetes
-  price: 3000
-  seats: 30
   color: cyan
   blurb: >
     You build GPU nodes, schedulers, model serving, and the boundary around
@@ -19,8 +18,6 @@
 - slug: agents-in-production
   name: Agents in Production
   short: Agents
-  price: 2500
-  seats: 30
   color: acid
   blurb: >
     You learn how to run an agent fleet for real: identity, grants, sandboxed
@@ -29,8 +26,6 @@
 - slug: attacking-and-defending-ai-agents
   name: Attacking and Defending AI Agents
   short: Agents, offense and defense
-  price: 2500
-  seats: 30
   color: mag
   blurb: >
     The first half breaks agents the way the published attacks do. The
