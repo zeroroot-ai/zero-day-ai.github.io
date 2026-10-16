@@ -5,7 +5,7 @@ hero:
   mid: "Secure it."
   emphasis: "Ship it."
   sub: >
-    Hands-on training for the engineer who has to see the whole picture. You
+    Hands-on training for the engineer who wants to see the whole picture. You
     learn how AI systems break, why they broke, and how to ship one you can stand behind.
   cta_primary: { label: "See the courses", url: "/training/" }
   cta_ghost: { label: "Work with us", url: "#get-in" }
