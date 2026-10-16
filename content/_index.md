@@ -11,20 +11,18 @@ hero:
   cta_ghost: { label: "Work with us", url: "#get-in" }
 why_heading: "The silo is closing."
 why_body: |
-  For twenty years the deal was simple. You picked a lane, you went deep in
-  it, and you got paid for the depth. The network person did not touch the
-  database, and the security person did not ship the code.
+  You spent years getting very good at one thing. Kubernetes, or security, or
+  backend code. For most of your career, that depth was the job.
 
-  AI ended that deal, and not by replacing you. It let one person do the work
-  of a whole row of lanes, and the person who can see across all of them is
-  now worth ten who cannot.
+  AI does not stay in one lane. An AI agent runs on GPUs that someone has to
+  keep up. It holds real credentials. It reads text written by strangers. When
+  it leaks a customer's files, nobody asks whose ticket it was. They ask who
+  can explain what happened and make sure it never happens again.
 
-  What remains is the whole loop. You find how the thing breaks and
-  you learn why it broke. You close the hole so the same break does not work
-  twice. You ship the result to real users on real hardware, and you stand
-  behind it.
+  Companies call that person a staff engineer. Most teams do not have one for
+  their AI systems yet, and they know it.
 
-  **That loop is one skill now, not three careers.** It is the only thing we
-  teach.
+  Each course starts in the lane you know. You finish able to answer for the
+  whole system.
 latest_heading: "Latest research"
 ---
