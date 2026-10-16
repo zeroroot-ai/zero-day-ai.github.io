@@ -24,7 +24,7 @@ content/training/ one file per course. The facts come from data/courses.yaml.
 content/services.md, content/about.md
 data/cohorts.yaml cohorts: name, season, start, end, status. The first
                   scheduled row is the one every page points at.
-data/courses.yaml courses: name, price, seats, enroll_url. No dates.
+data/courses.yaml courses: name, blurb, enroll_url. No dates, no price.
 data/services.yaml the two fixed offers.
 themes/zdl/       the theme. layouts, partials, styles, the mark.
 static/           files copied as they are, including CNAME.

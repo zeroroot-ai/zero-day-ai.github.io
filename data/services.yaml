@@ -1,9 +1,6 @@
-# Two fixed offers. Prices are ranges in US dollars and the low end is the
-# number every research piece quotes.
+# Two fixed offers. The site shows no price. We fix the price on the first call.
 - slug: assessment
   name: Agent Production Readiness Assessment
-  price_low: 45000
-  price_high: 75000
   length: Scoped on the first call
   team: One senior operator does the work. The founder reviews it.
   blurb: >
@@ -19,8 +16,6 @@
     - A plan to production, with the order of work, and a fixed price for the build if you want us to do it.
 - slug: build
   name: Agentic Software Factory
-  price_low: 150000
-  price_high: 400000
   length: Eight to twelve weeks
   team: Two operators do the work. The founder reviews it.
   blurb: >

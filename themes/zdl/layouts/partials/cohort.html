@@ -7,9 +7,8 @@
 {{ $starts := "" }}
 {{ with $c }}{{ with .start }}{{ $starts = printf "starts %s" ((time .).Format "2 January 2006") }}{{ end }}{{ end }}
 {{ $n := len hugo.Data.courses }}
-{{ $seats := 0 }}{{ with index hugo.Data.courses 0 }}{{ $seats = .seats }}{{ end }}
 {{ $line := "" }}
 {{ with $c }}
-  {{ $line = printf "Next cohort: %s. %s. %d courses. Ten weeks, live. %d seats each." .name (or $starts .when) $n $seats }}
+  {{ $line = printf "Next cohort: %s. %s. %d courses. Ten weeks, live. A limited number of seats." .name (or $starts .when) $n }}
 {{ end }}
-{{ return (dict "row" $c "starts" $starts "line" $line "courses" $n "seats" $seats) }}
+{{ return (dict "row" $c "starts" $starts "line" $line "courses" $n) }}

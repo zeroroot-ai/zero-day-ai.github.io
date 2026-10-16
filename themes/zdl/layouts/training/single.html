@@ -10,8 +10,7 @@
         <dl class="facts">
           <div><dt>Format</dt><dd>{{ .Site.Params.course_format }}</dd></div>
           <div><dt>Dates</dt><dd>{{ with $n.row }}{{ if .start }}{{ (time .start).Format "Monday 2 January 2006" }} to {{ (time .end).Format "2 January 2006" }}.{{ else }}{{ .when }}. The list hears the start date first.{{ end }}{{ end }} Every course runs in every cohort.</dd></div>
-          <div><dt>Price</dt><dd>{{ lang.FormatNumberCustom 0 $c.price }} USD per seat. Your seat includes the recordings of every session.</dd></div>
-          <div><dt>Seats</dt><dd>{{ $c.seats }}. Team seats available.</dd></div>
+          <div><dt>Seats</dt><dd>A limited number. Your seat includes the recordings of every session. Team seats available.</dd></div>
           <div><dt>Refund</dt><dd>Full refund until the first live session starts, none after. <a href="{{ "/terms/" | relURL }}">The terms</a> say the rest.</dd></div>
         </dl>
         <div class="cta">
@@ -28,12 +27,12 @@
 
       <div class="post-subscribe" id="hold">
         {{ if $c.enroll_url }}
-          <a class="btn" href="{{ $c.enroll_url }}">Buy a seat &middot; {{ lang.FormatNumberCustom 0 $c.price }} USD</a>
+          <a class="btn" href="{{ $c.enroll_url }}">Buy a seat</a>
         {{ else }}
           {{ partial "subscribe.html" (dict
               "ctx" . "tag" "training" "action" "Send them"
               "heading" "Get the dates first"
-              "blurb" (printf "There are %d seats. The list hears the dates and gets the payment link a week before anyone else." $c.seats)) }}
+              "blurb" "Seats are limited. The list hears the dates and gets the payment link a week before anyone else.") }}
         {{ end }}
       </div>
 

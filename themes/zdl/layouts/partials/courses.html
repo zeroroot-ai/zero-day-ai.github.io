@@ -7,7 +7,7 @@
       <span class="pixlabel st">{{ with $n.row }}{{ .name }} &middot; {{ or $n.starts .when }}{{ end }}</span>
       <b>{{ .name }}</b>
       <p>{{ .blurb }}</p>
-      <span class="meta">{{ lang.FormatNumberCustom 0 .price }} USD &middot; {{ .seats }} seats &middot; ten weeks, live</span>
+      <span class="meta">Limited number of seats &middot; ten weeks, live</span>
     </a>
   {{ end }}
 </div>
