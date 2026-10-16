@@ -14,10 +14,12 @@ why_body: |
   You spent years getting very good at one thing. Kubernetes, or security, or
   backend code. For most of your career, that depth was the job.
 
-  AI does not stay in one lane. An AI agent runs on GPUs that someone has to
-  keep up. It holds real credentials. It reads text written by strangers. When
-  it leaks a customer's files, nobody asks whose ticket it was. They ask who
-  can explain what happened and make sure it never happens again.
+  AI does not stay in one lane. At the bottom is the hardware: GPUs, drivers,
+  and the scheduler that shares them between teams. Above that is the model,
+  and the serving layer that keeps it answering. At the top is the agent, which
+  holds real credentials and reads text written by strangers. When it leaks a
+  customer's files, nobody asks which layer failed. They ask who can explain
+  what happened and make sure it never happens again.
 
   Companies call that person a staff engineer. Most teams do not have one for
   their AI systems yet, and they know it.
