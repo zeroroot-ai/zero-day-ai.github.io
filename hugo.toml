@@ -10,8 +10,8 @@ summaryLength     = 30
   tag = "tags"
 
 [params]
-  description = "Hands-on training for the engineer who has to see the whole picture. You learn how AI systems break, why they broke, and how to ship one you can stand behind."
-  eyebrow     = "Offensive and defensive AI training"
+  description = "Hands-on training for the engineer who wants to see the whole picture. You learn how AI systems break, why they broke, and how to ship one you can stand behind."
+  eyebrow     = "Offensive and defensive AI training & consulting"
   beehiiv     = "https://zero-day-ai.beehiiv.com"
   ogimage     = "/og.png"
   mailbox     = "info@zero-day.ai"
