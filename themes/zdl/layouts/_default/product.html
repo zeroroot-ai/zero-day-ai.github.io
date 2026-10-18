@@ -11,8 +11,21 @@
         </div>
       </header>
 
-      <div class="prose">{{ .Content }}</div>
+      {{ with .Params.outcomes }}
+        <h2 class="product-h2">{{ $.Params.outcomes_heading }}</h2>
+        <div class="outcomes">
+          {{ range . }}
+            <div class="outcome">
+              <h3>{{ .name }}</h3>
+              <p>{{ .blurb }}</p>
+            </div>
+          {{ end }}
+        </div>
+      {{ end }}
 
+      <div class="prose" style="margin-top:44px">{{ .Content }}</div>
+
+      {{ with .Params.parts_heading }}<h2 class="product-h2">{{ . }}</h2>{{ end }}
       <div class="parts">
         {{ range .Params.parts }}
           <a class="part" href="{{ .url }}" rel="noopener">

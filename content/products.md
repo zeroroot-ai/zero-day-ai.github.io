@@ -2,27 +2,44 @@
 title: Gibson Runtime
 layout: product
 eyebrow: "Products · from zeroroot.ai"
-description: Gibson is the runtime our agents execute inside. It is the lab in every course and the reference design in every engagement. zeroroot.ai builds and sells it.
+description: Gibson takes your agents from a demo to production on your own Kubernetes cluster, and gives your security team what it needs to sign off. zeroroot.ai builds and sells it.
 lede: >
-  Gibson is the runtime an agent executes inside. The boundary is a property
-  of execution, not a check that runs afterwards.
+  Gibson takes your agents from a demo to production, on your own Kubernetes
+  cluster, and gives your security team what it needs to sign off.
 cta: { label: "Go to zeroroot.ai", url: "https://www.zeroroot.ai/" }
 cta_ghost: { label: "Read the code", url: "https://github.com/zeroroot-ai/gibson" }
+outcomes_heading: What you get
+outcomes:
+  - name: Your security team signs off
+    blurb: They read what each agent may do in one place, and they replay any run step by step. That is the evidence a review asks for.
+  - name: A hijacked agent cannot send your data out
+    blurb: Untrusted work runs in a microVM on your own nodes. The network refuses every destination you did not list, even if an attacker fools the model.
+  - name: No agent holds a person's password
+    blurb: Each agent has its own identity. A person gives it only rights that person already holds, and Gibson checks them on every tool call.
+  - name: A runaway loop stops at the budget you set
+    blurb: Every run has a limit on tokens, cost, and steps. When a run goes over its limit, Gibson stops it.
+  - name: You can say what the agent did last Tuesday
+    blurb: Every run leaves a journal. Replay it for the auditor, the incident review, or the person who asks.
+  - name: It runs where you already run
+    blurb: One Helm chart on any Kubernetes cluster, in any cloud, on bare metal, or air-gapped. Use your own models, from Anthropic, OpenAI, Bedrock, Vertex, Azure, Mistral, or Ollama.
+  - name: Your engineers own what they build
+    blurb: The SDK is Apache 2.0. Gibson is source-available under ELv2. Read it, run it, change it, and send merge requests. You need a license only to resell it.
+parts_heading: What you install
 parts:
   - name: Gibson Runtime
-    blurb: The substrate. It identifies, budgets, and journals every call an agent makes, and it can refuse any of them.
+    blurb: Runs your agents. Gives each one an identity, a budget, and a journal, and stops every call it is not allowed to make.
     license: Elastic-2.0
     url: https://github.com/zeroroot-ai/gibson
   - name: Gibson Console
-    blurb: It shows missions, grants, traces, and replay. It is the screen for the person who has to answer for the agent.
+    blurb: The screen for the person who answers for the agent. See every run and what it touched, and replay it.
     license: Elastic-2.0
     url: https://github.com/zeroroot-ai/dashboard
-  - name: Execution environment
-    blurb: Setec gives microVM isolation as a Kubernetes primitive. Untrusted work goes in. Only what the grant allows comes out.
+  - name: Setec
+    blurb: Runs untrusted work in a microVM on your own nodes, so one compromised run cannot reach another.
     license: Apache-2.0
     url: https://github.com/zeroroot-ai/setec
   - name: ADK
-    blurb: You build agents with it, and it ships the gibson CLI. It is Apache licensed, so what you build on it is yours.
+    blurb: Build agents and ship them with the gibson CLI. It is Apache 2.0, so what you build is yours.
     license: Apache-2.0
     url: https://github.com/zeroroot-ai/adk
 outro: >
@@ -30,24 +47,9 @@ outro: >
   want to run it yourself, the product company is next door.
 ---
 
-We built Gibson because we kept finding the same thing on every assessment.
-The agent was fine. The model was fine. The thing that was missing was a line
-the agent could not cross, and a record of every step it took up to that line.
-
-So there are two ideas in it, and only two.
-
-**A grant, not a prompt.** A named person gives an agent the rights it may
-use: read, write, and execute. The rights are bounded by what that person
-holds. The person sets them once, up front. There is no runtime approval
-pop-up, because a pop-up is a prompt with a button on it.
-
-**Enforced, not advisory.** A control that inspects the output and scores it
-afterwards is advice. A control that makes the disallowed thing
-unrepresentable is a guarantee. Gibson only claims the second kind.
-
-Everything else is plumbing for those two ideas. Every agent gets an
-identity. Untrusted work gets a sandbox. Every session gets a budget. Every
-run gets a journal you can replay for the person who asks what happened.
+We built Gibson because every assessment found the same thing. The agents
+worked. Nobody could say what they were allowed to touch, and nobody could
+show what they had done. So the agents stayed in the demo.
 
 Our sibling company, [zeroroot.ai](https://www.zeroroot.ai/), builds and
 sells Gibson. We teach on it because we wrote it. You do not need it to take

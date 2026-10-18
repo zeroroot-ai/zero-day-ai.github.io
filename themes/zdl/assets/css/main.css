@@ -340,3 +340,9 @@ body.invert { --acid:#ff2e88; }
 .part b { font-family:var(--mono); font-weight:700; font-size:15px; color:var(--acid); display:block; }
 .part span { display:block; color:var(--fg-2); font-size:13.5px; line-height:1.5; margin-top:9px; }
 .part u { display:block; text-decoration:none; margin-top:14px; color:var(--fg-3); }
+.product-h2 { margin:52px 0 0; font-weight:700; font-size:26px; letter-spacing:-.03em; line-height:1.1; }
+.product-h2 + .parts { margin-top:18px; }
+.outcomes { display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:14px; margin-top:18px; }
+.outcome { background:var(--panel); border:1px solid var(--rule); border-top:3px solid var(--acid); padding:18px 18px 20px; }
+.outcome h3 { margin:0; font-size:18px; font-weight:700; letter-spacing:-.02em; line-height:1.25; color:var(--fg); }
+.outcome p { margin:10px 0 0; color:var(--fg-2); font-size:14.5px; line-height:1.5; }
