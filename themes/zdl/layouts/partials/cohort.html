@@ -1,6 +1,6 @@
 {{/* The next cohort, as one dict. Call with nothing: {{ $n := partial "cohort.html" . }}
      Returns the first scheduled row of data/cohorts.yaml plus two rendered
-     strings: .starts ("starts 11 January 2027", or "" while no day is set)
+     strings: .starts ("starts <day> <month> <year>" from .start, or "" while no day is set)
      and .line (the band text). Every surface that names the next cohort
      reads this one partial, so a new cohort is one edit in the data. */}}
 {{ $c := index (where hugo.Data.cohorts "status" "scheduled") 0 }}
@@ -9,6 +9,6 @@
 {{ $n := len hugo.Data.courses }}
 {{ $line := "" }}
 {{ with $c }}
-  {{ $line = printf "Next cohort: %s. %s. %d courses. Ten weeks, live. A limited number of seats." .name (or $starts .when) $n }}
+  {{ $line = printf "Next cohort: %s. %d courses. Ten weeks, live. A limited number of seats." (or $starts .when) $n }}
 {{ end }}
 {{ return (dict "row" $c "starts" $starts "line" $line "courses" $n) }}

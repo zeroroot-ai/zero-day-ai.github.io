@@ -5,7 +5,7 @@
 <a class="ticker" href="{{ "/training/" | relURL }}" aria-label="{{ $n.line }}">
   <div class="run" aria-hidden="true">
     {{ range seq 2 }}
-      <b>Next cohort</b><q>{{ $n.row.name }} &middot; {{ or $n.starts $n.row.when }} &middot; {{ $n.courses }} courses &middot; ten weeks, live &middot; limited number of seats &middot; recorded</q><i>&#9670;</i>
+      <b>Next cohort</b><q>{{ or $n.starts $n.row.when }} &middot; {{ $n.courses }} courses &middot; ten weeks, live &middot; limited number of seats &middot; recorded</q><i>&#9670;</i>
     {{ end }}
   </div>
 </a>
