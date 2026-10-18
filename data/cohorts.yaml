@@ -6,9 +6,7 @@
 - slug: winter-2027
   name: Winter 2027
   status: scheduled            # scheduled | planned
-  when: January 2027
-  start: 2027-01-11
-  end: 2027-03-19
+  when: Jan '27
 - slug: spring-2027
   name: Spring 2027
   status: planned
