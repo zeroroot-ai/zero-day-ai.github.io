@@ -17,9 +17,8 @@ why_body: |
   GPU scheduler. The model server. The agent that holds production credentials
   and believes whatever a web page tells it.
 
-  That gap is what we teach. Three courses, ten weeks each, cover the full
-  stack from the hardware up. Every layer starts with an attack, because that
-  is the fastest way to learn how it works.
+  **That gap is what we teach. Three courses, ten weeks each, cover the full
+  stack from the hardware up.**
 
   Take all three, and the AI design round in a staff interview turns into a
   conversation about work you have already done.
