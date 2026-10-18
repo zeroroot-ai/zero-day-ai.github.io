@@ -3,21 +3,44 @@
     <div class="wrap">
       <header class="sechead">
         <h1>{{ .Title }}</h1>
-        {{ with .Params.intro }}<p class="sechead-sub">{{ . }}</p>{{ end }}
+        {{ with .Params.intro }}<p class="sechead-sub">{{ . | markdownify }}</p>{{ end }}
       </header>
 
       <div class="offers">
         {{ range hugo.Data.services }}
-          <div class="offer-card" id="{{ .slug }}">
+          <div class="offer-card{{ if .paths }} offer-wide{{ end }}" id="{{ .slug }}">
             <span class="pixlabel">{{ .length }}</span>
-            <h2>{{ .name }}</h2>
+            <h2>{{ if .url }}<a href="{{ .url }}">{{ .name }}</a>{{ else }}{{ .name }}{{ end }}</h2>
             <p class="blurb">{{ .blurb }}</p>
             <p class="team">{{ .team }}</p>
-            <h3>You get</h3>
-            <ul>{{ range .deliver }}<li>{{ . }}</li>{{ end }}</ul>
+            {{ with .paths }}
+              <div class="offer-paths">
+                {{ range . }}
+                  <div class="offer-path">
+                    <span class="pixlabel">{{ .label }}</span>
+                    <h3 class="path-name">{{ .name }}</h3>
+                    <p class="blurb">{{ .blurb }}</p>
+                    <h3>You get</h3>
+                    <ul>{{ range .deliver }}<li>{{ . }}</li>{{ end }}</ul>
+                  </div>
+                {{ end }}
+              </div>
+            {{ else }}
+              <h3>You get</h3>
+              <ul>{{ range .deliver }}<li>{{ . }}</li>{{ end }}</ul>
+            {{ end }}
           </div>
         {{ end }}
       </div>
+
+      {{ with .Params.gibson }}
+        <aside class="gibson-callout">
+          <span class="pixlabel">{{ .label }}</span>
+          <h2>{{ .heading }}</h2>
+          {{ .body | markdownify }}
+          <p class="gibson-links">{{ range .links }}<a href="{{ .url }}">{{ .label }}</a>{{ end }}</p>
+        </aside>
+      {{ end }}
 
       <div class="prose" style="margin-top:52px">{{ .Content }}</div>
 
