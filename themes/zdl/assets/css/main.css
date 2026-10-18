@@ -322,6 +322,22 @@ body.invert { --acid:#ff2e88; }
 .offer-card h3 { margin:22px 0 8px; font-family:var(--pix); font-size:10px; text-transform:uppercase; letter-spacing:.04em; color:var(--acid); }
 .offer-card ul { margin:0; padding-left:1.1em; color:var(--fg-2); font-size:14.5px; }
 .offer-card li + li { margin-top:.45em; }
+.offer-card h2 a { color:inherit; text-decoration:underline; text-decoration-color:var(--cyan); text-underline-offset:4px; }
+.offer-card h2 a:hover { color:var(--cyan); }
+.offer-wide { grid-column:1 / -1; }
+.offer-paths { display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:16px; margin-top:22px; }
+.offer-path { border:1px solid var(--rule); background:var(--panel-2); padding:18px 18px 20px; }
+.offer-path + .offer-path { border-top:2px solid var(--violet); }
+.offer-path:first-child { border-top:2px solid var(--acid); }
+.offer-card .path-name { margin:8px 0 0; font-family:inherit; font-size:19px; font-weight:700; text-transform:none; letter-spacing:-.02em; color:var(--fg); }
+.offer-path .blurb { font-size:15px; }
+
+.gibson-callout { margin-top:28px; border:1px solid var(--rule); border-left:4px solid var(--violet); background:var(--panel); padding:22px 24px 24px; }
+.gibson-callout .pixlabel { color:var(--violet); }
+.gibson-callout h2 { margin:10px 0 0; font-weight:700; font-size:26px; letter-spacing:-.03em; line-height:1.1; }
+.gibson-callout p { margin:12px 0 0; color:var(--fg-2); max-width:70ch; }
+.gibson-callout .gibson-links { display:flex; flex-wrap:wrap; gap:18px; }
+.gibson-callout .gibson-links a { text-underline-offset:3px; }
 
 /* ---------------------------------------------------------------- latest -- */
 

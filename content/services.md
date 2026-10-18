@@ -1,13 +1,29 @@
 ---
 title: Services
 layout: services
-description: Two fixed offers for the organization whose AI pilots work and whose AI production does not exist yet. An assessment that attacks your agents. A build that stands up an agentic software factory on your own cluster.
+description: Two fixed offers for the organization whose AI pilots work and whose AI production does not exist yet. An assessment that attacks your agents and then closes the gaps. A build that stands up an agentic software factory on your own cluster.
 intro: >
   Your pilots work. Your production does not exist. The agent that impressed
   the room in March is still on a laptop in September. Nobody can say who it
   runs as, what it may touch, or what it did last Tuesday. We close that gap
   with a runtime we built. We also bring fifteen years of platforms that
   passed review at the Department of Defense and at the trading exchanges.
+gibson:
+  label: The runtime under both offers
+  heading: Gibson
+  body: |
+    Gibson is the agent runtime we built and run every day. Every agent gets
+    an identity, every tool call passes a grant, untrusted work runs in a
+    sandbox, every session has a budget, and every run leaves a journal you
+    can replay. It installs on your own Kubernetes cluster with one Helm chart.
+
+    Gibson is source-available under the Elastic License 2.0. You can read
+    it, run it in production, change it, and send merge requests to improve
+    it. You need a license from us only to resell it or offer it as a hosted
+    service. The SDK your engineers build on is Apache 2.0.
+  links:
+    - { label: "Go to zeroroot.ai", url: "https://www.zeroroot.ai/" }
+    - { label: "Read the code", url: "https://github.com/zeroroot-ai/gibson" }
 contact_heading: Talk to us
 contact_blurb: >
   Leave an address here, or write to info@zero-day.ai. You get a reply from a
@@ -31,7 +47,7 @@ everything they build.
 The rest of this page says what each offer delivers, where the platform runs,
 and how it fits the systems you have.
 
-## The Agentic Software Factory, in detail
+## The [Agentic Software Factory](https://www.zeroroot.ai/), in detail
 
 ### Why this is not a build from scratch
 
@@ -139,7 +155,7 @@ and at the end your engineers hold all of it.
 4. Weeks eleven and twelve. Your engineers ship the fourth agent without us.
    We hand over the runbooks and the reviewer's map, and we leave.
 
-## The Agent Production Readiness Assessment, in detail
+## The Agent Production Readiness Assessment and Implementation, in detail
 
 ### What we look at
 
@@ -170,20 +186,36 @@ The length depends on how many agents you have and how many systems they
 reach. We scope it with you on the first call and fix the price before we
 start.
 
-### You do not have to run Gibson
+### Two paths after the assessment
 
-The assessment is not a sales call for the runtime. Most teams we meet have
-already built something: an agent framework, a gateway, a set of tools, a
-half-finished platform. Some want to keep building in house. Some cannot
-adopt a new runtime for a year. We assess what you have and design for what
-you will run.
+The assessment is the same on both paths. What changes is how we close the
+gaps it finds. You pick the path after you read the report, not before.
 
-Gibson is where our answers come from. It is the design we tested, and every
-control we recommend has a working example in it. If you run something else,
-you get the same control mapped onto your stack, with the trade-off named
-where your stack cannot do what the runtime does.
+### Fix what you have: the Agent Production Blueprint
 
-### What you get
+Most teams we meet have already built something. They have agents on
+LangChain or LangGraph, a gateway, a set of tools, maybe half a platform.
+The agents work. Nobody designed them to pass a security review, and a
+rewrite is not on the table.
+
+The Agent Production Blueprint is our method for that stack. It covers
+the same ground as Gibson: one identity per agent, a grant checked on every
+tool call, a sandbox for untrusted work, a budget per session, and a journal
+of every run. We map each of these onto the framework you run, and we name
+the trade-off where your stack cannot do what Gibson does. Then we build the
+controls in with your engineers, in the order the report ranks them.
+
+### Bring Gibson: everything out of the box
+
+Some teams would rather not build the controls at all. On this path we
+install Gibson on your cluster and move your agents onto it. The gaps close
+because the runtime closes them. Then we run the same attacks again, so your
+reviewer can see each one fail.
+
+If you want more than the agents you have, this path grows into the
+[Agentic Software Factory](https://www.zeroroot.ai/).
+
+### What you get on both paths
 
 - A readiness report. Every gap ranked, with the control or the change that
   closes it.
@@ -191,12 +223,10 @@ where your stack cannot do what the runtime does.
   control that stops it.
 - A live replay of every successful attack, in your environment, for your
   team.
-- A reference architecture for your agents on your stack. It names every
-  component, every identity, every boundary, and every data flow, and it
-  fits the systems you have. If you build it in house, this is the drawing
-  your team builds from.
-- A plan to production, with the order of work, and a fixed price for the
-  build if you want us to do it.
+- A reference architecture for your agents. It names every component, every
+  identity, every boundary, and every data flow.
+- The implementation, on the path you picked, at a price we fix after the
+  assessment.
 
 ## Who this is for
 
